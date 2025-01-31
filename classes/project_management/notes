@@ -1,0 +1,15 @@
+bzr notes
+
+bzr branch sftp://academy@fab.cba.mit.edu:846/archive academy
+bzr visualize
+bzr status
+bzr add
+bzr commit -m "during class"
+bzr push sftp://academy@fab.cba.mit.edu:846/archive
+bzr push
+bzr pull
+bzr upload sftp://academy@fab.cba.mit.edu:846/tree
+bzr upload
+
+python modules needed for sftp: python-paramiko python-crypto
+

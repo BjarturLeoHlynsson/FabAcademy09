@@ -1,0 +1,20 @@
+bzr branch sftp://academy@fab.cba.mit.edu:846/archive academy
+cd academy/
+bzr visualize
+bzr status
+bzr commit -m "Neil with Frosti"
+bzr push sftp://academy@fab.cba.mit.edu:846/archive
+bzr push
+bzr help diverged-branches
+bzr merge
+bzr status
+bzr add
+bzr status
+bzr commit -m "Frosti log file"
+bzr push
+bzr resolve
+
+http://doc.bazaar.canonical.com/latest/en/mini-tutorial/
+http://wiki.bazaar.canonical.com/Tutorials
+http://wiki.bazaar.canonical.com/BzrExplorer
+

@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Assignment #1: Create a self-replicating machine - Fab Academy at AS220</title>
+    <meta name="generator" content="Movable Type Open Source 4.1" />
+    <link rel="stylesheet" href="http://www.as220.org/labs/fabacademy/academy-styles.css" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="Providence Fab Academy RSS Feed" href="http://as220.org/labs/fabacademy/rss.xml" />  
+</head>
+<body>
+
+<div id="pagewrapper">
+<div id="top">
+   <center>
+    <a style="border-style:none;" href="http://www.as220.org/labs/fabacademy/">
+          <img style="border-style:none;" src="http://as220.org/labs/fabacademy/images/fabacademytitle.png" 
+          alt="Fab Academy at AS220 Labs"  /></a>
+  </center>
+</div>
+
+<div id="left">
+  
+
+
+
+<div id="entry-1202" class="entry-asset asset hentry">
+<p class="date">September 22, 2009 10:12 PM</p>
+<p class="title">Assignment #1: Create a self-replicating machine</p>
+by Shawn Wallace<br/>
+<div class="asset-body">
+
+            <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="group.png" src="http://as220.org/labs/fabacademy/2009/09/22/group.png" width="330" height="175" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span>  </p>
+
+<p>This post describes and documents a simple machine that can replicate itself. As with any self replicating process, the major limiting factors and design decisions are:</p>
+
+<ul>
+<li>The method of supplying raw material</li>
+<li>How to seed or start the process</li>
+<li>How to represent the code that controls the process</li>
+<li>How state transitions and signals are communicated</li>
+<li>How to represent a mechanism abstractly that does not require magic or
+alien technology to realize </li>
+<li>The utility of the final thing</li>
+</ul>
+
+<p>I started the design process thinking about ways a machine can piggyback on biological processes (e.g. a tree) to provide the raw material and base for  replication. Kind of like automated topiary, not unlike a topiary chair.</p>
+
+
+
+            <p>I quickly moved on to a simpler idea based on a cellular automata model. The raw material is provided by a bunch of identically programmed cells that are moving around in a "primordial ooze" similar to the shaken sack described in Penrose's 1959 article <a href="http://cba.mit.edu/events/03.11.ASE/docs/Penrose.pdf">Self-Reproducing Machines</a>. The self-assembling mechanism of each cell is described in a way that can be implemented as a (relatively) simple electromechanical device.</p>
+
+<p>Each cell looks like the following, with four 'tongues' and two 'grooves':</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="cell.png" src="http://as220.org/labs/fabacademy/2009/09/22/cell.png" width="96" height="96" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>The rules that govern the behavior of the cell are:</p>
+
+<ol>
+<li>Tongues and Grooves can be in one of three states: Positive (P), Negative (N), and Open (O).</li>
+<li>If a tongue on one cell is P and a groove on another is N, the two cells will join if allowed by the shape of the cells</li>
+<li>If a tongue is O and a connected groove is "flipped" from O to P or N, the tongue will "flip" to the opposite of the connected groove</li>
+<li>If a connection is made between a tongue and groove (i.e., one side is P, one side is N) and either side is flipped to O, the connection is broken and both sides are flipped to O</li>
+</ol>
+
+<p>These four simple rules and the state tables below will result in a sequence of self-forming L-shaped 'machines' that can bud other L-shaped machines. The following state tables describe the programming of each cell:</p>
+
+<p>Seed state                                               </p>
+
+<blockquote>
+  <p>A = N <br />
+  B = O <br />
+  C = P <br />
+  D = N <br />
+  E = O <br />
+  F = O </p>
+</blockquote>
+
+<p>All cells start at the seed state, where tongue C is attracted to groove A. When two lone cells connect, D flips B and the state changes:</p>
+
+<p>If (A connected to C) and (B connected to D), then</p>
+
+<blockquote>
+  <p>A = N <br />
+  B = O <br />
+  C = P <br />
+  D = O <br />
+  E = O <br />
+  F = O</p>
+</blockquote>
+
+<p>When another cell is attached, the state changes again:</p>
+
+<p>If (A connected to C) and (B not connected to D), then</p>
+
+<blockquote>
+  <p>A = N <br />
+  B = O <br />
+  C = O <br />
+  D = O <br />
+  E = P <br />
+  F = O                                                                       </p>
+</blockquote>
+
+<p>Now tongue E is attracted to groove A of other cells. When they connect:</p>
+
+<p>If E connected to A, then                                                                        </p>
+
+<blockquote>
+  <p>A = N <br />
+  B = N <br />
+  C = P <br />
+  D = O <br />
+  E = P <br />
+  F = O</p>
+</blockquote>
+
+<p>Note that groove B acts as a signal to the first cell that the process is complete. When B switches from O to N, tongue D flips to P and D is connected to B (rule 3). This triggers the final state in the original starter cell:     </p>
+
+<p>If D connected to B, then                                                             </p>
+
+<blockquote>
+  <p>A = O <br />
+  B = O <br />
+  C = P <br />
+  D = N <br />
+  E = O <br />
+  F = O                                                  </p>
+</blockquote>
+
+<p>Grooves A and B are opened, breaking the connection between the starter cell and it's "creator". Tongue C remains positive to attract new cells. In this arrangement, L-shaped assemblies can be created from a single cell or from another L-shaped assembly. Here's the sequence graphically:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="machine.png" src="http://as220.org/labs/fabacademy/2009/09/22/machine.png" width="500" height="946" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>To implement the machine as an electromechanical device, you would need the following elements:</p>
+
+<ul>
+<li>a controller</li>
+<li>a switchable electromagnetic node that can be made positive, negative, or off</li>
+<li>a sensor at each node that can detect the id of the node it is physically connected to</li>
+<li>a means to communicate the id of a node to one connected to it</li>
+<li>power and driver for electromagnets</li>
+</ul>
+
+
+</div>
+</div> 
+
+
+<center>
+<p><a href="http://www.as220.org/labs/fabacademy/">Return to front</a></p>
+
+<p><a href="http://www.as220.org/labs/fabacademy/archives.html">Older articles</a></p>
+</center>
+</div>
+
+<div id="right">
+<h1>Projects</h1>
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/01-computer-controlled-cutting/">
+01 computer-controlled cutting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/laser-cut-cards---construction-kit.html">Laser Cut Cards - Construction Kit </a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/make-blog-post-1-make-a-press-fit-construction-kit.html">MAKE blog post #1: Make a Press-fit Construction Kit</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/nik.html">NIK</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/press-fit.html">Press-fit construction</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/hey-fabfolk-its-4.html">Hey FabFolk! It's # 4 :)</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/sunglasses.html">Sunglasses</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/02-electronics-design-and-production/">
+02 electronics design and production</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/second-article-for-make-blog.html">Second article for MAKE Blog</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/hello-circuits.html">Hello circuits</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/03-computer-controlled-machining/">
+03 computer-controlled machining</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-something-anything-big.html">Make something (anything) big</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/shelves-from-the-shopbot.html">Shelves from the Shopbot</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-it-bigish.html">Make it Big(ish)</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/04-embedded-programming/">
+04 embedded programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/re-programming-the-echo-board.html">Re-Programming the Echo Board</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/persistence-of-vision.html">Persistence of Vision</a> by Jenine Bressner</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/05-3d-molding-and-casting/">
+05 3D molding and casting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/completed-tardis-cast-working-light.html">Completed TARDIS Cast | Working Light</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/tardis-moldmaking.html">TARDIS:  Moldmaking</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/3-d-modeling-for-molding-and-casting.html">3-D modeling for molding and casting</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-a-flexible-coupling-part-2.html">Molding and casting a flexible coupling part 2</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-flexible-coupling.html">Molding and casting a flexible coupling</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/monkeys-on-typewriters.html">Monkeys on typewriters</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting.html">Molding and casting</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/casting.html">Moon Crater</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tardis-3d-modeling-1.html">TARDIS: 3D Modeling</a> by Anna France</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/06-collaborative-technical-development/">
+06 collaborative tech development</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/new-bazaar-tutorial.html">New bazaar tutorial</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/intro-to-bazaar.html">Intro to Bazaar</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/07-3D-scanning-and-printing/">
+07 3D scanning and printing</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/half-drill-bit.html">Half drill bit!</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/fluxamascanner.html">F(l)uxamascanner</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/picza.html">Picza </a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/08-sensors-actuators-and-displays/">
+08 sensors, actuators, and displays</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">The Gellerizer</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/09-interface-programming/">
+09 interface programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/10-embedded-networking/">
+10 embedded networking</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/05/xbee-networking-1.html">XBee Networking</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/11-machine-design/">
+11 machine design</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/12-applications-and-implications/">
+12 applications and implications</a></div>
+<ol>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/13-IP-and-business-models/">
+13 IP and business models</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/licensing.html">Licensing</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/14-project-development/">
+14 project development</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/year-long-projects/">
+year-long projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/working-outside-the-lab-but-making-progress.html">Working outside the lab, but making progress</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/year-long-project.html">Year-long Project</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/coil-wrapping-machine.html">Coil wrapping machine</a> by Shawn Wallace</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/other-projects/">
+other projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tintin-rocket-neko-wa-kowaii.html">Tintin Rocket (neko-wa kowaii)</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/fluxamacutter-press-fit-diy-vinyl-cutter.html">Fluxamacutter press-fit DIY vinyl cutter</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/kamina-glasses.html">Kamina glasses</a> by Noah Bedford</div>
+
+</ol>
+
+<h1>Links</h1>
+<p><a class="category-link" href="http://www.as220.org/labs/wiki">
+             Labs Wiki
+             </a></P>
+<p><a class="category-link" href="http://www.as220.org/labs/blog">
+             Labs Blog
+             </a></P>
+<p><a class="category-link" href="http://fabacademy.org">
+             Global Fab Academy
+             </a></P>
+<p><a class="category-link" href="http://www.fabacademy.org/moodle/">
+             Academy Moodle
+             </a></P>
+
+    <h1>Recent entries</h1>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/05/xbee-networking-1.html">XBee Networking</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/best-error-message-ever.html">Best Error Message Ever</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">The Gellerizer</a></p>
+      
+
+    <p class="column-head">&nbsp;</p>
+    <h1>Archives</h1>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/05/">May 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/04/">April 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/03/">March 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/02/">February 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/01/">January 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/12/">December 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/11/">November 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/10/">October 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/09/">September 2009</a></p>
+    
+</div>
+
+<div style="clear:both;">
+    <center>
+     <img src="http://www.as220.org/labs/images/labsFooter.gif"/>
+    </center>
+</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>A window frame - Fab Academy at AS220</title>
+    <meta name="generator" content="Movable Type Open Source 4.1" />
+    <link rel="stylesheet" href="http://www.as220.org/labs/fabacademy/academy-styles.css" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="Providence Fab Academy RSS Feed" href="http://as220.org/labs/fabacademy/rss.xml" />  
+</head>
+<body>
+
+<div id="pagewrapper">
+<div id="top">
+   <center>
+    <a style="border-style:none;" href="http://www.as220.org/labs/fabacademy/">
+          <img style="border-style:none;" src="http://as220.org/labs/fabacademy/images/fabacademytitle.png" 
+          alt="Fab Academy at AS220 Labs"  /></a>
+  </center>
+</div>
+
+<div id="left">
+  
+
+
+
+<div id="entry-1235" class="entry-asset asset hentry">
+<p class="date">October 15, 2009 11:25 PM</p>
+<p class="title">A window frame</p>
+by Noah Bedford<br/>
+<div class="asset-body">
+
+            <p><a href="http://www.artofillusion.org/">Art of Illusion</a> is messy, here's how to make a window frame.
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="finalframe.png" src="http://as220.org/labs/fabacademy/2009/10/16/finalframe.png" width="300" height="409" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span>
+<span class="mt-enclosure mt-enclosure-file" style="display: inline;"><a href="http://as220.org/labs/fabacademy/2009/10/16/window.stl">window.stl</a></span></p>
+
+<p><a href="http://www.artofillusion.org/docs/booleantut/booleantutorial">ganked mostly from this tutorial</a></p>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>.</p>
+
+
+
+            <p>Start out with your garden variety four-sided polygon:
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="box.png" src="http://as220.org/labs/fabacademy/2009/10/16/box.png" width="392" height="454" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Turn it into a triangle mesh:
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="trianglemesh.png" src="http://as220.org/labs/fabacademy/2009/10/16/trianglemesh.png" width="290" height="384" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>So now you've got a square. Make a copy and shrink it:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="boxwithsmallerbox.png" src="http://as220.org/labs/fabacademy/2009/10/16/boxwithsmallerbox.png" width="488" height="481" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Copy the small square four times to make the panes, then extrude the big square.</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="extrude1.png" src="http://as220.org/labs/fabacademy/extrude1.png" width="473" height="312" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Extrude the smaller squares to 1.5:
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="extrude2.png" src="http://as220.org/labs/fabacademy/2009/10/16/extrude2.png" width="472" height="326" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Line them up such that there're four small squares poking through the large one like so:
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="through.png" src="http://as220.org/labs/fabacademy/2009/10/16/through.png" width="475" height="747" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Now for the boolean modeling bits, which must be done one at a time. 
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="booleanmodelling.png" src="http://as220.org/labs/fabacademy/2009/10/16/booleanmodelling.png" width="270" height="456" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Select the window pane you wish to remove:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="firsttwo.png" src="http://as220.org/labs/fabacademy/2009/10/16/firsttwo.png" width="219" height="363" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>We'll do first-second the first time, but the rest will probably be second-first. Use
+whatever looks right.</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="first-second.png" src="http://as220.org/labs/fabacademy/first-second.png" width="199" height="273" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>It should look like this:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="firstpane.png" src="http://as220.org/labs/fabacademy/2009/10/16/firstpane.png" width="204" height="298" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Select the new object and the next pane you want to remove, and proceed thusly:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="boolean-lowerleftpane.png" src="http://as220.org/labs/fabacademy/2009/10/16/boolean-lowerleftpane.png" width="222" height="356" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Keep on removing each frame from the next like this:</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="comingtogether.png" src="http://as220.org/labs/fabacademy/2009/10/16/comingtogether.png" width="816" height="274" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>Once you've removed all of them, you can select everything but the final boolean object
+and just delete it.
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="extrajunk.png" src="http://as220.org/labs/fabacademy/2009/10/16/extrajunk.png" width="228" height="360" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>And that's it! Harder than SketchUp, easier than Blender.
+I just got a copy of SolidWorks, I'll blog about that later. </p>
+
+<p>-\n</p>
+
+
+</div>
+</div> 
+
+
+<center>
+<p><a href="http://www.as220.org/labs/fabacademy/">Return to front</a></p>
+
+<p><a href="http://www.as220.org/labs/fabacademy/archives.html">Older articles</a></p>
+</center>
+</div>
+
+<div id="right">
+<h1>Projects</h1>
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/01-computer-controlled-cutting/">
+01 computer-controlled cutting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/laser-cut-cards---construction-kit.html">Laser Cut Cards - Construction Kit </a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/make-blog-post-1-make-a-press-fit-construction-kit.html">MAKE blog post #1: Make a Press-fit Construction Kit</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/nik.html">NIK</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/press-fit.html">Press-fit construction</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/hey-fabfolk-its-4.html">Hey FabFolk! It's # 4 :)</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/sunglasses.html">Sunglasses</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/02-electronics-design-and-production/">
+02 electronics design and production</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/second-article-for-make-blog.html">Second article for MAKE Blog</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/hello-circuits.html">Hello circuits</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/03-computer-controlled-machining/">
+03 computer-controlled machining</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-something-anything-big.html">Make something (anything) big</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/shelves-from-the-shopbot.html">Shelves from the Shopbot</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-it-bigish.html">Make it Big(ish)</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/04-embedded-programming/">
+04 embedded programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/re-programming-the-echo-board.html">Re-Programming the Echo Board</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/persistence-of-vision.html">Persistence of Vision</a> by Jenine Bressner</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/05-3d-molding-and-casting/">
+05 3D molding and casting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/completed-tardis-cast-working-light.html">Completed TARDIS Cast | Working Light</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/tardis-moldmaking.html">TARDIS:  Moldmaking</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/3-d-modeling-for-molding-and-casting.html">3-D modeling for molding and casting</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-a-flexible-coupling-part-2.html">Molding and casting a flexible coupling part 2</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-flexible-coupling.html">Molding and casting a flexible coupling</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/monkeys-on-typewriters.html">Monkeys on typewriters</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting.html">Molding and casting</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/casting.html">Moon Crater</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tardis-3d-modeling-1.html">TARDIS: 3D Modeling</a> by Anna France</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/06-collaborative-technical-development/">
+06 collaborative tech development</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/new-bazaar-tutorial.html">New bazaar tutorial</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/intro-to-bazaar.html">Intro to Bazaar</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/07-3D-scanning-and-printing/">
+07 3D scanning and printing</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/half-drill-bit.html">Half drill bit!</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/fluxamascanner.html">F(l)uxamascanner</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/picza.html">Picza </a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/08-sensors-actuators-and-displays/">
+08 sensors, actuators, and displays</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">The Gellerizer</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/09-interface-programming/">
+09 interface programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/10-embedded-networking/">
+10 embedded networking</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/05/xbee-networking-1.html">XBee Networking</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/11-machine-design/">
+11 machine design</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/12-applications-and-implications/">
+12 applications and implications</a></div>
+<ol>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/13-IP-and-business-models/">
+13 IP and business models</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/licensing.html">Licensing</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/14-project-development/">
+14 project development</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/year-long-projects/">
+year-long projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/working-outside-the-lab-but-making-progress.html">Working outside the lab, but making progress</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/year-long-project.html">Year-long Project</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/coil-wrapping-machine.html">Coil wrapping machine</a> by Shawn Wallace</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/other-projects/">
+other projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tintin-rocket-neko-wa-kowaii.html">Tintin Rocket (neko-wa kowaii)</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/fluxamacutter-press-fit-diy-vinyl-cutter.html">Fluxamacutter press-fit DIY vinyl cutter</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/kamina-glasses.html">Kamina glasses</a> by Noah Bedford</div>
+
+</ol>
+
+<h1>Links</h1>
+<p><a class="category-link" href="http://www.as220.org/labs/wiki">
+             Labs Wiki
+             </a></P>
+<p><a class="category-link" href="http://www.as220.org/labs/blog">
+             Labs Blog
+             </a></P>
+<p><a class="category-link" href="http://fabacademy.org">
+             Global Fab Academy
+             </a></P>
+<p><a class="category-link" href="http://www.fabacademy.org/moodle/">
+             Academy Moodle
+             </a></P>
+
+    <h1>Recent entries</h1>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/05/xbee-networking-1.html">XBee Networking</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/best-error-message-ever.html">Best Error Message Ever</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">The Gellerizer</a></p>
+      
+
+    <p class="column-head">&nbsp;</p>
+    <h1>Archives</h1>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/05/">May 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/04/">April 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/03/">March 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/02/">February 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/01/">January 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/12/">December 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/11/">November 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/10/">October 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/09/">September 2009</a></p>
+    
+</div>
+
+<div style="clear:both;">
+    <center>
+     <img src="http://www.as220.org/labs/images/labsFooter.gif"/>
+    </center>
+</div>
+</div>
+</body>
+</html>
+
+

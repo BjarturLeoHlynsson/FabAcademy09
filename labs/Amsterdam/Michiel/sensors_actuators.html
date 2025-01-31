@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.2  (Linux)">
+	<META NAME="CREATED" CONTENT="20100602;12475800">
+	<META NAME="CHANGEDBY" CONTENT="Eric Kormelink">
+	<META NAME="CHANGED" CONTENT="20100602;13062300">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in }
+		H2 { margin-bottom: 0.08in }
+		H2.western { font-family: "Nimbus Roman No9 L", serif }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H2 CLASS="western"> 
+</H2>
+<H2 CLASS="western">Sensors, Actuators, and&nbsp;Displays</H2>
+<P><SCRIPT SRC="Sensors,%20Actuators,%20and%20Displays%20«%20Fab%20Academy%20experiences_files/adsense.js"></SCRIPT>The
+goal of this class (nr.10) assignment is to “interface an input
+device with an output device”.</P>
+<P>For this Fab Academy assignment about “Sensors, Actuators and
+Displays”, I am building a model of a Segway vehicle. Segway model
+will contain a tilt sensor that can mesure the angle of the vehicle
+from the vertical. The mode of operation should be that the segway
+should stay straight up. If the Segway is falling forward, the motors
+should drive it forward such that it remains straight up. Like wise,
+if the Segway should fall to the back: the motors should drive the
+vehicle backward. All in all it is a control operation that should
+balance the Segway vehicle. If one should push the Segway such that
+it inclines forward or backward continuously, the vehicle will
+continue to drive forward or in reverse. This is the main operation
+of the Segway.</P>
+<P>I was so inspired by Neil Gershenfeld talk about the stepresponse
+sensors that I intend to build such a sensor. In order to fullfil
+this assignment I thus have to make the angle detection sensor, and
+would like to build the Segway model out of Plexiglass. This can
+easily be done with the laser cutter.</P>
+<P>I have started to model the the Segway model in Blender. Below an
+impressions of the work in progress.</P>
+<P ALIGN=CENTER><A HREF="http://fabacademy.files.wordpress.com/2010/03/workinprogress8.jpg"><FONT COLOR="#000080"><IMG SRC="pictures/workinprogress8.jpg" NAME="graphics1" ALIGN=BOTTOM WIDTH=300 HEIGHT=225 BORDER=1></FONT></A></P>
+<P><BR><BR>
+</P>
+<P>The mechanical design in plexiglass also contains a stand where
+the vehicle can be store in rest, and that is also suitable to
+calibrate the angle sensor.</P>
+<P ALIGN=CENTER><A HREF="pictures/workinprogress7.png"><FONT COLOR="#000080"><IMG SRC="pictures/workinprogress7.png" NAME="graphics2" ALIGN=BOTTOM WIDTH=300 HEIGHT=225 BORDER=1></FONT></A></P>
+<P ALIGN=CENTER><A HREF="http://fabacademy.files.wordpress.com/2010/03/angle_sensor.png"><FONT COLOR="#000080"><IMG SRC="pictures/angle_sensor.png" NAME="graphics3" ALIGN=BOTTOM WIDTH=300 HEIGHT=112 BORDER=1></FONT></A></P>
+<P>The angle sensor is constructed as free hanging half circle (in
+3mm plexiglass) that will naturaly be hanging down as the earths
+gravity pulls it down. It’s sides will be covered with thin coper
+surface. The free hanging half circle is suspended in a circular cage
+of plexiglass that is constructed from 4mm plexiglass plates. The
+sides of the cage will be covered with thin coper plates as well.
+There are two options for the variable capacitor, and hence the
+stepresponse, to work:</P>
+<P>1). The half circle plate in the middle is disturbing the field of
+the two outer plates suficiently to detect an angle change. This is
+the prefered solution as it does not require any electrical
+connections to the middle moving part.<BR>2). The half cicle plate is
+an active connected conductor of the capacitor and should be
+connected electically.</P>
+<P>Besides the angular sensor, I intend to experiment a bit with
+another type of stepresonse sensor: a accelormeter. This sensor will
+be build in the front of the vegicle. It will also consist of 3
+condensator plates. Those plates will all be active and together
+these 3 condensator plates will form 2 condensators. The middle plate
+will be a free hanging plate constructed from thin copper and will
+move to the front and the back as the vehicle moves. This sensor is
+experimental and probably not directly necessary for the operation of
+the Segway model.</P>
+<P>The mechanical and sensor construction has been drawn completely
+in Blender. The laser cutter files have been made by exporting 2D
+files from blender in DXF format and importing them in Inkscape. In
+Inkscape the DXF files had to be adjusted in size (scale to blender
+dimensions), made a path and be combined, and the line width (stroke
+style) set to 0,001mm. When cutting the plexiglass this SVG file will
+be imported in Adobe Illustrator. Below you can find the 2D images
+used for the laser cutter and the vinyl cutter (to cut the copper
+sheets for the condensator sensor plates).</P>
+<DIV ID="attachment_14" DIR="LTR">
+	<P><A HREF="http://fabacademy.files.wordpress.com/2010/03/lasercutter_segwaymodel_stand_v1.png"><FONT COLOR="#000080"><IMG SRC="pictures/lasercutter_segwaymodel_stand_v1.png" NAME="graphics4" ALIGN=BOTTOM WIDTH=457 HEIGHT=279 BORDER=1></FONT></A></P>
+	<P>mechanical parts of Segway model</P>
+</DIV>
+<DIV ID="attachment_15" DIR="LTR">
+	<P><A HREF="http://fabacademy.files.wordpress.com/2010/03/lasercutter_segwaymodel_stand_3mm_v1.png"><FONT COLOR="#000080"><IMG SRC="pictures/lasercutter_segwaymodel_stand_3mm_v1.png" NAME="graphics5" ALIGN=BOTTOM WIDTH=90 HEIGHT=135 BORDER=1></FONT></A></P>
+	<P>moving parts of angle sensor</P>
+</DIV>
+<DIV ID="attachment_16" DIR="LTR">
+	<P><A HREF="http://fabacademy.files.wordpress.com/2010/03/lasercutter_segwaymodel_stand_koper_v1.png"><FONT COLOR="#000080"><IMG SRC="pictures/lasercutter_segwaymodel_stand_koper_v1.png" NAME="graphics6" ALIGN=BOTTOM WIDTH=450 HEIGHT=310 BORDER=1></FONT></A></P>
+	<P>copper sheet parts (to be cut out with vinyl cutter)</P>
+</DIV>
+<P>For the electronics I would like to implement this design with the
+following materials and constraints:<BR>- 2 DC motors: they should be
+able to turn independly (for perhaps later to add functionality) and
+run forward and reverse.<BR>- A ATtiny44 microcontroller<BR>- The
+angular sensor based on step response (requires 2 ADC inputs and 2
+“type?” outputs (or can they both be driven with the same output
+step signal?))<BR>- USB communication for calibration of the sensors
+(can the ATtiny44 provide for USB communication and do the Segway
+control simultaniously?)<BR>- 1 or 2 buttons for switching between
+on/of and calibration mode and operation mode<BR>- a 5 volt regulator
+and a 9 volt battery<BR>- H-bridge needed for the control of the DC
+motor in forward and reverse direction</P>
+<P>Next step: design of electronic circuitry based on the above
+requirements and development of (assembly) code for the
+microcontroller.</P>
+<P>To be continued…</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

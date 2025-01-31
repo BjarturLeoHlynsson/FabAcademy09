@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DIY hobo game controllers - Fab Academy at AS220</title>
+    <meta name="generator" content="Movable Type Open Source 4.1" />
+    <link rel="stylesheet" href="http://www.as220.org/labs/fabacademy/academy-styles.css" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="Providence Fab Academy RSS Feed" href="http://as220.org/labs/fabacademy/rss.xml" />  
+</head>
+<body>
+
+<div id="pagewrapper">
+<div id="top">
+   <center>
+    <a style="border-style:none;" href="http://www.as220.org/labs/fabacademy/">
+          <img style="border-style:none;" src="http://as220.org/labs/fabacademy/images/fabacademytitle.png" 
+          alt="Fab Academy at AS220 Labs"  /></a>
+  </center>
+</div>
+
+<div id="left">
+  
+
+
+
+<div id="entry-1510" class="entry-asset asset hentry">
+<p class="date">March 30, 2010 12:45 AM</p>
+<p class="title">DIY hobo game controllers</p>
+by Shawn Wallace<br/>
+<div class="asset-body">
+
+            <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="IMG_0285.jpg" src="http://as220.org/labs/fabacademy/2010/03/31/IMG_0285.jpg" width="600" height="450" class="mt-image-none" style="" /></span>  </p>
+
+<p>These DIY game controllers are made from pennies and cigar boxes.  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="IMG_0287.JPG" src="http://as220.org/labs/fabacademy/2010/03/31/IMG_0287.JPG" width="600" height="450" class="mt-image-none" style="" /></span>  </p>
+
+<p>They are a sample controller for the Fluxly video game, a wizard duel where you have to build your own controller to compete. The interface for the game is implemented in Actionscript and compiled using Adobe's free mxmlc compiler.  </p>
+
+
+
+            <p>This is the hardware block diagram:  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="figure1.png" src="http://as220.org/labs/fabacademy/2010/03/31/figure1.png" width="600" height="413" class="mt-image-none" style="" /></span>  </p>
+
+<p>And these are the services and software that are running on the computer side:  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="figure2.png" src="http://as220.org/labs/fabacademy/2010/03/31/figure2.png" width="600" height="469" class="mt-image-none" style="" /></span>  </p>
+
+<p>The serproxy serial proxy written in C can be found <a href="">here</a>.</p>
+
+<p>A Perl version of the Flash socket policy server can be found here: <a href="http://as220.org/shawn/public_html/Code/flashpolicyd.txt"> flashpolicyd.pl</a>.  </p>
+
+<p>The socket policy XML file looks like this:  </p>
+
+<hr>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;<br/>&lt;!DOCTYPE cross-domain-policy SYSTEM &quot;/xml/dtds/cross-domain-policy.dtd&quot;&gt;<br/>&lt;cross-domain-policy&gt;<br/>   &lt;site-control permitted-cross-domain-policies=&quot;master-only&quot;/&gt;<br/>   &lt;allow-access-from domain=&quot;*&quot; to-ports=&quot;5331&quot; /&gt;<br/>&lt;/cross-domain-policy&gt; 
+</pre>  
+
+<hr>
+
+<p>The hardware is intended to be Arduino-compatible, so it is based on the Atmega8 line of microcontrollers. Here are the schematics for the controller:  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="FluxlyBoard.png" src="http://as220.org/labs/fabacademy/2010/03/31/FluxlyBoard.png" width="600" height="465" class="mt-image-none" style="" /></span>  </p>
+
+<p>and the base unit:  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="FluxlyBase.png" src="http://as220.org/labs/fabacademy/2010/03/31/FluxlyBase.png" width="600" height="401" class="mt-image-none" style="" /></span>  </p>
+
+<p>The SWF application in action:  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="3_aaafluxly2-thumb-600x600-3468.jpg" src="http://as220.org/labs/fabacademy/2010/03/31/3_aaafluxly2-thumb-600x600-3468.jpg" width="600" height="600" class="mt-image-none" style="" /></span>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="3_aaafluxly-1-thumb-600x600-3465.jpg" src="http://as220.org/labs/fabacademy/2010/03/31/3_aaafluxly-1-thumb-600x600-3465.jpg" width="600" height="600" class="mt-image-none" style="" /></span>  </p>
+
+<p>Arduino code for the Base unit:</p>
+
+<p><font size = -1></p>
+
+<pre>
+#
+# Fluxly Base Unit
+#
+# Acts as a bridge between two controllers and a serial connection.
+# Requests the state of each controller via I2C and forwards it 
+# to the computer.
+#
+
+#include &lt;Wire.h&gt;
+
+byte state[6] = { 0x00, 0x10, 0x20, 0x30, 0x40, 0x50};
+
+void setup()
+{
+  Wire.begin();       
+  Serial.begin(57600);  
+}
+
+void loop()
+{
+  Wire.requestFrom(2, 6);    
+
+  while(Wire.available())    
+  { 
+    byte c = Wire.receive(); 
+    state[int(c>>4)] = c;
+  }
+
+  Wire.requestFrom(3, 6);  
+
+  while(Wire.available())   
+  { 
+    byte c = Wire.receive(); 
+    state[int(c>>4)] = state[int(c>>4)] | c;        
+  }
+
+  for (int i=0; i < 6; i++) {                                                                                
+    Serial.print(state[i],BYTE);
+    delay(10);
+  }        
+  delay(10);
+}
+</pre>
+
+<p></font>  </p>
+
+<p>Arduino code for the controller:  </p>
+
+<p><font size="-1"></p>
+
+<pre>
+# 
+# Fluxly Controller
+# 
+# A super simple controller that polls a bunch of switches and sends a 
+# state table to the base unit over an I2C connection when asked. 
+#
+
+#include &lt;Wire.h&gt;
+
+#define player1 2
+#define player2 3
+#define maxButtons 12
+
+#define left 0x01 
+#define right 0x02                                                                                              
+#define jump 0x04                                                                                              
+#define stabilize 0x08                                                                                              
+
+#define windFromEast 0x11                                                                                              
+#define windFromWest 0x12                                                                                              
+#define quake 0x14                                                                                              
+#define lessGravity 0x18                                                                                              
+
+#define dropSmallBlocks 0x21                                                                                              
+#define dropLargeBlocks 0x22                                                                                              
+#define dropPlanks 0x24                                                                                              
+#define conjureClouds 0x28                                                                                              
+
+#define lightning 0x31                                                                                              
+#define moreGravity 0x32                                                                                              
+#define p2Left 0x34                                                                                              
+#define p2Right 0x38                                                                                              
+
+#define p2Jump 0x41                                                                                              
+#define p2Stabilize 0x42                                                                                              
+
+#define STATE_NSIZE (6)
+
+uint8_t state[STATE_NSIZE] = { 0x00, 0x10, 0x20, 0x30, 0x40, 0x50}; 
+
+byte buttons[maxButtons];
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin(player2);                       
+  Wire.onRequest(requestEvent); 
+
+  for (int i=0; i < maxButtons; i++) {
+    pinMode(i+2, INPUT);
+    buttons[i] = 0x00;
+  }
+
+  setButton(1, p2Left);
+  setButton(2, p2Stabilize);
+  setButton(3, p2Right);
+  setButton(4, p2Jump);
+  setButton(5, windFromEast);
+  setButton(6, windFromWest);
+  setButton(7, quake);
+  setButton(8, lessGravity);
+  setButton(9, dropSmallBlocks);
+  setButton(10, conjureClouds);
+  setButton(11, lightning);
+  setButton(12, moreGravity);
+
+}
+
+void setButton(int n, byte action) {
+  buttons[n-1] = action;
+}
+
+void checkButtons() {
+
+  for (byte i=0; i < 6; i++) {
+    state[i] = i<<4;
+  }
+
+  for (int i=0; i < maxButtons; i++) {
+    int index = buttons[i]>>4;
+    if (digitalRead(i+2) == LOW) {
+      state[index] = state[index] | buttons[i]; 
+     } 
+  }
+}
+
+void loop() {
+  checkButtons();
+  delay(30);
+}
+
+// function that executes whenever data is requested by master
+// this function is registered as an event, see setup()
+
+void requestEvent() {
+     Wire.send(state, STATE_NSIZE);
+}
+</pre>  
+
+<p></font></p>
+
+<p>Finally, an Actionscript class (ControllerInput) for handling the serial input:  </p>
+
+<p><font size = -1></p>
+
+<pre>
+package {
+  import flash.errors.*;
+  import flash.events.*;
+  import flash.net.Socket;
+
+  public class ControllerInput {
+    public var state:Array = new Array(32);
+    private var arduinoSocket:Socket;
+    private var input:int;
+
+    public function ControllerInput() {
+        for (var i:int=0; i<32; i++) {
+      state[i]=false;      
+        }
+        openArduinoSocket();
+    }
+
+    private function openArduinoSocket():void {
+    //Create a socket connection to serproxy
+    arduinoSocket = new Socket("localhost",5331);
+    arduinoSocket.addEventListener(Event.CLOSE, closeHandler);
+    arduinoSocket.addEventListener(ProgressEvent.SOCKET_DATA, socketDataHandler);
+    }
+
+    private function closeHandler(event:Event):void {
+    //  re-open socket if it gets closed accidentially
+    openArduinoSocket();
+    }
+
+    private function socketDataHandler(event:ProgressEvent):void {
+        var base_index:uint;
+        if (arduinoSocket.bytesAvailable >=6) {
+        for (var i:int=0; i<6; i++) {
+            input = arduinoSocket.readByte();
+            // place byte in state table
+            base_index = input >>4;
+            for (var j:int=0;j<0;j++) {
+                state[base_index+j] = (input >> j) & 0x01;
+            }
+        } 
+     }
+    }
+  }
+}
+</pre> 
+
+<p></font></p>
+
+
+</div>
+</div> 
+
+
+<center>
+<p><a href="http://www.as220.org/labs/fabacademy/">Return to front</a></p>
+
+<p><a href="http://www.as220.org/labs/fabacademy/archives.html">Older articles</a></p>
+</center>
+</div>
+
+<div id="right">
+<h1>Projects</h1>
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/01-computer-controlled-cutting/">
+01 computer-controlled cutting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/laser-cut-cards---construction-kit.html">Laser Cut Cards - Construction Kit </a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/make-blog-post-1-make-a-press-fit-construction-kit.html">MAKE blog post #1: Make a Press-fit Construction Kit</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/nik.html">NIK</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/press-fit.html">Press-fit construction</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/hey-fabfolk-its-4.html">Hey FabFolk! It's # 4 :)</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/sunglasses.html">Sunglasses</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/02-electronics-design-and-production/">
+02 electronics design and production</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/second-article-for-make-blog.html">Second article for MAKE Blog</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/hello-circuits.html">Hello circuits</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/03-computer-controlled-machining/">
+03 computer-controlled machining</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-something-anything-big.html">Make something (anything) big</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/shelves-from-the-shopbot.html">Shelves from the Shopbot</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-it-bigish.html">Make it Big(ish)</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/04-embedded-programming/">
+04 embedded programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/re-programming-the-echo-board.html">Re-Programming the Echo Board</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/persistence-of-vision.html">Persistence of Vision</a> by Jenine Bressner</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/05-3d-molding-and-casting/">
+05 3D molding and casting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/completed-tardis-cast-working-light.html">Completed TARDIS Cast | Working Light</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/tardis-moldmaking.html">TARDIS:  Moldmaking</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/3-d-modeling-for-molding-and-casting.html">3-D modeling for molding and casting</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-a-flexible-coupling-part-2.html">Molding and casting a flexible coupling part 2</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-flexible-coupling.html">Molding and casting a flexible coupling</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/monkeys-on-typewriters.html">Monkeys on typewriters</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting.html">Molding and casting</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/casting.html">Moon Crater</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tardis-3d-modeling-1.html">TARDIS: 3D Modeling</a> by Anna France</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/06-collaborative-technical-development/">
+06 collaborative tech development</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/new-bazaar-tutorial.html">New bazaar tutorial</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/intro-to-bazaar.html">Intro to Bazaar</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/07-3D-scanning-and-printing/">
+07 3D scanning and printing</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/half-drill-bit.html">Half drill bit!</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/fluxamascanner.html">F(l)uxamascanner</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/picza.html">Picza </a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/08-sensors-actuators-and-displays/">
+08 sensors, actuators, and displays</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">The Gellerizer</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/09-interface-programming/">
+09 interface programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/10-embedded-networking/">
+10 embedded networking</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/05/xbee-networking-1.html">XBee Networking</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/11-machine-design/">
+11 machine design</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/12-applications-and-implications/">
+12 applications and implications</a></div>
+<ol>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/13-IP-and-business-models/">
+13 IP and business models</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/licensing.html">Licensing</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/14-project-development/">
+14 project development</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/year-long-projects/">
+year-long projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/working-outside-the-lab-but-making-progress.html">Working outside the lab, but making progress</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/year-long-project.html">Year-long Project</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/coil-wrapping-machine.html">Coil wrapping machine</a> by Shawn Wallace</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/other-projects/">
+other projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tintin-rocket-neko-wa-kowaii.html">Tintin Rocket (neko-wa kowaii)</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/fluxamacutter-press-fit-diy-vinyl-cutter.html">Fluxamacutter press-fit DIY vinyl cutter</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/kamina-glasses.html">Kamina glasses</a> by Noah Bedford</div>
+
+</ol>
+
+<h1>Links</h1>
+<p><a class="category-link" href="http://www.as220.org/labs/wiki">
+             Labs Wiki
+             </a></P>
+<p><a class="category-link" href="http://www.as220.org/labs/blog">
+             Labs Blog
+             </a></P>
+<p><a class="category-link" href="http://fabacademy.org">
+             Global Fab Academy
+             </a></P>
+<p><a class="category-link" href="http://www.fabacademy.org/moodle/">
+             Academy Moodle
+             </a></P>
+
+    <h1>Recent entries</h1>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/05/xbee-networking-1.html">XBee Networking</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/best-error-message-ever.html">Best Error Message Ever</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">The Gellerizer</a></p>
+      
+
+    <p class="column-head">&nbsp;</p>
+    <h1>Archives</h1>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/05/">May 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/04/">April 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/03/">March 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/02/">February 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/01/">January 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/12/">December 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/11/">November 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/10/">October 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/09/">September 2009</a></p>
+    
+</div>
+
+<div style="clear:both;">
+    <center>
+     <img src="http://www.as220.org/labs/images/labsFooter.gif"/>
+    </center>
+</div>
+</div>
+</body>
+</html>
+
+

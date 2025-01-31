@@ -1,0 +1,698 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+
+
+	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+	<title>Tutorial: Modela Player 4</title>
+	<meta name="GENERATOR" content="OpenOffice.org 3.1  (Linux)">
+	<meta name="AUTHOR" content="Michiel Klaarwater">
+	<meta name="CREATED" content="0;0">
+	<meta name="CHANGEDBY" content="michiel ">
+	<meta name="CHANGED" content="20100217;15040300">
+	<meta name="DESCRIPTION" content="Mill out a 3D object with Roland MDX-20 and Modela Player 4 software'">
+	<meta name="KEYWORDS" content="3D, Milling, Modela Player, Software, Tutorial, step-by-step, Fab Academy, chemical wood">
+	<style type="text/css">
+	<!--
+		H2 { color: #353535; font-family: "verdana", "arial", "lucida console", sans-serif }
+		TD P.ingesprongen-western { margin-left: 1.2cm; so-language: en-US }
+		TD P.ingesprongen-cjk { margin-left: 1.2cm }
+		TD P.ingesprongen-ctl { margin-left: 1.2cm }
+		A:link { color: #525252; font-family: "verdana", "arial", "lucida console", sans-serif; text-decoration: none }
+	-->
+	</style>
+</head><body dir="LTR" lang="nl-NL" link="#525252">
+<p><a href="http://academy.cba.mit.edu/tutorials/">back</a> |</p>
+<dl>
+	<dl>
+		<dl>
+			<dl>
+				<dd>
+				<table width="688" border="0" cellpadding="2" cellspacing="0">
+					<col width="684">
+					<tbody><tr>
+						<td width="684">
+							<h2>Tutorial: Modela Player</h2>
+							<p lang="en-US">In this tutorial we will show how to use
+							Roland Modela Player 4 software to make a 3D object on the
+							Roland Modela MDX-20 scanning and milling machine. More
+							specifically we will set-up the Modula Player 4 software to
+							mill out a mold. This requires that the actual object is
+							caught within 4 sides that have slight slope. This will make
+							it easier to lift the cast object out of the mold.</p>
+							<p lang="en-US">This tutorial will show you step-by-step in
+							pictures how to setup the software (version 1.99)</p>
+							<p><span lang="en-US">More info about the Modela MDX-20
+							scanning and milling machine on the website of Roland: <a href="http://www.rolanddga.com/products/scanners/mdx15/">Modela
+							MDX-20</a></span></p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<font color="#0047ff"><b>Summary</b></font></p>
+							<ul>
+								<li><p class="ingesprongen-western" style="font-weight: normal;" lang="en-US">
+								<font color="#000000">Set up Modela Player software to mill
+								out an object (in our case for casting)</font></p>
+								</li><li><p class="ingesprongen-western" style="font-weight: normal;" lang="en-US">
+								<font color="#000000">We use 3 processing steps: 1 roughing
+								process step and 2 finishing process steps</font></p>
+							</li></ul>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							This second finishing step adds up to the already long
+							processing time. Depending on the material (hence the x- and
+							y-speed) and the size of your object it can take a while. In
+							our example we used chemical wood, and we had 2 finishing
+							processes it took more than 2 complete days!!!!</p>
+							<ul>
+								<li><p class="ingesprongen-western" lang="en-US"><span lang="en-US">We
+								setup the design in sloped box (because of our purpose as a
+								mold).</span></p>
+								</li><li><p class="ingesprongen-western" lang="en-US"><span lang="en-US">Tutorial
+								in 50 step documented in screen shot images</span></p>
+							</li></ul>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_290fe2f7.png" name="Afbeeldingen1" height="460" width="665" align="LEFT" border="0"><br clear="LEFT"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 1</b>:
+							launching the Modela Player 4 program</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">You can launch
+							MODELA Player 4 software from the task bar, or you can select
+							it from the start button program menu.</p>
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m4c2956a2.png" name="Afbeeldingen2" height="464" width="671" align="LEFT" border="0"><br clear="LEFT">
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							Modela Player software is only available for Windows OS'es.</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 2</b>: Open
+							3D design file</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_me082299.png" name="Afbeeldingen3" height="474" width="685" align="LEFT" border="0"><br clear="LEFT">
+							<p class="ingesprongen-western" lang="en-US">Goto: File →
+							Open</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 3</b>:
+							Select the design file (*.stl) and open it.</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">Browse to your
+							design file and select it to open it.</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							Besides STL files (*.stl) you can also open DXF formated files
+							(*.dxf) or IGES files (*.igs). Of course you can also open
+							Modela Player project files (*.mpj) or Modela player version
+							3.x files (*.mdj).</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m1d495bb9.png" name="Afbeeldingen4" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 4</b>: Your
+							design will be shown on screen.</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m7947f4e5.png" name="Afbeeldingen5" height="467" width="675" align="LEFT" border="0"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 5</b>:
+							Select the material from the material pull down menu.</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In the top right
+							corner of the program window you can find the material pull
+							down menu. Select the material you are using for the milling.
+							We select chemical wood (soft) as material.</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							The choice of material determines the speed of the milling
+							tool. The softer the material the speedier the milling tool
+							can move.</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m384faca.png" name="Afbeeldingen6" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 6</b>: Set
+							the model parameters</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In the top right
+							corner of the program window you can find the green model
+							button. Click it to open the Model window dialog.</p>
+							<p class="ingesprongen-western" lang="en-US">In the first tab
+							“Size and Orientation” you can set the scale and
+							orientation. The orientation is an important property. The
+							milling tool can generally only access the material in on
+							direction; the top face of the object in the milling machine.
+							Holes in the bottom and to the side of your object are
+							generally not accessible. Set the orientation such that you
+							can access the important side of your model.</p>
+							<p class="ingesprongen-western" lang="en-US">For our example,
+							we have to swap the model up side down to be able to access
+							the model with the milling tool. We will click the bottom box
+							of the six orientation switches. With this choice we have to
+							accept that the shafts (now on the top, and after changing the
+							orientation on the bottom of the object) are not milled out.</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_2a823b4c.png" name="Afbeeldingen7" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 7</b>: Set
+							origin of your model</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">Select the
+							“Origin” tab of the model window dialog. Here you can set
+							the origin of your model. The top left front corner is default
+							and is convenient to align with the Modela mill machine
+							platform. So we keep it unchanged.</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m58cfdc75.png" name="Afbeeldingen8" height="467" width="675" align="LEFT" border="0"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 8</b>:
+							Notice the orientation of your model has now changed!</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">The model is
+							swapped up side down now after changing the orientation in the
+							step 6.</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m450d6800.png" name="Afbeeldingen9" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 9</b>:
+							Click the “Modeling Form” button</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">Click on the
+							“Modeling Form” button on the top right side of the
+							window. The button is blueish, and most on the right in the
+							second row (under the word “material” of the material pull
+							down menu).</p>
+							<p class="ingesprongen-western" lang="en-US">In the “Margin”
+							tab of the “Modeling Form” window you can set the margin
+							around your model. We leave it to the automatic setting of
+							6.5mm.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m77345eeb.png" name="Afbeeldingen10" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 10</b>:
+							Click the “Depth” tab of the “Modeling Form” window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In the second
+							tab, “Depth”, you can set how deep the milling tool has to
+							cut. For this example we want the whole model to be cut out.
+							We leave it to default setting to cut out the whole depth.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_7a06107.png" name="Afbeeldingen11" height="467" width="675" align="LEFT" border="0"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 11</b>:
+							Click the “Slope” tab of the “Modeling Form” window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In the third tab,
+							“Slope”, you can set a slope around the model. This is
+							convenient for our purpose as our model will be a mold for
+							casting the final product. For this example we select “make
+							sloped” and leave the default angle to 10<font face="DejaVu Sans, sans-serif">°</font>.</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_63b02f5b.png" name="Afbeeldingen12" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 12</b>:
+							Click the “Cutting Area” tab of the “Modeling Form”
+							window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In the fourth
+							tab, “Cutting Area”, you see the size of your cutting
+							area. We use this information to determine how big the surface
+							of the material needs to be. You need to take into account
+							that you have enough margin on your material to save your
+							sloped sides.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_me13fc56.png" name="Afbeeldingen13" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 13</b>:
+							Click the “View” menu and select “rendering” option</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m5ea67b82.png" name="Afbeeldingen14" height="467" width="675" align="LEFT" border="0"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 14</b>:
+							Your model now shows as solid object.</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">Setting the view
+							mode from “Wire Frame” to “Rendering” switches your
+							model to show as a solid object.</p>
+							<p style="margin-bottom: 0cm;"><img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_2ffd0055.png" name="Afbeeldingen15" height="467" width="675" align="LEFT" border="0"><br clear="LEFT"><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 15</b>:
+							Click the “New Process” button</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">We are now going
+							to set up the milling process for our model. We can 'program'
+							the Roland Milling machine to mill out our model in different
+							processes. We generally use a “Roughing” and a “Finishing”
+							process. The roughing process is used to mill out the rough
+							shape of the model. The finishing process is used to create a
+							more smooth finish.</p>
+							<p class="ingesprongen-western" lang="en-US">The “New
+							Process” button can be found on the right side of the window
+							in the third 'row'. After clicking the “New Process”
+							button, the “New Process Creation” window is opened. This
+							is a dialog to program the milling processes.</p>
+							<p class="ingesprongen-western" lang="en-US">First we start
+							with a roughing process. So, we select the roughing option.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m5aee1ad4.png" name="Afbeeldingen16" height="467" width="674" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 16</b>:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can select the cutting surface. Since we have
+							only one cutting surface, we have only one option: “+Z”.
+							It signifies we are going to cut from the top surface, exactly
+							as the Roland Milling tool operates.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m4506287e.png" name="Afbeeldingen17" height="467" width="674" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 17</b>:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can select the tool(blade) to use for this
+							cutting process. For each milling process we can select a
+							different tool. In between the processes the software offers
+							to change the tool before it continues. 
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							A difficulty when changing a tool in between two processes is
+							that you will need to zero it again. Therefor, it is wise to
+							have a point of origin that is not cut away. So use enough
+							margin around your sloped sides (or rest material) to be able
+							to zero a tool for a second or third process.</p>
+							<p class="ingesprongen-western" lang="en-US">For our example
+							we are going to use a 6mm square tool for the roughing and the
+							first finishing process. After the first finishing process we
+							going to use a second finishing process to refine a limited
+							part of the model.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m399ff106.png" name="Afbeeldingen18" height="467" width="674" align="LEFT" border="0"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 18</b>:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can set the cutting area and depth. Here we can
+							also choose if we want to cut out the whole model or partial
+							(in depth). We can also limit the area that we want to cut.</p>
+							<p class="ingesprongen-western" lang="en-US">For this example
+							we already slit the model in half. So, we need the complete
+							model and not a partial selection.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_893972d.png" name="Afbeeldingen19" height="467" width="674" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 19</b>:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can set the type of tool path of the cutting
+							process. You can choose between the options:</p>
+							<ul>
+								<ul>
+									<li><p class="ingesprongen-western" lang="en-US">Scan lines</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">Unidirectional
+																		</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">Contour
+									lines</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">Spiral</p>
+								</li></ul>
+							</ul>
+							<p class="ingesprongen-western" lang="en-US">For this example
+							we choose the option for scan lines in X+Y direction.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_28942a62.png" name="Afbeeldingen20" height="467" width="674" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 20</b>:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can set the cutting parameters like:</p>
+							<ul>
+								<ul>
+									<li><p class="ingesprongen-western" lang="en-US">X and Y
+									speed</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">Z speed</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">Spindle
+									speed</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">and more...</p>
+								</li></ul>
+							</ul>
+							<p class="ingesprongen-western" lang="en-US">The parameters
+							are set by default based on the tool (6mm square) and the
+							material (chemical wood)  we set in step 5.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_77e3b6ac.png" name="Afbeeldingen21" height="467" width="674" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 21</b>:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this last
+							window of the “New Process Creation” window you can give
+							this process step a name. And you can choose to calculate and
+							create the tool path now or an a later moment.</p>
+							<p class="ingesprongen-western" lang="en-US">For this example
+							we choose the default name (“Roughing1”) and to create the
+							tool path immediately.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m47784c01.png" name="Afbeeldingen22" height="467" width="674" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 22</b></span><span lang="en-US">:
+							Click on the “Finish” button of the “New Process
+							Creation” dialog window</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">After clicking
+							the “Finish” button the program starts to calculate the
+							tool path to mill out the model out of the material. After the
+							calculation is finished you can see the “Roughing1”
+							process listed in the process list on the right hand side of
+							the screen.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m42243e05.png" name="Afbeeldingen23" height="467" width="674" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 23</b></span><span lang="en-US">:
+							Click the “Create tool path” button</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">The “Create
+							Tool Path” button is the first button on the left below the
+							processes list.</p>
+							<p class="ingesprongen-western" lang="en-US">After clicking
+							the “Create tool path” button the program starts to
+							calculate the tool path to mill out the model out of the
+							material. When the calculation is finished the tool path is
+							shown on the model. 
+							</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/ModelaPlayer4_tutorial_v1_html_m735cc9ff.png" name="Afbeeldingen24" height="467" width="674" align="LEFT" border="0"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 24</b></span><span lang="en-US">:
+							Click the “Preview Cutting” button</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><br><br>
+							</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step25.png" name="Afbeeldingen25" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 25</b></span><span lang="en-US">:
+							View the “Preview Cutting” window</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">After clicking
+							the “Preview Cutting” button a new window pops up and
+							shows an example of the milled out product.</p>
+							<p class="ingesprongen-western" lang="en-US">In the preview
+							window you can look at forecast of how the milled out model
+							will look. In the view menu of the “Preview Cutting”
+							window you can select “wire frame” view or “rendered”
+							view. See an example in the image below.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step25a.png" name="Afbeeldingen26" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step26.png" name="Afbeeldingen27" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 26</b></span><span lang="en-US">:
+							Press the “New Process” button</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">To add a
+							finishing step to the milling process, press the “New
+							Process” button.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step27.png" name="Afbeeldingen28" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 27</b></span><span lang="en-US">:
+							Select “Finishing”</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">From the “New
+							Process Creation” wizard window, select the “Finishing”
+							option</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 28 to
+							32</b></span><span lang="en-US">: follow steps 16 to 20</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">The next steps
+							(28 to 32) for setting up the finishing process are similar to
+							setup the roughing process . So see steps 16 to 20 before
+							proceeding with step 33.</p>
+							<p class="ingesprongen-western" lang="en-US"><br><br>
+							</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step33.png" name="Afbeeldingen29" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p lang="en-US"><b>Step 33</b>: Click on the “Next” button
+							of the “New Process Creation” dialog window</p>
+							<p class="ingesprongen-western" lang="en-US"><span lang="en-US">In
+							this last window of the “New Process Creation” window you
+							can give this process step a name. And you can choose to
+							calculate and create the tool path now or an a later moment.</span></p>
+							<p class="ingesprongen-western" lang="en-US">For this example
+							we choose the default name (“Finishing1”) and to create
+							the tool path immediately.</p>
+							<p class="ingesprongen-western" lang="en-US"><span lang="en-US">Click
+							on the “Finish” button of the “New Process Creation”
+							dialog window</span></p>
+							<p class="ingesprongen-western" lang="en-US">After clicking
+							the “Finish” button the program starts to calculate the
+							tool path to mill out the model out of the material. After the
+							calculation is finished you can see the “Finishing1”
+							process listed (see image step 34) in the process list on the
+							right hand side of the screen.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step34.png" name="Afbeeldingen30" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p><span lang="en-US"><b>Step 34</b>: </span><span lang="en-US">Press
+							the “New Process” button</span></p>
+							<p class="ingesprongen-western" lang="en-US">To add a second
+							finishing step to the milling process, press the “New
+							Process” button.</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							See the high density of lines that represent the tool path in
+							the wire frame view.</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							This second finishing step adds up to the already long
+							processing time. Depending on the material (hence the x- and
+							y-speed) and the size of your object it can take a while. In
+							our example we used chemical wood, and we had 2 finishing
+							processes it took more than 2 complete days!!!!</p>
+							<p><span lang="en-US"><b>Step 35 </b></span><span lang="en-US">:
+							See step 27 </span>
+							</p>
+							<p><span lang="en-US"><b>Step 36 </b></span><span lang="en-US">:
+							See step 16</span></p>
+							<p><img src="ModelaPlayer4_tutorial_v2_files/step37.png" name="Afbeeldingen31" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p><span lang="en-US"><b>Step 37 </b></span><span lang="en-US">:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</span></p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can select the tool(blade) to use for this
+							cutting process. For each milling process we can select a
+							different tool. In between the processes the software offers
+							to change the tool before it continues. 
+							</p>
+							<p class="ingesprongen-western" lang="en-US">For our example
+							we are going to use a 3mm square tool for the second finishing
+							process. 
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							A difficulty when changing a tool in between two processes is
+							that you will need to zero it again. Therefor, it is wise to
+							have a point of origin that is not cut away. So use enough
+							margin around your sloped sides (or rest material) to be able
+							to zero a tool for a second or third process.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step38.png" name="Afbeeldingen32" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p><span lang="en-US"><b>Step 38</b>: Click on the “Next”
+							button of the “New Process Creation” dialog window</span></p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can set the cutting area and depth. Here we can
+							also choose if we want to cut out the whole model or partial
+							(in depth). We can also limit the area that we want to cut.</p>
+							<p class="ingesprongen-western" lang="en-US">For this example
+							we are going for a partial setup for the finishing2 process
+							step. This is because we use a 3mm milling tool that has 20mm
+							length. We want to limit the tool path to an area where we
+							know the depth is not exceeding 20mm. We have chosen to set an
+							area that needs the most details and ignore the part where we
+							could not reach with a 20mm tool length.</p>
+							<p class="ingesprongen-western" lang="en-US"><span lang="en-US">Use</span>
+							the mouse to drag the corners of the red rectangle box to set
+							the area. 
+							</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step39.png" name="Afbeeldingen33" height="474" width="684" align="LEFT" border="0"><br><br>
+							</p>
+							<p><span lang="en-US"><b>Step 39</b></span><span lang="en-US">:
+							Click the right most button under cutting area preview. </span>
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><span lang="en-US">This
+							will display a side view of your object. Similar to the
+							previous step where we limited the cutting area from the top
+							view, we can limit here the cutting depth. Use the mouse to
+							drag the corners of the red rectangle box to set the area.</span></p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step40.png" name="Afbeeldingen34" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p><span lang="en-US"><b>Step 40</b></span><span lang="en-US">:
+							Use the</span> magnifying glass to zoom in and out to set the
+							borders more precise.</p>
+							<p><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 41</b></span><span lang="en-US">:
+							follow step 19.</span></p>
+							<p><br><br>
+							</p>
+							<p><img src="ModelaPlayer4_tutorial_v2_files/step42.png" name="Afbeeldingen35" height="474" width="684" align="LEFT" border="0"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;"><span lang="en-US"><b>Step 42</b></span><span lang="en-US">:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</span></p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this
+							sub-window we can set the cutting parameters like:</p>
+							<ul>
+								<ul>
+									<li><p class="ingesprongen-western" lang="en-US">X and Y
+									speed</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">Z speed</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">Spindle
+									speed</p>
+									</li><li><p class="ingesprongen-western" lang="en-US">and more...</p>
+								</li></ul>
+							</ul>
+							<p class="ingesprongen-western" lang="en-US">The parameters
+							are set by default based on the material (chemical wood) and
+							tool (3mm square). We choose the default values.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step43.png" name="Afbeeldingen36" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p style="margin-bottom: 0cm;" lang="en-US"><b>Step 43</b>:
+							Click on the “Next” button of the “New Process Creation”
+							dialog window</p>
+							<p style="margin-bottom: 0cm;"><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US">In this last
+							window of the “New Process Creation” window you can give
+							this process step a name. And you can choose to calculate and
+							create the tool path now or an a later moment.</p>
+							<p class="ingesprongen-western" lang="en-US">For this example
+							we choose the default name (“Finishing2”) and to create
+							the tool path immediately.</p>
+							<p><span lang="en-US"><b>Step 44</b></span><span lang="en-US">:
+							Click on the “Finish” button of the “New Process
+							Creation” dialog window</span></p>
+							<p class="ingesprongen-western" lang="en-US">After clicking
+							the “Finish” button the program starts to calculate the
+							tool path to mill out the model out of the material. After the
+							calculation is finished, a “Finishing2” process is added
+							to the process list on the right hand side of the screen.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step45.png" name="Afbeeldingen37" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p><span lang="en-US"><b>Step 45</b></span><span lang="en-US">:
+							Click on the “Cutting-position setup”</span></p>
+							<p class="ingesprongen-western" lang="en-US"> <span lang="en-US">The
+							“Cutting-position setup” is located on the left of the
+							bottom row of button under the process list. </span>
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><span lang="en-US">In
+							the dialog window that opens you can setup where the tool is
+							going to cut in the material that you put into the milling
+							machine. This window is also used to move the tool to the
+							reference point. This is the zero point where the tool starts
+							milling.</span></p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							If you use a “sloped” design be aware that you need take
+							extra space on your material and that you need to set it up
+							properly in this “Cutting-position” setup dialog. It is
+							the grey blue colored area in the preview window.</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							Attach your material with double sided tape to the table of
+							the milling machine and make sure the reference point is set
+							well. 
+							</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step46.png" name="Afbeeldingen38" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p><span lang="en-US"><b>Step 46</b></span><span lang="en-US">:
+							When material is setup well on the machine, click the “Cut”
+							button</span></p>
+							<p class="ingesprongen-western" lang="en-US"> <span lang="en-US">The
+							“Cut” is located on the right of the bottom row of button
+							under the process list. </span>
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><span lang="en-US">When
+							everything is ready and the material is well attached to the
+							machine, and the tool is “zeroed” to the reference point,
+							we can start the cutting by pressing the cut button. </span>
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><span lang="en-US"><b>Note</b></span></font><font color="#0047ff"><span lang="en-US">:</span></font><span lang="en-US">
+							The Roland Modela milling machine has to be out of view mode
+							to do the zeroing and the cutting!</span></p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step47.png" name="Afbeeldingen39" height="474" width="684" align="LEFT" border="0"><br><br>
+							</p>
+							<p lang="en-US"><b>Step 47</b>: Confirm the start of the
+							cutting process by clicking “OK” in the cut dialog that
+							pops up.</p>
+							<p lang="en-US"><img src="ModelaPlayer4_tutorial_v2_files/step48.png" name="Afbeeldingen40" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p lang="en-US"><b>Step 48</b>: The machine is running! (if
+							all went well?!)</p>
+							<p class="ingesprongen-western" lang="en-US">In the “output
+							in progress” dialog box the status can be read of the
+							milling process. You can also notice that a tool change is
+							required in between the finishing1 and the finishing2 process
+							step.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<img src="ModelaPlayer4_tutorial_v2_files/step49.png" name="Afbeeldingen41" height="474" width="684" align="LEFT" border="0"><br clear="LEFT"><br><br>
+							</p>
+							<p lang="en-US"><b>Step 49</b>: Change of the milling tool</p>
+							<p class="ingesprongen-western" lang="en-US">When the machine
+							has come to a halt after finishing1 process step, you can
+							change the tool.</p>
+							<p class="ingesprongen-western" lang="en-US"><font color="#0047ff"><b>Note</b></font><font color="#0047ff">:</font>
+							A difficulty when changing a tool in between two processes is
+							that you will need to zero it again. Therefor, it is wise to
+							have a point of origin that is not cut away. So use enough
+							margin around your sloped sides (or rest material) to be able
+							to zero a tool for a second or third process.</p>
+							<p lang="en-US"><b>Step 50</b>: Ready!?</p>
+							<p class="ingesprongen-western" lang="en-US">Enjoy the result
+							in the milling machine.</p>
+							<p class="ingesprongen-western" style="margin-left: 0cm;" lang="en-US">
+							<br><br>
+							</p>
+							<p class="ingesprongen-western" lang="en-US"><br><br>
+							</p>
+							<p><span lang="en-US"><a href="http://academy.cba.mit.edu/tutorials/">back</a>
+							|</span></p>
+						</td>
+					</tr>
+				</tbody></table>
+			</dd></dl>
+		</dl>
+	</dl>
+</dl>
+<p><br><br>
+</p>
+</body></html>

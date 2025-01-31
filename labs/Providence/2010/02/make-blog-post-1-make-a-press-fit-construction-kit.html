@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MAKE blog post #1: Make a Press-fit Construction Kit - Fab Academy at AS220</title>
+    <meta name="generator" content="Movable Type Open Source 4.1" />
+    <link rel="stylesheet" href="http://www.as220.org/labs/fabacademy/academy-styles.css" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="Providence Fab Academy RSS Feed" href="http://as220.org/labs/fabacademy/rss.xml" />  
+</head>
+<body>
+
+<div id="pagewrapper">
+<div id="top">
+   <center>
+    <a style="border-style:none;" href="http://www.as220.org/labs/fabacademy/">
+          <img style="border-style:none;" src="http://as220.org/labs/fabacademy/images/fabacademytitle.png" 
+          alt="Fab Academy at AS220 Labs"  /></a>
+  </center>
+</div>
+
+<div id="left">
+  
+
+
+
+<div id="entry-1407" class="entry-asset asset hentry">
+<p class="date">February  4, 2010  2:46 PM</p>
+<p class="title">MAKE blog post #1: Make a Press-fit Construction Kit</p>
+by Shawn Wallace<br/>
+<div class="asset-body">
+
+            <p><p>This article was written for the <a href="http://blog.makezine.com/archive/2010/01/letters_from_the_fab_academy_part_1.html">MAKE Magazine blog</a>.</p>
+
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img01.jpg" width="600" height="440" alt="FabAcademy01img01.jpg"/></div>
+
+<p><p>
+Since October of 2009, a handful of small groups of students have been taking part in an educational experiment called the <a href="http://fabacademy.org">Fab Academy</a>. The Fab Academy is a distance learning collaborative that's built on the infrastructure of the <a href="http://fab.cba.mit.edu/about/faq/">Fab Lab network</a>. Labs in Spain, Iceland, Kenya, Amsterdam, India, and Rhode Island participate in Wednesday morning lectures by videoconference. The curriculum is concentrated into two week topics with a project due at the end of each and a more ambitious annual project  due at the end of the year. This series of articles for the Make: Online will follow each of the two week sessions in the curriculum and highlight the work, tools, and techniques being developed in the pilot year of the Fab Academy.</p>
+
+
+
+            <p>
+All Fab Labs are equipped with a laser cutter for cutting non-metallic sheet material up to a quarter inch or so, as well as a vinyl cutter for cutting adhesive films for signs, flexible circuitry, and antennas. The first Fab Academy section focused on techniques of computer-controlled cutting. For background on specific brands, accessories, and software, check the frequently-updated <a href="http://fab.cba.mit.edu/about/fab/inv.html">inventory of Fab Lab tools</a> at the Center for Bits and Atoms site. 
+<p>
+The goal of the first assignment -- make a press-fit construction kit -- was to get a feeling for settings, materials, and the workflow of creating files for the tools. Press-fit construction is a way of building things without adhesives or fasteners; parts are designed to be held tightly together by friction, but not so tightly that they can't be pulled apart with a stiff tug. Applications can range from flat-pack style furnishings, like Elliot Clapp's slideholder lampshade (below), to Larry Sass's <a href="http://web.mit.edu/newsoffice/2008/arch-sass-0703.html">human-scale prefab New Orleans house</a>.
+
+
+      </div>
+
+
+      <div id="more" class="asset-more">
+        <p>
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img02.jpg" width="600" height="370" alt="FabAcademy01img02.jpg"/></div>
+<p>
+In press-fit construction, the fasteners are integral to the piece. This can be a big win because regular hardware fasteners can add up in numbers and cost very quickly. For materials, cardboard and birch plywood are the old standbys. Acrylic is usually too brittle (except when it isn't). Delrin is a terrific, strong, and flexible plastic, but it's slippery. Makeda Stephenson changed the frequency of the laser cutter to perforate all the cuts and create little teeth in her Delrin construction set, as seen below.
+<p>
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img03.jpg" width="600" height="327" alt="FabAcademy01img03.jpg"/></div>
+
+<p>&nbsp;</p>
+
+<p>Paper is also a nice material to work with:</p>
+
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img03a.jpg" width="510" height="520" alt="FabAcademy01img03a.jpg"/></div>
+
+<p>Fairly precise cuts are necessary in press-fit construction, in the thousandth-of-inch range. Although the laser cutter is a very precise tool, you'll still find a measurable variance in kerf (i.e. width of material removed) depending on the material, the state of the optics, and the quality of the air exhaust. You'll also find that off-the-shelf sheet material like plywood usually varies from piece-to-piece by +/- .005 inches or so.</p>
+
+<p>Because you will inevitably have to tweak a press-fit design to match the materials and equipment at hand, your design should be created so that the width of slots and notches can be changed parametrically. It's also important to chamfer (i.e. cut at a 45 degree angle) the edges of the press-fit notches. Without a proper chamfer, you may not be able to slide the pieces together to get an effective joint. </p>
+
+<p>&nbsp;</p>
+
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img04.jpg" width="600" height="450" alt="FabAcademy01img04.jpg"/></div>
+
+<p><em>Some sample joints (clockwise): low-profile slider with wedge,
+flush with wedge, push-through with clip, simple notch and slot</em></p>
+
+<p>&nbsp;</p>
+
+<p>One of the tenets of the Fab Lab network is that designers should be able to transcend any particular tool, particularly proprietary tools. At the <a href="http://as220.org/labs/">Providence Fab Lab</a>, we use all open source software for our basic lab infrastructure (although people are certainly free to use whatever tool they want). We print to the laser and vinyl cutters using a <a href="http://as220.org/git/gitweb/?p=cups-epilog.git">custom open source driver</a> for the Common Unix Printing System (CUPS), written by Brandon Edens. This software allows us to eschew the usual proprietary Epilog/Corel Draw workflow found in most laser shops. Almost everything in the Fab Lab can be created within <a href="http://www.inkscape.org">Inkscape</a> and <a href="http://www.qcad.org/qcad.html">QCad</a>, or by writing simple programs using the cad.py Python script.</p>
+
+<p>&nbsp;</p>
+
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img05.jpg" width="600" height="416" alt="FabAcademy01img05.jpg"/></div>
+
+<p><em>Inkscape is a great open source vector drawing program. When designing for the laser cutter, thin red lines cut and black/grey values are engraved. Note the chamfers...</em></p>
+
+<p>&nbsp;</p>
+
+<p>Full-featured CAD programs, like QCad, make it relatively easy to parameterize parts, but it's also possible to use Inkscape to make parametric designs using the clone tool. First, follow these steps to determine the base size of a press-fit notch:</p>
+
+<ol>
+    <li>With calipers, measure the kerf created by your laser cutter. (You do have a laser cutter, don't you?) Cut a square, then measure the inner dimension of the hole and the outer dimension of the piece. Subtract and divide by two: this is the kerf for that material.<br/></li>
+    <li>Measure the thickness of the material, preferably with calipers. <br/></li>
+    <li>Use these measurements to draw your best guess for a notch <br/></li>
+    <li>Duplicate the notch a few times and bracket in .001 inch increments (i.e., make some at  w-.002", w-.001", w+.001", w+.002" etc.). <br/></li>
+    <li>Cut and test the fit<br></li>
+</ol>
+
+<p>
+Once you have a good dimension, create a template layer in Inkscape with your basic notch shapes. When adding a notch to your design, use the Edit->Clone option to create a linked copy of the notch. When faced with modifying your drawing for a new material width, update the dimensions of the notch in the template layer and watch those changes update throughout the document.
+
+<p>&nbsp;</p>
+
+<p>Here are a few last examples of work from the class: </p>
+
+<p><object width="600" height="486"><param name="movie"
+value="http://www.youtube.com/v/SMajJYDKs_8&amp;hl=en_US&amp;fs=1&amp;"></param><param
+name="allowFullScreen" value="true"></param><param
+name="allowscriptaccess" value="always"></param><embed
+src="http://www.youtube.com/v/SMajJYDKs_8&amp;hl=en_US&amp;fs=1&amp;"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="600" height="486"></embed></object><br/>
+<em>A fabulous flex-fit rotating joint by Benito Juarez of the Barcelona Fab Lab.</em></p>
+
+<p>&nbsp;</p>
+
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img07.jpg" width="600" height="570" alt="FabAcademy01img07.jpg"/></div>
+
+<p><em>Press-fit models from Victor Vi&ntilde;a in Barcelona and G&iacute;sli Matth&iacute;as Sigmarsson in Iceland.</em></p>
+
+<p>&nbsp;</p>
+
+<div style="align: right;"><img src="http://blog.makezine.com/upload/2010/01/letters_from_the_fab_academy_part_1/FabAcademy01img08.jpg" width="600" height="400" alt="FabAcademy01img08.jpg"/></div>
+
+<p><em>Press-fit linear bearings in Jonathan Ward's MTM A-Z milling machine (demoed by Noah Bedford, left) and a press-fit pinch roller from the Fluxamacutter DIY vinyl cutter (right).</em></p>
+
+<p>&nbsp;</p>
+
+<p>In my next article, we'll discuss electronics design and production, the Fab Lab way. </p>
+
+<p>&nbsp;</p>
+
+
+</div>
+</div> 
+
+
+<center>
+<p><a href="http://www.as220.org/labs/fabacademy/">Return to front</a></p>
+
+<p><a href="http://www.as220.org/labs/fabacademy/archives.html">Older articles</a></p>
+</center>
+</div>
+
+<div id="right">
+<h1>Projects</h1>
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/01-computer-controlled-cutting/">
+01 computer-controlled cutting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/laser-cut-cards---construction-kit.html">Laser Cut Cards - Construction Kit </a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/make-blog-post-1-make-a-press-fit-construction-kit.html">MAKE blog post #1: Make a Press-fit Construction Kit</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/nik.html">NIK</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/press-fit.html">Press-fit construction</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/hey-fabfolk-its-4.html">Hey FabFolk! It's # 4 :)</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/sunglasses.html">Sunglasses</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/02-electronics-design-and-production/">
+02 electronics design and production</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/second-article-for-make-blog.html">Second article for MAKE Blog</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/hello-circuits.html">Hello circuits</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/03-computer-controlled-machining/">
+03 computer-controlled machining</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-something-anything-big.html">Make something (anything) big</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/shelves-from-the-shopbot.html">Shelves from the Shopbot</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/make-it-bigish.html">Make it Big(ish)</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/04-embedded-programming/">
+04 embedded programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/re-programming-the-echo-board.html">Re-Programming the Echo Board</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/12/persistence-of-vision.html">Persistence of Vision</a> by Jenine Bressner</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/05-3d-molding-and-casting/">
+05 3D molding and casting</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/completed-tardis-cast-working-light.html">Completed TARDIS Cast | Working Light</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/tardis-moldmaking.html">TARDIS:  Moldmaking</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/3-d-modeling-for-molding-and-casting.html">3-D modeling for molding and casting</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-a-flexible-coupling-part-2.html">Molding and casting a flexible coupling part 2</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting-flexible-coupling.html">Molding and casting a flexible coupling</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/monkeys-on-typewriters.html">Monkeys on typewriters</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/molding-and-casting.html">Molding and casting</a> by Makeda Stephenson</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/casting.html">Moon Crater</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tardis-3d-modeling-1.html">TARDIS: 3D Modeling</a> by Anna France</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/06-collaborative-technical-development/">
+06 collaborative tech development</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/new-bazaar-tutorial.html">New bazaar tutorial</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/intro-to-bazaar.html">Intro to Bazaar</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/07-3D-scanning-and-printing/">
+07 3D scanning and printing</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/half-drill-bit.html">Half drill bit!</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/fluxamascanner.html">F(l)uxamascanner</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/02/picza.html">Picza </a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/08-sensors-actuators-and-displays/">
+08 sensors, actuators, and displays</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">The Gellerizer</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/09-interface-programming/">
+09 interface programming</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a> by Anna France</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/10-embedded-networking/">
+10 embedded networking</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/04/xbee-networking-1.html">XBee Networking</a> by Elliot Clapp</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/11-machine-design/">
+11 machine design</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/12-applications-and-implications/">
+12 applications and implications</a></div>
+<ol>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/13-IP-and-business-models/">
+13 IP and business models</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/03/licensing.html">Licensing</a> by Noah Bedford</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/14-project-development/">
+14 project development</a></div>
+<ol>
+
+</ol>
+
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/year-long-projects/">
+year-long projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/working-outside-the-lab-but-making-progress.html">Working outside the lab, but making progress</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/year-long-project.html">Year-long Project</a> by Elliot Clapp</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/coil-wrapping-machine.html">Coil wrapping machine</a> by Shawn Wallace</div>
+
+</ol>
+
+<div class="category-link" ><a href="http://as220.org/labs/fabacademy/other-projects/">
+other projects</a></div>
+<ol>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/tintin-rocket-neko-wa-kowaii.html">Tintin Rocket (neko-wa kowaii)</a> by Noah Bedford</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2010/01/fluxamacutter-press-fit-diy-vinyl-cutter.html">Fluxamacutter press-fit DIY vinyl cutter</a> by Shawn Wallace</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/11/lasercutting.html">Lasercutting!</a> by Jenine Bressner</div>
+
+  <li><div class="index_link"><a href="http://as220.org/labs/fabacademy/2009/10/kamina-glasses.html">Kamina glasses</a> by Noah Bedford</div>
+
+</ol>
+
+<h1>Links</h1>
+<p><a class="category-link" href="http://www.as220.org/labs/wiki">
+             Labs Wiki
+             </a></P>
+<p><a class="category-link" href="http://www.as220.org/labs/blog">
+             Labs Blog
+             </a></P>
+<p><a class="category-link" href="http://fabacademy.org">
+             Global Fab Academy
+             </a></P>
+<p><a class="category-link" href="http://www.fabacademy.org/moodle/">
+             Academy Moodle
+             </a></P>
+
+    <h1>Recent entries</h1>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/04/fabian.html">The Fabian: an Arduino-compatible, student-friendly board for Fab Labs</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/04/xbee-networking-1.html">XBee Networking</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/04/breadboard-friendly-attiny45-board.html">Breadboard-friendly Attiny45 board</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/best-error-message-ever.html">Best Error Message Ever</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Pure Data Frequency Modulator</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">DIY hobo game controllers</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">My favorite python/GTK reference</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">A soldering video tutorial</a></p>
+    
+      <p class="recent-link"><a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Motion Sensing Glow Skull</a></p>
+      
+
+    <p class="column-head">&nbsp;</p>
+    <h1>Archives</h1>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/04/">April 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/03/">March 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/02/">February 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2010/01/">January 2010</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/12/">December 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/11/">November 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/10/">October 2009</a></p>
+    
+    <p class="recent-link">
+    <a href="http://as220.org/labs/fabacademy/2009/09/">September 2009</a></p>
+    
+</div>
+
+<div style="clear:both;">
+    <center>
+     <img src="http://www.as220.org/labs/images/labsFooter.gif"/>
+    </center>
+</div>
+</div>
+</body>
+</html>
+
+

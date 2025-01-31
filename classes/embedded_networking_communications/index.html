@@ -1,0 +1,123 @@
+<html>
+<head>
+<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+<body link="black" alink="black" vlink="black">
+<font face="bitstream vera sans,arial,helvetica,sans-serif">
+<div style="margin-left: 5%; margin-right: 5%">
+<center>
+<img src=../../images/logo.jpg width="20%"><br>
+<br>
+<font style="font-size:125%; color:#bb0000">
+<b>The Fab Academy</b><br>
+</font>
+
+<br>
+<div style="font-size:125%">
+<b><i>Embedded Networking and Communications</i></b>
+</div>
+</center>
+
+<div style="font-size:100%;margin-left:2.5%">
+
+<pre>
+
+<font face="bitstream vera sans,arial,helvetica,sans-serif"><a href=http://www.iso.org/iso/home.htm><b>OSI layers</b></a>
+   7: application (HTTP)
+   6: presentation (SSL)
+   5: session (RPC)
+   4: transport (TCP, UDP)
+   3: network (IP)
+   2: data link (MAC)
+   1: physical (PHY)
+   
+   Note: The <a href=http://en.wikipedia.org/wiki/Internet_Protocol_Suite>Internet Protocol Suite</a> is generally described in four (or "four plus one") layers.
+
+<a href=http://www.ietf.org/><b>protocols</b></a>
+   <a href="./FabAcademy.pdf">basics</a>
+   <a href=http://www.ietf.org/rfc/rfc2616.txt>HTTP</a>
+   sockets
+   <a href=http://www.ietf.org/rfc/rfc768.txt>UDP</a>, <a href=http://www.ietf.org/rfc/rfc793.txt>TCP</a>
+   <a href=http://www.ietf.org/rfc/rfc0791.txt>IPv4</a>, <a href=http://www.ietf.org/rfc/rfc2460.txt>IPv6</a>
+   <a href=http://www.ietf.org/rfc/rfc1055.txt>SLIP</a>
+  
+<b><a href=http://www.cambridge.org/us/catalogue/catalogue.asp?isbn=0521570956>errors</a></b>
+   detection, correction
+   block, convolution codes
+   parity, checksum, Hamming, Reed-Solomon, Turbo
+   
+<a href=http://books.google.com/books?id=Pd-z64SJRBAC&printsec=frontcover&dq=computer+networks><b>channel sharing</b></a>
+   Master-Slave
+   Token Ring
+   TDMA: Time-Division Multiple Access
+   FDMA: Frequency-Division Multiple Access
+   ALOHA
+   CSMA: Carrier-Sense Multiple Access
+      CD: Collision Detection
+      CA: Collision Avoidance
+      1-persistent: transmit when clear
+      nonpersistent: random backoff
+      p-persistent: probability to transmit
+   CDMA: Code-Division Multiple Access
+   "PDMA": Physical-Division Multiple Access
+
+<b><a href=http://www.cambridge.org/us/catalogue/catalogue.asp?isbn=9780521580441>physical media</a></b>
+   <a href=http://www.iet.ntnu.no/projects/beats/Documents/LarsTelektronikk02.pdf>Shannon Capacity</a>
+      bandwidth * log_2 (signal/noise)
+   wired
+      single-ended, differential, powerline
+      open collector, open drain
+      transmission (pass) gate, tri-state
+      transmission line
+      waveguide
+      <a href=http://www.eia.org/>EIA</a> RS232, 422, 485
+      <a href=http://www.ieee802.org/3/>802.3</a> ethernet
+      <a href=http://www.sonet.com/EDU/edu.htm>SONET</a> optical fiber
+   wireless
+      RF
+         <a href=http://www.fcc.gov/>FCC</a> <a href=http://www.fcc.gov/oet/info/rules/part15/PART15_07-10-08.pdf>Part 15</a> <a href=http://www.fcc.gov/Bureaus/Engineering_Technology/Documents/cfr/1997/47cfr18.pdf>ISM</a>
+         <a href=http://www.bluetooth.com/bluetooth/>Bluetooth</a>
+         <a href=http://www.ieee802.org/15>802.15.4</a>
+         <a href=http://www.zigbee.org/>ZigBee</a>
+         <a href=http://www.ietf.org/dyn/wg/charter/6lowpan-charter.html>6LoWPAN</a>, <a href=http://www.ietf.org/dyn/wg/charter/roll-charter.html>ROLL</a>
+
+      optical
+      acoustic
+
+<a href=http://books.google.com/books?id=kDppdi-VrmAC&pg=PT7&lpg=PT7&dq=the+communications+handbook+crc&source=web&ots=YQuJTu_1Ro&sig=a1VgNbAsOxBRVcTghCqxtoOwccc&hl=en&sa=X&oi=book_result&resnum=7&ct=result><b>modulation</b></a>
+   PCM: Pulse-Code Modulation
+   PPM: Pulse-Position Modulation
+   OOK: On-Off Keying
+   FSK: Frequency-Shift Keying
+   BPSK: Binary Phase-Shift Keying
+   QAM: Quadrature Amplitude Modulation
+   OFDM: Orthogonal Frequency-Division Multiplexing
+   FHSS: Frequency-Hopping Spread Spectrum
+   DSSS: Direct-Sequence Spread Spectrum
+   UWB:  Ultra-WideBand
+
+<b><a href=i0.pdf>Internet 0</a></b>
+   <a href=clicks.png>clicks</a>
+   <a href=i0.jpg>implementations</a>
+   <a href=i0.3.IO.44.cad>i0.3.IO.44.cad</a>
+   <a href=i0.3.IO.44.thtpv4.asm>i0.3.IO.44.thtpv4.asm</a>
+   <a href=i0.3.serial.44.cad>i0.3.serial.44.cad</a>
+   <a href=i0.3.serial.44.packetv4.asm>i0.3.serial.44.packetv4.asm</a>
+   <a href=i0.3.hub.4.cad>i0.3.hub.4.cad</a>
+   <a href=http://www.wireshark.org/>Wireshark</a>, slattach
+   <a href=thtpv4.py>thtpv4.py</a>
+
+<b><a href=http://www.arrl.org/catalog/?item=NO-HB2010#top>radios</a></b>
+   oscillator, mixer, PA, LNA, IF, I/Q, demod, baseband, filters
+   Q, antenna gain, impedance matching
+   software radio
+   <a href=http://www.national.com/analog/wireless/bluetooth>National Semiconductor</a> <a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?lang=en&site=US&WT.z_homepage_link=hp_go_button&KeyWords=LMX9838SB-ND&x=0&y=0>LMX9838SB/NOPB</a> 
+   <a href=http://www.atmel.com/products/smartRF/default.asp>Atmel</a> <a href=http://www.mouser.com/ProductDetail/Atmel/AT86RF230-ZU/?qs=sGAEpiMZZMtmW1oUCKTs6lU/g6uaIrtE>AT86RF230-ZU</a>
+   <a href=http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=2663>Microchip</a> <a href=http://www.mouser.com/ProductDetail/Microchip/MRF49XA-I-ST/?qs=E6wAi2XWqcOoe%252bxjmU2ROA==>MRF49XA-I/ST</a>
+   <a href=http://www.rfm.com/products/rfic.php>RFM</a> <a href=http://www.mouser.com/ProductDetail/RFM/TRC103/?qs=sGAEpiMZZMvYU0Oh5y3R5uwhkv9SnI1A>TRC103</a>
+   <a href=http://www.silabs.com/products/wireless/pages/default.aspx>Silicon Laboratories</a> <a href=http://www.mouser.com/ProductDetail/Silicon-Laboratories/Si4421-A1-FT/?qs=sXzyty3v6jo2aFjvpYF37w==>Si4421-A1-FT</a>
+   <a href=http://www.atmel.com/products/zigbee/single-chip.asp?family_id=676>Atmel</a> <a href=http://www.atmel.com/dyn/products/product_card_mcu.asp?part_id=4692>ATmega128RFA1</a>
+   <a href=hello_radio/>hello_radio</a>
+
+<b>assignment</b>
+   build a network with at least two nodes

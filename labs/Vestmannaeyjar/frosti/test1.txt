@@ -1,0 +1,22 @@
+hello this is text file, how do I add it to the bazaar
+
+cad_cam_cae
+computer_cutting
+computer_machining
+digital_fabrication
+electronics_design_production
+embedded_networking_communications
+embedded_programming
+implications_applications
+interface_application_programming
+invention_IP_business
+machine_design
+molding_casting
+project_development
+project_management
+scan_print
+sensors_actuators_displays
+
+
+Is this something to change.  I'm changing this on the 26 th of May, 11:13, AM
+

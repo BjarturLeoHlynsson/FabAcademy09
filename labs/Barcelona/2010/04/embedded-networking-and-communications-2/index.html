@@ -1,0 +1,675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>Embedded Networking and Communications &laquo; Fab Academy Barcelona</title>
+<link rel="shortcut icon" href="http://fabacademy.org/Barcelona/wp-content/themes/atahualpa/images/favicon/gcsh.rgb.300.ico" /><link rel="canonical" href="http://fabacademy.org/Barcelona/2010/04/embedded-networking-and-communications-2/" /><link rel="alternate" type="application/rss+xml" title="Fab Academy Barcelona RSS Feed" href="http://fabacademy.org/Barcelona/feed/" />
+<link rel="alternate" type="application/atom+xml" title="Fab Academy Barcelona Atom Feed" href="http://fabacademy.org/Barcelona/feed/atom/" />
+
+<link rel="alternate" type="application/rss+xml" title="Fab Academy Barcelona &raquo; Embedded Networking and Communications Comments Feed" href="http://fabacademy.org/Barcelona/2010/04/embedded-networking-and-communications-2/feed/" />
+<link rel='stylesheet' id='thickbox-css'  href='http://fabacademy.org/Barcelona/wp-includes/js/thickbox/thickbox.css?ver=20090514' type='text/css' media='all' />
+<script type='text/javascript' src='http://fabacademy.org/blog/wp-includes/js/jquery/jquery.js?ver=1.3.2'></script>
+<script type='text/javascript' src='http://fabacademy.org/blog/wp-includes/js/comment-reply.js?ver=20090102'></script>
+
+ 
+<link rel='index' title='Fab Academy Barcelona' href='http://fabacademy.org/blog' />
+<link rel='start' title='Self-Reproducing machine' href='http://fabacademy.org/Barcelona/2009/09/9/' />
+<link rel='prev' title='Embedded Networking and Communications' href='http://fabacademy.org/Barcelona/2010/04/embedded-networking-and-communications/' />
+<link rel='canonical' href='http://fabacademy.org/Barcelona/2010/04/embedded-networking-and-communications-2/' />
+<style type="text/css">body{text-align:center;margin:0;padding:0;font-family:tahoma,arial,sans-serif;font-size:0.8em;color:#000000;background:#ffffff}a:link,a:visited,a:active{color:#666666;font-weight:bold;text-decoration:none;}a:hover{color:#cc0000;font-weight:bold;text-decoration:underline}ul,ol,dl,p,h1,h2,h3,h4,h5,h6{margin-top:10px;margin-bottom:10px;padding-top:0;padding-bottom:0;}ul ul,ul ol,ol ul,ol ol{margin-top:0;margin-bottom:0}h1,h2,h3,h4,h5,h6{color:#000;display:block;font-smooth:always}h1{font-size:34px;line-height:1.2;margin:0.3em 0 10px;}h2{font-size:28px;line-height:1.3;margin:1em 0 .2em;}h3{font-size:24px;line-height:1.3;margin:1em 0 .2em;}h4{font-size:19px;margin:1.33em 0 .2em;}h5{font-size:1.3em;margin:1.67em 0;font-weight:bold;}h6{font-size:1.15em;margin:1.67em 0;font-weight:bold;}h1 a,h2 a,h1 a:link,h2 a:link,h1 a:visited,h2 a:visited{color:#000;}h1 a:active,h2 a:active,h1 a:focus,h2 a:focus,h1 a:hover,h2 a:hover{color:#669900;}code,pre{font-family:"Courier New",Courier,monospace;font-size:1em}pre{overflow:auto;word-wrap:normal;padding-bottom:1.5em;overflow-y:hidden;width:99%}abbr[title],acronym[title]{border-bottom:1px dotted}hr{display:block;height:2px;border:none;margin:0.5em auto;color:#cccccc;background-color:#cccccc}table{font-size:1em;}div.post,ul.commentlist li,ol.commentlist li{word-wrap:break-word;}pre,.wp_syntax{word-wrap:normal;}div#wrapper{text-align:center;margin-left:auto;margin-right:auto;display:block;width:90%}div#container{padding:0;width:auto;margin-left:auto;margin-right:auto;text-align:left;display:block}table#layout{font-size:100%;width:100%;table-layout:fixed}.colone{width:200px}.colone-inner{width:200px}.coltwo{width:100% }.colthree-inner{width:200px}.colthree{width:200px}td#header{width:auto;padding:0}table#logoarea,table#logoarea tr,table#logoarea td{margin:0;padding:0;background:none;border:0}table#logoarea{width:100%;border-spacing:0px}img.logo{display:block;margin:0px 10px 0px 0px}td.logoarea-logo{width:1%}h1.blogtitle,h2.blogtitle{ display:block;margin:0;padding:0;letter-spacing:-1px;line-height:1.0em;font-family:tahoma,arial,sans-serif;font-size:240%;font-smooth:always}h1.blogtitle a:link,h1.blogtitle a:visited,h1.blogtitle a:active,h2.blogtitle a:link,h2.blogtitle a:visited,h2.blogtitle a:active{ text-decoration:none;color:#666666;font-weight:bold;font-smooth:always}h1.blogtitle a:hover,h2.blogtitle a:hover{ text-decoration:none;color:#000000;font-weight:bold}p.tagline{margin:0;padding:0;font-size:1.2em;font-weight:bold;color:#666666}td.feed-icons{white-space:nowrap;}div.rss-box{height:1%;display:block;padding:10px 0 10px 10px;margin:0;width:280px}a.comments-icon{height:22px;line-height:22px;margin:0 5px 0 5px;padding-left:22px;display:block;text-decoration:none;float:right;white-space:nowrap}a.comments-icon:link,a.commentss-icon:active,a.comments-icon:visited{background:transparent url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/comment-gray.png) no-repeat scroll center left}a.comments-icon:hover{background:transparent url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/comment.png) no-repeat scroll center left}a.posts-icon{height:22px;line-height:22px;margin:0 5px 0 0;padding-left:20px;display:block;text-decoration:none;float:right;white-space:nowrap}a.posts-icon:link,a.posts-icon:active,a.posts-icon:visited{background:transparent url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/rss-gray.png) no-repeat scroll center left}a.posts-icon:hover{background:transparent url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/rss.png) no-repeat scroll center left}a.email-icon{height:22px;line-height:22px;margin:0 5px 0 5px;padding-left:24px;display:block;text-decoration:none;float:right;white-space:nowrap}a.email-icon:link,a.email-icon:active,a.email-icon:visited{background:transparent url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/email-gray.png) no-repeat scroll center left}a.email-icon:hover{background:transparent url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/email.png) no-repeat scroll center left}td.search-box{height:1%}div.searchbox{height:35px;border:1px dashed #cccccc;border-bottom:0;width:200px;margin:0;padding:0}div.searchbox-form{margin:5px 10px 5px 10px}div.horbar1,div.horbar2{font-size:1px;clear:both;display:block;position:relative;padding:0;margin:0;width:100%;}div.horbar1{height:5px;background:#ffffff;border-top:dashed 1px #cccccc}div.horbar2{height:5px;background:#ffffff;border-bottom:dashed 1px #cccccc}div.header-image-container{position:relative;margin:0;padding:0;height:200px;}div.opacityleft{position:absolute;z-index:2;top:0;left:0;background-color:#FFFFFF;height:200px;width:200px;filter:alpha(opacity=40);-moz-opacity:.40;opacity:.40}div.opacityright{position:absolute;z-index:2;top:0;right:0;background-color:#FFFFFF;height:200px;width:200px;filter:alpha(opacity=40);-moz-opacity:.40;opacity:.40}a.divclick:link,a.divclick:visited,a.divclick:active,a.divclick:hover{width:100%;height:100%;display:block;text-decoration:none}td#left{vertical-align:top;border-right:dashed 1px #CCCCCC;padding:10px 10px 10px 10px;background:#ffffff}td#left-inner{vertical-align:top;border-right:dashed 1px #CCCCCC;padding:10px 10px 10px 10px;background:#ffffff}td#right{vertical-align:top;border-left:dashed 1px #CCCCCC;padding:10px 10px 10px 10px;background:#ffffff}td#right-inner{vertical-align:top;border-left:dashed 1px #CCCCCC;padding:10px 10px 10px 10px;background:#ffffff}td#middle{vertical-align:top;width:100%;padding:10px 15px}td#footer{width:auto;background-color:#ffffff;border-top:dashed 1px #cccccc;padding:10px;text-align:center;color:#777777;font-size:95%}td#footer a:link,td#footer a:visited,td#footer a:active{text-decoration:none;color:#777777;font-weight:normal}td#footer a:hover{text-decoration:none;color:#777777;font-weight:normal}div.widget{display:block;width:auto;margin:0 0 15px 0}div.widget-title{display:block;width:auto}div.widget-title h3,td#left h3.tw-widgettitle,td#right h3.tw-widgettitle,td#left ul.tw-nav-list,td#right ul.tw-nav-list{padding:0;margin:0;font-size:1.6em;font-weight:bold}div.widget ul,div.textwidget{display:block;width:auto}div.widget select{width:98%;margin-top:5px;}div.widget ul{list-style-type:none;margin:0;padding:0;width:auto}div.widget ul li{display:block;margin:2px 0 2px 0px;padding:0 0 0 5px;border-left:solid 7px #cccccc}div.widget ul li:hover,div.widget ul li.sfhover{display:block;width:auto;border-left:solid 7px #000000;}div.widget ul li ul li{margin:2px 0 2px 5px;padding:0 0 0 5px;border-left:solid 7px #cccccc;}div.widget ul li ul li:hover,div.widget ul li ul li.sfhover{border-left:solid 7px #000000;}div.widget ul li ul li ul li{margin:2px 0 2px 5px;padding:0 0 0 5px;border-left:solid 7px #cccccc;}div.widget ul li ul li ul li:hover,div.widget ul li ul li ul li.sfhover{border-left:solid 7px #000000;}div.widget ul li a:link,div.widget ul li a:visited,div.widget ul li a:active{text-decoration:none;font-weight:normal;color:#666666;font-weight:normal;}div.widget ul li ul li a:link,div.widget ul li ul li a:visited,div.widget ul li ul li a:active{color:#666666;font-weight:normal;}div.widget ul li ul li ul li a:link,div.widget ul li ul li ul li a:visited,div.widget ul li ul li ul li a:active{color:#666666;font-weight:normal;}div.widget ul li a:hover{color:#000000;}div.widget ul li ul li a:hover{color:#000000;}div.widget ul li ul li ul li a:hover{color:#000000;}div.widget ul li a:link,div.widget ul li a:visited,div.widget ul li a:active,div.widget ul li a:hover{display:inline}* html div.widget ul li a:link,* html div.widget ul li a:visited,* html div.widget ul li a:active,* html div.widget ul li a:hover{height:1%; } div.widget_pages ul li,div.widget_categories ul li{border-left:0 !important;padding:0 !important}div.widget_pages ul li a:link,div.widget_pages ul li a:visited,div.widget_pages ul li a:active,div.widget_categories ul li a:link,div.widget_categories ul li a:visited,div.widget_categories ul li a:active{padding:0 0 0 5px;border-left:solid 7px #cccccc}div.widget_pages ul li a:hover,div.widget_categories ul li a:hover{border-left:solid 7px #000000;}div.widget_pages ul li ul li a:link,div.widget_pages ul li ul li a:visited,div.widget_pages ul li ul li a:active,div.widget_categories ul li ul li a:link,div.widget_categories ul li ul li a:visited,div.widget_categories ul li ul li a:active{padding:0 0 0 5px;border-left:solid 7px #cccccc}div.widget_pages ul li ul li a:hover,div.widget_categories ul li ul li a:hover{border-left:solid 7px #000000;}div.widget_pages ul li ul li ul li a:link,div.widget_pages ul li ul li ul li a:visited,div.widget_pages ul li ul li ul li a:active,div.widget_categories ul li ul li ul li a:link,div.widget_categories ul li ul li ul li a:visited,div.widget_categories ul li ul li ul li a:active{padding:0 0 0 5px;border-left:solid 7px #cccccc}div.widget_pages ul li ul li ul li a:hover,div.widget_categories ul li ul li ul li a:hover{border-left:solid 7px #000000;}div.widget_pages ul li a:link,div.widget_pages ul li a:active,div.widget_pages ul li a:visited,div.widget_pages ul li a:hover{display:block !important}div.widget_categories ul li a:link,div.widget_categories ul li a:active,div.widget_categories ul li a:visited,div.widget_categories ul li a:hover{display:inline !important}table.subscribe{width:100%}table.subscribe td.email-text{padding:0 0 5px 0;vertical-align:top}table.subscribe td.email-field{padding:0;width:100%}table.subscribe td.email-button{padding:0 0 0 5px}table.subscribe td.post-text{padding:7px 0 0 0;vertical-align:top}table.subscribe td.comment-text{padding:7px 0 0 0;vertical-align:top}div.post,div.page{display:block;margin:0 0 30px 0}div.sticky{background:#eee url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/sticky.gif) 99% 5% no-repeat;border:dashed 1px #cccccc;padding:10px}div.post-kicker{margin:0 0 5px 0}div.post-kicker a:link,div.post-kicker a:visited,div.post-kicker a:active{color:#000000;text-decoration:none;text-transform:uppercase}div.post-kicker a:hover{color:#cc0000}div.post-headline{}div.post-headline h1,div.post-headline h2{ margin:0; padding:0;padding:0;margin:0}div.post-headline h2 a:link,div.post-headline h2 a:visited,div.post-headline h2 a:active,div.post-headline h1 a:link,div.post-headline h1 a:visited,div.post-headline h1 a:active{color:#666666;text-decoration:none}div.post-headline h2 a:hover,div.post-headline h1 a:hover{color:#000000;text-decoration:none}div.post-byline{margin:5px 0 10px 0}div.post-byline a:link,div.post-byline a:visited,div.post-byline a:active{}div.post-byline a:hover{}div.post-bodycopy{}div.post-bodycopy p{margin:1em 0;padding:0;display:block}div.post-pagination{}div.post-footer{clear:both;display:block;margin:0;padding:5px;background:#eeeeee;color:#666;line-height:18px}div.post-footer a:link,div.post-footer a:visited,div.post-footer a:active{color:#333;font-weight:normal;text-decoration:none}div.post-footer a:hover{color:#333;font-weight:normal;text-decoration:underline}div.post-kicker img,div.post-byline img,div.post-footer img{border:0;padding:0;margin:0 0 -1px 0;background:none}span.post-ratings{display:inline-block;width:auto;white-space:nowrap}div.navigation-top{display:block;width:100%;margin:0 0 10px 0;padding:0 0 10px 0;border-bottom:dashed 1px #cccccc}div.navigation-middle{display:block;width:100%;margin:10px 0 20px 0;padding:10px 0 10px 0;border-top:dashed 1px #cccccc;border-bottom:dashed 1px #cccccc}div.navigation-bottom{display:block;width:100%;margin:20px 0 0 0;padding:10px 0 0 0;border-top:dashed 1px #cccccc}div.navigation-comments-above{display:block;width:100%;margin:0 0 10px 0;padding:5px 0 5px 0}div.navigation-comments-below{display:block;width:100%;margin:0 0 10px 0;padding:5px 0 5px 0}div.older{float:left;width:49%;text-align:left;margin:0;padding:0}div.newer{float:right;width:49%;text-align:right;margin:0;padding:0;}div.older-home{float:left;width:45%;text-align:left;margin:0;padding:0}div.newer-home{float:right;width:45%;text-align:right;margin:0;padding:0;}div.home{float:left;width:9%;text-align:center;margin:0;padding:0}form,.feedburner-email-form{margin:0;padding:0;}fieldset{border:1px solid #cccccc;width:auto;padding:0.35em 0.625em 0.75em;display:block;}legend{color:#000000;background:#f4f4f4;border:1px solid #cccccc;padding:2px 6px;margin-bottom:15px;}form p{margin:5px 0 0 0;padding:0;}label{margin-right:0.5em;font-family:arial;cursor:pointer;}input.text,input.textbox,input.password,input.file,input.TextField,textarea{padding:3px;color:#000000;border-top:solid 1px #333333;border-left:solid 1px #333333;border-right:solid 1px #999999;border-bottom:solid 1px #cccccc;background:url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/inputbackgr.gif) top left no-repeat}textarea{width:96%;}input.inputblur{color:#777777;width:95%}input.inputfocus{color:#000000;width:95%}input.highlight,textarea.highlight{background:#e8eff7;border-color:#37699f}.button,.Button{padding:0 2px;height:24px;line-height:16px;background-color:#777777;color:#ffffff;border:solid 2px #555555;font-weight:bold}.buttonhover{padding:0 2px;cursor:pointer;background-color:#6b9c6b;color:#ffffff;border:solid 2px #496d49}form#commentform input#submit{padding:4px 10px 4px 10px;font-size:1.2em;line-height:1.5em;height:36px}table.searchform{width:100%}table.searchform td.searchfield{padding:0;width:100%}table.searchform td.searchbutton{padding:0 0 0 5px}table.searchform td.searchbutton input{padding:0 0 0 5px}blockquote{height:1%;display:block;clear:both;color:#555555;padding:1em 1em;background:#f4f4f4;border:solid 1px #e1e1e1}blockquote blockquote{height:1%;display:block;clear:both;color:#444444;padding:1em 1em;background:#e1e1e1;border:solid 1px #d3d3d3}div.post table{border-collapse:collapse;margin:10px 0}div.post table caption{width:auto;margin:0 auto;background:#eeeeee;border:#999999;padding:4px 8px;color:#666666}div.post table th{background:#888888;color:#ffffff;font-weight:bold;font-size:90%;padding:4px 8px;border:solid 1px #ffffff;text-align:left}div.post table td{padding:4px 8px;background-color:#ffffff;border-bottom:1px solid #dddddd;text-align:left}div.post table tfoot td{}div.post table tr.alt td{background:#f4f4f4}div.post table tr.over td{background:#e2e2e2}#calendar_wrap{padding:0;border:none}table#wp-calendar{width:100%;font-size:90%;border-collapse:collapse;background-color:#ffffff;margin:0 auto}table#wp-calendar caption{width:auto;background:#eeeeee;border:none;;padding:3px;margin:0 auto;font-size:1em}table#wp-calendar th{border:solid 1px #eeeeee;background-color:#999999;color:#ffffff;font-weight:bold;padding:2px;text-align:center}table#wp-calendar td{padding:0;line-height:18px;background-color:#ffffff;border:1px solid #dddddd;text-align:center}table#wp-calendar tfoot td{border:solid 1px #eeeeee;background-color:#eeeeee}table#wp-calendar td a{display:block;background-color:#eeeeee;width:100%;height:100%;padding:0}div#respond{margin:25px 0;padding:25px;background:#eee;-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;}p.thesetags{margin:10px 0}h3.reply{margin:0;padding:0 0 10px 0}ol.commentlist{margin:15px 0 25px 0;list-style-type:none;padding:0;display:block;border-top:dotted 1px #cccccc}ol.commentlist li{padding:15px 10px;display:block;height:1%;margin:0;background-color:#ffffff;border-bottom:dotted 1px #cccccc}ol.commentlist li.alt{display:block;height:1%;background-color:#eeeeee;border-bottom:dotted 1px #cccccc}ol.commentlist li.authorcomment{display:block;height:1%;background-color:#ffecec}ol.commentlist span.authorname{font-weight:bold;font-size:110%}ol.commentlist span.commentdate{color:#666666;font-size:90%;margin-bottom:5px;display:block}ol.commentlist span.editcomment{display:block}ol.commentlist li p{margin:2px 0 5px 0}div.comment-number{float:right;font-size:2em;line-height:2em;font-family:georgia,serif;font-weight:bold;color:#ddd;margin:-10px 0 0 0;position:relative;height:1%}div.comment-number a:link,div.comment-number a:visited,div.comment-number a:active{color:#ccc}textarea#comment{width:98%;margin:10px 0;display:block}ul.commentlist{margin:15px 0 15px 0;list-style-type:none;padding:0;display:block;border-top:dotted 1px #cccccc}ul.commentlist ul{margin:0;border:none;list-style-type:none;padding:0}ul.commentlist li{padding:0; margin:0;display:block;clear:both;height:1%;}ul.commentlist ul.children li{ margin-left:30px}ul.commentlist div.comment-container{padding:10px;margin:0}ul.children div.comment-container{background-color:transparent;border:dotted 1px #ccc;padding:10px;margin:0 10px 8px 0; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px}ul.children div.bypostauthor{}ul.commentlist li.thread-even{background-color:#ffffff;border-bottom:dotted 1px #cccccc}ul.commentlist li.thread-odd{background-color:#eeeeee;border-bottom:dotted 1px #cccccc}ul.commentlist div.bypostauthor{background-color:#ffecec}ul.children div.bypostauthor{border:dotted 1px #ffbfbf}ul.commentlist span.authorname{font-size:110%}div.comment-meta a:link,div.comment-meta a:visited,div.comment-meta a:active,div.comment-meta a:hover{font-weight:normal}div#cancel-comment-reply{margin:-5px 0 10px 0}div.comment-number{float:right;font-size:2em;line-height:2em;font-family:georgia,serif;font-weight:bold;color:#ddd;margin:-10px 0 0 0;position:relative;height:1%}div.comment-number a:link,div.comment-number a:visited,div.comment-number a:active{color:#ccc}.page-numbers{padding:2px 6px;border:solid 1px #000000;-moz-border-radius:6px;-khtml-border-radius:6px;-webkit-border-radius:6px;border-radius:6px}span.current{background:#ddd}a.prev,a.next{border:none}a.page-numbers:link,a.page-numbers:visited,a.page-numbers:active{text-decoration:none;color:#666666;border-color:#666666}a.page-numbers:hover{text-decoration:none;color:#cc0000;border-color:#cc0000}div.xhtml-tags{display:none}abbr em{border:none !important;border-top:dashed 1px #aaa !important;display:-moz-inline-box !important;display:inline-block !important;background:url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/commentluv.gif) 0% 90% no-repeat;margin-top:8px;padding:5px 5px 2px 20px !important;font-style:normal}p.subscribe-to-comments{margin-bottom:10px}div#gsHeader{display:none;}div.g2_column{margin:0 !important;width:100% !important;font-size:1.2em}div#gsNavBar{border-top-width:0 !important}p.giDescription{font-size:1.2em;line-height:1 !important}p.giTitle{margin:0.3em 0 !important;font-size:1em;font-weight:normal;color:#666}div#wp-email img{border:0;padding:0}div#wp-email input,div#wp-email textarea{margin-top:5px;margin-bottom:2px}div#wp-email p{margin-bottom:10px}input#wp-email-submit{ padding:0; font-size:30px; height:50px; line-height:50px; overflow:visible;}img.WP-EmailIcon{ vertical-align:text-bottom !important}.tw-accordion .tw-widgettitle,.tw-accordion .tw-widgettitle:hover,.tw-accordion .tw-hovered,.tw-accordion .selected,.tw-accordion .selected:hover{ background:transparent !important; background-image:none !important}.tw-accordion .tw-widgettitle span{ padding-left:0 !important}.tw-accordion h3.tw-widgettitle{border-bottom:solid 1px #ccc}.tw-accordion h3.selected{border-bottom:none}td#left .without_title,td#right .without_title{ margin-top:0;margin-bottom:0}ul.tw-nav-list{border-bottom:solid 1px #999;display:block;margin-bottom:5px !important}td#left ul.tw-nav-list li,td#right ul.tw-nav-list li{padding:0 0 1px 0;margin:0 0 -1px 5px; border:solid 1px #ccc;border-bottom:none;-moz-border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;-moz-border-radius-bottomright:0;-moz-border-radius-bottomleft:0;-webkit-border-bottom-right-radius:0;-webkit-border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-left-radius:0;background:#eee}td#left ul.tw-nav-list li.ui-tabs-selected,td#right ul.tw-nav-list li.ui-tabs-selected{ background:none;border:solid 1px #999;border-bottom:solid 1px #fff !important}ul.tw-nav-list li a:link,ul.tw-nav-list li a:visited,ul.tw-nav-list li a:active,ul.tw-nav-list li a:hover{padding:0 8px !important;background:none;border-left:none !important;outline:none}td#left ul.tw-nav-list li.ui-tabs-selected a,td#left li.ui-tabs-selected a:hover,td#right ul.tw-nav-list li.ui-tabs-selected a,td#right li.ui-tabs-selected a:hover{ color:#000000; text-decoration:none;font-weight:bold;background:none !important;outline:none}td#left .ui-tabs-panel,td#right .ui-tabs-panel{ margin:0; padding:0}img{border:0}#dbem-location-map img{ background:none !important}.post img{padding:5px;border:solid 1px #dddddd;background-color:#f3f3f3;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}.post img.size-full{max-width:96%;width:auto 100%;margin:5px 0 5px 0}div.post img[class~=size-full]{height:auto;}.post img.alignleft{float:left;margin:10px 10px 5px 0;}.post img.alignright{float:right;margin:10px 0 5px 10px;}.post img.aligncenter{display:block;margin:10px auto}.aligncenter,div.aligncenter{ display:block; margin-left:auto; margin-right:auto}.alignleft,div.alignleft{float:left;margin:10px 10px 5px 0}.alignright,div.alignright{ float:right; margin:10px 0 5px 10px}div.archives-page img{border:0;padding:0;background:none;margin-bottom:0;vertical-align:-10%}.wp-caption{max-width:96%;width:auto 100%;height:auto;display:block;border:1px solid #dddddd;text-align:center;background-color:#f3f3f3;padding-top:4px;margin:10px 0 0 0;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}* html .wp-caption{height:100%;}.wp-caption img{ margin:0 !important; padding:0 !important; border:0 none !important}.wp-caption p.wp-caption-text{font-size:0.8em;line-height:13px;padding:2px 4px 5px;margin:0;color:#666666}img.wp-post-image{float:left;border:0;padding:0;background:none;margin:0 10px 5px 0}img.wp-smiley{ float:none;border:none !important;margin:0 1px -1px 1px;padding:0 !important;background:none !important}img.avatar{float:left;display:block;margin:0 8px 1px 0;padding:3px;border:solid 1px #ddd;background-color:#f3f3f3;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}#comment_quicktags{text-align:left;padding:10px 0 2px 0;display:block}#comment_quicktags input.ed_button{background:#f4f4f4;border:2px solid #cccccc;color:#444444;margin:2px 4px 2px 0;width:auto;padding:0 4px;height:24px;line-height:16px}#comment_quicktags input.ed_button_hover{background:#dddddd;border:2px solid #666666;color:#000000;margin:2px 4px 2px 0;width:auto;padding:0 4px;height:24px;line-height:16px;cursor:pointer}#comment_quicktags #ed_strong{font-weight:bold}#comment_quicktags #ed_em{font-style:italic}@media print{body{background:white;color:black;margin:0;font-size:10pt !important;font-family:arial,sans-serif;}div.post-footer{line-height:normal !important;color:#555 !important;font-size:9pt !important}a:link,a:visited,a:active,a:hover{text-decoration:underline !important;color:#000}h2{color:#000;font-size:14pt !important;font-weight:normal !important}h3{color:#000;font-size:12pt !important;}#header,#footer,.colone,.colthree,.navigation,.navigation-top,.navigation-middle,.navigation-bottom,.wp-pagenavi-navigation,#comment,#respond,.remove-for-print{display:none}td#left,td#right,td#left-inner,td#right-inner{width:0}td#middle{width:100%}*:lang(en) td#left{ display:none}*:lang(en) td#right{ display:none}*:lang(en) td#left-inner{ display:none}*:lang(en) td#right-inner{ display:none}td#left:empty{ display:none}td#right:empty{ display:none}td#left-inner:empty{ display:none}td#right-inner:empty{ display:none}}ul.rMenu,ul.rMenu ul,ul.rMenu li,ul.rMenu a{display:block;margin:0;padding:0}ul.rMenu,ul.rMenu li,ul.rMenu ul{list-style:none}ul.rMenu ul{display:none}ul.rMenu li{position:relative;z-index:1}ul.rMenu li:hover{z-index:999}ul.rMenu li:hover > ul{display:block;position:absolute}ul.rMenu li:hover{background-position:0 0} ul.rMenu-hor li{float:left;width:auto}ul.rMenu-hRight li{float:right}ul.rMenu-ver li{float:none}div#menu1 ul.rMenu-ver,div#menu1 ul.rMenu-ver ul{width:11em}div#menu2 ul.rMenu-ver,div#menu2 ul.rMenu-ver ul{width:11em}ul.rMenu-wide{width:100%}ul.rMenu-vRight{float:right}ul.rMenu-lFloat{float:left}ul.rMenu-noFloat{float:none}div.rMenu-center ul.rMenu{float:left;position:relative;left:50%}div.rMenu-center ul.rMenu li{position:relative;left:-50%}div.rMenu-center ul.rMenu li li{left:auto}ul.rMenu-hor ul{top:auto;right:auto;left:auto;margin-top:-1px}ul.rMenu-hor ul ul{margin-top:0;margin-left:0px}ul.rMenu-ver ul{left:100%;right:auto;top:auto;top:0}ul.rMenu-vRight ul,ul.rMenu-hRight ul.rMenu-ver ul{left:-100%;right:auto;top:auto}ul.rMenu-hRight ul{left:auto;right:0;top:auto;margin-top:-1px}div#menu1 ul.rMenu{background:#ffffff;border:dashed 1px #cccccc}div#menu2 ul.rMenu{background:#777777;border:solid 1px #000000}div#menu1 ul.rMenu li a{border:dashed 1px #cccccc}div#menu2 ul.rMenu li a{border:solid 1px #000000}ul.rMenu-hor li{margin-bottom:-1px;margin-top:-1px;margin-left:-1px}ul#rmenu li{}ul#rmenu li ul li{}ul.rMenu-hor{padding-left:1px }ul.rMenu-ver li{margin-left:0;margin-top:-1px; }div#menu1 ul.rMenu-ver{border-top:dashed 1px #cccccc}div#menu2 ul.rMenu-ver{border-top:solid 1px #000000}div#menu1 ul.rMenu li a{padding:4px 5px}div#menu2 ul.rMenu li a{padding:4px 5px}div#menu1 ul.rMenu li a:link,div#menu1 ul.rMenu li a:hover,div#menu1 ul.rMenu li a:visited,div#menu1 ul.rMenu li a:active{text-decoration:none;margin:0;padding:4px 5px;color:#777777;text-transform:uppercase;font:11px Arial,Verdana,sans-serif;}div#menu2 ul.rMenu li a:link,div#menu2 ul.rMenu li a:hover,div#menu2 ul.rMenu li a:visited,div#menu2 ul.rMenu li a:active{text-decoration:none;margin:0;padding:4px 5px;color:#ffffff;text-transform:uppercase;font:11px Arial,Verdana,sans-serif;}div#menu1 ul.rMenu li{background-color:#ffffff}div#menu2 ul.rMenu li{background-color:#777777}div#menu1 ul.rMenu li:hover,div#menu1 ul.rMenu li.sfhover{background:#dddddd}div#menu2 ul.rMenu li:hover,div#menu2 ul.rMenu li.sfhover{background:#000000}div#menu1 ul.rMenu li.current_page_item > a:link,div#menu1 ul.rMenu li.current_page_item > a:active,div#menu1 ul.rMenu li.current_page_item > a:hover,div#menu1 ul.rMenu li.current_page_item > a:visited{background-color:#eeeeee;color:#000000}div#menu1 ul.rMenu li.current_page_item a:link,div#menu1 ul.rMenu li.current_page_item a:active,div#menu1 ul.rMenu li.current_page_item a:hover,div#menu1 ul.rMenu li.current_page_item a:visited,div#menu1 ul.rMenu li a:hover{background-color:#eeeeee;color:#000000}div#menu2 ul.rMenu li.current-cat > a:link,div#menu2 ul.rMenu li.current-cat > a:active,div#menu2 ul.rMenu li.current-cat > a:hover,div#menu2 ul.rMenu li.current-cat > a:visited{background-color:#cc0000;color:#ffffff}div#menu2 ul.rMenu li.current-cat a:link,div#menu2 ul.rMenu li.current-cat a:active,div#menu2 ul.rMenu li.current-cat a:hover,div#menu2 ul.rMenu li.current-cat a:visited,div#menu2 ul.rMenu li a:hover{background-color:#cc0000;color:#ffffff}div#menu1 ul.rMenu li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a{padding-right:15px;padding-left:5px;background-repeat:no-repeat;background-position:100% 50%;background-image:url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/expand-right.gif)}div#menu2 ul.rMenu li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a{padding-right:15px;padding-left:5px;background-repeat:no-repeat;background-position:100% 50%;background-image:url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/expand-right-white.gif)}ul.rMenu-vRight li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a{padding-right:5px;padding-left:20px;background-image:url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/expand-left.gif);background-repeat:no-repeat;background-position:-5px 50%}div#menu1 ul.rMenu-hor li.rMenu-expand a{padding-left:5px;padding-right:15px !important;background-position:100% 50%;background-image:url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/expand-down.gif)}div#menu2 ul.rMenu-hor li.rMenu-expand a{padding-left:5px;padding-right:15px !important;background-position:100% 50%;background-image:url(http://fabacademy.org/blog/wp-content/themes/atahualpa/images/expand-down-white.gif)}div#menu1 ul.rMenu li.rMenu-expand li a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a{background-image:none;padding-right:5px;padding-left:5px}div#menu2 ul.rMenu li.rMenu-expand li a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a{background-image:none;padding-right:5px;padding-left:5px}* html ul.rMenu{display:inline-block;display:block;position:relative;position:static}* html ul.rMenu ul{float:left;float:none}ul.rMenu ul{}* html ul.rMenu-ver li,* html ul.rMenu-hor li ul.rMenu-ver li{width:100%;float:left;clear:left}*:first-child+html ul.rMenu-ver > li{width:100%;float:left;clear:left}ul.rMenu li a{position:relative;min-width:0}* html ul.rMenu-hor li{width:11em;width:auto}* html div.rMenu-center{position:relative;z-index:1}* html ul.rMenu ul{display:block;position:absolute}* html ul.rMenu ul,* html ul.rMenu-hor ul,* html ul.rMenu-ver ul,* html ul.rMenu-vRight ul,* html ul.rMenu-hRight ul.rMenu-ver ul,* html ul.rMenu-hRight ul{left:-10000px}* html ul.rMenu li.sfhover{z-index:999}* html ul.rMenu li.sfhover ul{left:auto}* html ul.rMenu li.sfhover ul ul,* html ul.rMenu li.sfhover ul ul ul,* html ul.rMenu li.sfhover ul ul ul ul,* html ul.rMenu li.sfhover ul ul ul ul ul,* html ul.rMenu li.sfhover ul ul ul ul ul ul{display:none}* html ul.rMenu li.sfhover ul,* html ul.rMenu li li.sfhover ul,* html ul.rMenu li li li.sfhover ul,* html ul.rMenu li li li li.sfhover ul,* html ul.rMenu li li li li li.sfhover ul{display:block}* html ul.rMenu-ver li.sfhover ul{left:100%}* html ul.rMenu-vRight li.sfhover ul,* html ul.rMenu-hRight ul.rMenu-ver li.sfhover ul{left:-100%}* html ul.rMenu iframe{position:absolute;left:0;top:0;z-index:-1}* html ul.rMenu{margin-left:1px}* html ul.rMenu ul,* html ul.rMenu ul ul,* html ul.rMenu ul ul ul,* html ul.rMenu ul ul ul ul{margin-left:0}* html ul.rMenu{display:inline-block;display:block;position:relative;position:static}* html ul.rMenu ul{float:left;float:none}ul.rMenu ul{background-color:#fff}* html ul.rMenu-ver li,* html ul.rMenu-hor li ul.rMenu-ver li{width:100%;float:left;clear:left}*:first-child+html ul.rMenu-ver > li:hover ul{min-width:0}ul.rMenu li a{position:relative;min-width:0}* html ul.rMenu-hor li{width:6em;width:auto}* html div.rMenu-center{position:relative;z-index:1}html:not([lang*=""]) div.rMenu-center ul.rMenu li a:hover{height:100%}html:not([lang*=""]) div.rMenu-center ul.rMenu li a:hover{height:auto}* html ul.rMenu ul{display:block;position:absolute}* html ul.rMenu ul,* html ul.rMenu-hor ul,* html ul.rMenu-ver ul,* html ul.rMenu-vRight ul,* html ul.rMenu-hRight ul.rMenu-ver ul,* html ul.rMenu-hRight ul{left:-10000px}* html ul.rMenu li.sfhover{z-index:999}* html ul.rMenu li.sfhover ul{left:auto}* html ul.rMenu li.sfhover ul ul,* html ul.rMenu li.sfhover ul ul ul{display:none}* html ul.rMenu li.sfhover ul,* html ul.rMenu li li.sfhover ul,* html ul.rMenu li li li.sfhover ul{display:block}* html ul.rMenu-ver li.sfhover ul{left:60%}* html ul.rMenu-vRight li.sfhover ul,* html ul.rMenu-hRight ul.rMenu-ver li.sfhover ul{left:-60%}* html ul.rMenu iframe{position:absolute;left:0;top:0;z-index:-1}.clearfix:after{ content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{min-width:0;display:inline-block;display:block}* html .clearfix{height:1%;}* html a.posts-icon,a.comments-icon,a.email-icon,img.logo{behavior:url("http://fabacademy.org/blog/wp-content/themes/atahualpa/js/iepngfix.php") }.clearfix:after{ content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{min-width:0;display:inline-block;display:block}* html .clearfix{height:1%;}.clearboth{clear:both;height:1%;font-size:1%;line-height:1%;display:block;padding:0;margin:0}</style>
+<script type="text/javascript">
+//<![CDATA[
+
+
+
+/* JQUERY */
+
+jQuery(document).ready(function(){  
+  
+	/* For IE6 */
+	if (jQuery.browser.msie && /MSIE 6\.0/i.test(window.navigator.userAgent) && !/MSIE 7\.0/i.test(window.navigator.userAgent) && !/MSIE 8\.0/i.test(window.navigator.userAgent)) {
+
+		/* Max-width for images in IE6 */		
+		var centerwidth = jQuery("td#middle").width(); 
+		
+		/* Images without caption */
+		jQuery(".post img").each(function() { 
+			var maxwidth = centerwidth - 10 + 'px';
+			var imgwidth = jQuery(this).width(); 
+			var imgheight = jQuery(this).height(); 
+			var newimgheight = (centerwidth / imgwidth * imgheight) + 'px';	
+			if (imgwidth > centerwidth) { 
+				jQuery(this).css({width: maxwidth}); 
+				jQuery(this).css({height: newimgheight}); 
+			}
+		});
+		
+		/* Images with caption */
+		jQuery("div.wp-caption").each(function() { 
+			var captionwidth = jQuery(this).width(); 
+			var maxcaptionwidth = centerwidth + 'px';
+			var captionheight = jQuery(this).height();
+			var captionimgwidth =  jQuery("div.wp-caption img").width();
+			var captionimgheight =  jQuery("div.wp-caption img").height();
+			if (captionwidth > centerwidth) { 
+				jQuery(this).css({width: maxcaptionwidth}); 
+				var newcaptionheight = (centerwidth / captionwidth * captionheight) + 'px';
+				var newcaptionimgheight = (centerwidth / captionimgwidth * captionimgheight) + 'px';
+				jQuery(this).css({height: newcaptionheight}); 
+				jQuery("div.wp-caption img").css({height: newcaptionimgheight}); 
+				}
+		});
+		
+		/* sfhover for LI:HOVER support in IE6: */
+		jQuery("ul li").
+			hover( function() {
+					jQuery(this).addClass("sfhover")
+				}, 
+				function() {
+					jQuery(this).removeClass("sfhover")
+				} 
+			); 
+
+	/* End IE6 */
+	}
+	
+	jQuery(".post table tr").
+		mouseover(function() {
+			jQuery(this).addClass("over");
+		}).
+		mouseout(function() {
+			jQuery(this).removeClass("over");
+		});
+
+	
+	jQuery(".post table tr:even").
+		addClass("alt");
+
+	
+	jQuery("input.text, input.TextField, input.file, input.password, textarea").
+		focus(function () {  
+			jQuery(this).addClass("highlight"); 
+		}).
+		blur(function () { 
+			jQuery(this).removeClass("highlight"); 
+		})
+	
+	jQuery("input.inputblur").
+		focus(function () {  
+			jQuery(this).addClass("inputfocus"); 
+		}).
+		blur(function () { 
+			jQuery(this).removeClass("inputfocus"); 
+		})
+
+		
+
+	
+	jQuery("input.button, input.Button").
+		mouseover(function() {
+			jQuery(this).addClass("buttonhover");
+		}).
+		mouseout(function() {
+			jQuery(this).removeClass("buttonhover");
+		});
+
+	/* toggle "you can use these xhtml tags" */
+	jQuery("a.xhtmltags").
+		click(function(){ 
+			jQuery("div.xhtml-tags").slideToggle(300); 
+		});
+
+	/* For the Tabbed Widgets plugin: */
+	jQuery("ul.tw-nav-list").
+		addClass("clearfix");
+
+		
+	
+});
+
+//]]>
+</script>
+<style type="text/css">
+.avatar {vertical-align:middle}
+.credit {font-size: 50%;}
+</style>
+		<!--[if IE 6]>
+<script type="text/javascript" src="http://fabacademy.org/blog/wp-content/themes/atahualpa/js/DD_roundies.js"></script>
+<script type="text/javascript">DD_roundies.addRule('a.posts-icon, a.comments-icon, a.email-icon, img.logo');</script>
+<![endif]-->
+</head>
+<body class="single postid-1132">
+<div id="wrapper">
+<div id="container">
+<table id="layout" border="0" cellspacing="0" cellpadding="0">
+<colgroup>
+<col class="colone" /><col class="coltwo" />
+<col class="colthree" /></colgroup> 
+	<tr>
+
+		<!-- Header -->
+		<td id="header" colspan="3">
+
+		<div id="menu1"><ul id="rmenu2" class="clearfix rMenu-hor rMenu">
+<li class="page_item"><a href="http://fabacademy.org/Barcelona/" title="Fab Academy Barcelona">Home</a></li>
+<li class="page_item page-item-2"><a href="http://fabacademy.org/Barcelona/about/" >The Fab Academy</a></li>
+<li class="page_item page-item-46"><a href="http://fabacademy.org/Barcelona/about-2/" >Methodology</a></li>
+<li class="page_item page-item-70"><a href="http://fabacademy.org/Barcelona/about-3/" >Apply</a></li>
+<li class="page_item page-item-142"><a href="http://fabacademy.org/Barcelona/about-4/" >Tuition</a></li>
+<li class="page_item page-item-158"><a href="http://fabacademy.org/Barcelona/about-5/" >Modules</a></li>
+</ul></div>
+ <table id="logoarea" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td rowspan="2" valign="middle" class="logoarea-logo"><a href="http://fabacademy.org/Barcelona/"><img class="logo" src="http://fabacademy.org/Barcelona/wp-content/themes/atahualpa/images/fab.png" alt="Fab Academy Barcelona" /></a></td><td rowspan="2" valign="middle" class="logoarea-title"><h2 class="blogtitle"><a href="http://fabacademy.org/Barcelona/">Fab Academy Barcelona</a></h2><p class="tagline">Fab Lab Bcn projects</p></td><td class="feed-icons" valign="middle" align="right"><div class="clearfix rss-box"><a class="comments-icon" href="http://fabacademy.org/Barcelona/comments/feed/" title="Subscribe to the COMMENTS feed">Comments</a><a class="posts-icon" href="http://fabacademy.org/Barcelona/feed/" title="Subscribe to the POSTS feed">Posts</a></div></td></tr><tr><td valign="bottom" class="search-box" align="right"><div class="searchbox">
+				<form method="get" class="searchform" action="http://fabacademy.org/blog/">
+				<div class="searchbox-form">
+					<input type="text" class="text inputblur" onfocus="this.value=''" 
+					value="Type + Enter to search" onblur="this.value='Type + Enter to search'" name="s" /></div>
+				</form>
+			</div>
+			</td></tr></table> <div class="horbar1">&nbsp;</div> <div id="imagecontainer" class="header-image-container" style="background: url('http://fabacademy.org/blog/wp-content/themes/atahualpa/images/header/h4.jpg') top center no-repeat;"><div class="opacityleft">&nbsp;</div><div class="opacityright">&nbsp;</div></div> <div class="horbar2">&nbsp;</div>
+		</td>
+		<!-- / Header -->
+
+	</tr>
+
+	<!-- Main Body -->	
+	<tr id="bodyrow">
+
+				<!-- Left Sidebar -->
+		<td id="left">
+
+			<div id="calendar-3" class="widget widget_calendar"><div class="widget-title"><h3>Activities</h3></div><div id="calendar_wrap"><table id="wp-calendar" summary="Calendar">
+	<caption>April 2010</caption>
+	<thead>
+	<tr>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td abbr="March" colspan="3" id="prev"><a href="http://fabacademy.org/Barcelona/2010/03/" title="View posts for March 2010">&laquo; Mar</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="3" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td>
+	</tr>
+	<tr>
+		<td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+	</tr>
+	<tr>
+		<td>12</td><td>13</td><td id="today"><a href="http://fabacademy.org/Barcelona/2010/04/14/" title="Networking, Embeded Networking, Embedded Networking and Communications, Embedded Networking and Communications">14</a></td><td>15</td><td>16</td><td>17</td><td>18</td>
+	</tr>
+	<tr>
+		<td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+	</tr>
+	<tr>
+		<td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+		<td class="pad" colspan="2">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></div><div id="text-3" class="widget widget_text"><div class="widget-title"><h3>Fab Academy Videos</h3></div>			<div class="textwidget"><object width="180" height="150"><param name="movie" value="http://www.youtube.com/v/HMoXchaFzHI&hl=en_US&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/HMoXchaFzHI&hl=en_US&fs=1" type="application/x-shockwave-flash" width="180" height="150" allowscriptaccess="always" allowfullscreen="true"></embed></object></div>
+		</div><div id="linkcat-69" class="widget widget_links"><div class="widget-title"><h3>Fab Labs</h3></div>
+	<ul class='xoxo blogroll'>
+<li><a href="http://as220.org/labs/wiki/index.php/Main_Page" target="_blank">AS220 Providence</a></li>
+<li><a href="http://amsterdam.fablab.nl/" target="_blank">Fab Lab Amsterdam</a></li>
+<li><a href="http://www.fablabbcn.org" target="_blank">Fab Lab Barcelona</a></li>
+<li><a href="http://www.fablab.is" target="_blank">Fab Lab Iceland</a></li>
+<li><a href="http://www.fablab.co.ke/" target="_blank">Fab Lab Kenya</a></li>
+
+	</ul>
+</div>
+
+		</td>
+		<!-- / Left Sidebar -->
+		
+				
+
+		<!-- Main Column -->
+		<td id="middle">
+
+	
+
+		
+		 
+
+		<div class="navigation-top">
+		<div class="older"> &nbsp;</div><div class="newer">&nbsp; <a href="http://fabacademy.org/Barcelona/2010/04/embedded-networking-and-communications/" rel="prev">Embedded Networking and Communications</a> &raquo;</div><div class="clearboth"></div></div>
+<div class="post-1132 post hentry category-12-embedded-networking-and-communications" id="post-1132">
+
+
+<div class="post-headline">		<h1>Embedded Networking and Communications</h1>
+		</div>
+
+<div class="post-bodycopy clearfix"><p><strong><span style="font-size: xx-large;">i0</span></strong></p>
+<p><strong><span style="font-size: xx-large;"><span style="font-size: medium;"><img class="alignleft size-full wp-image-1135" title="i0" src="http://fabacademy.org/Barcelona/wp-content/uploads/2010/04/i0.jpg" alt="" width="900" height="675" /><br />
+______________________________________</span><br />
+<span style="font-size: small;">A. GOAL&gt;<br />
+B. PROCESS&gt;<br />
+1. Milling and soldering  the boards<br />
+1.1 CAD and Milling<br />
+1.2  Circuit soldering<br />
+2. Programing<br />
+2.1 Fuses<br />
+2.2 ASM<br />
+2.3 Python<br />
+3. Network<br />
+3.1 Wires conection<br />
+3.2 IP generation<br />
+3.3 Network interaction<br />
+C. REFERENCES<br />
+<span style="font-size: small;">D.  COLABORATORS</span></span><span style="font-size: medium;"><span style="font-size: small;"><br />
+</span>______________________________________</span><br />
+<span style="font-size: small;"><br />
+A. GOAL</span></span></strong></p>
+<p><strong> </strong><span style="font-family: bitstream vera sans,arial,helvetica,sans-serif; color: #000000;"><span> <span style="font-size: medium;">Build  a network with at least two nodes</span></span></span><strong><span style="font-size: small;">.</span></strong></p>
+<p><strong></strong><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/academy/classes/embedded_networking_communications/index.html"> http://fab.cba.mit.edu/academy/classes/embedded_networking_communications/index.html</a><span style="font-family: bitstream vera sans,arial,helvetica,sans-serif;"><a  href="https://docs.google.com/i0.pdf">Internet 0</a> <a  href="https://docs.google.com/clicks.png">clicks</a> <a  href="https://docs.google.com/i0.jpg"> implementations</a> <a  href="https://docs.google.com/i0.3.IO.44.cad"> i0.3.IO.44.cad</a> <a  href="https://docs.google.com/i0.3.IO.44.thtpv4.asm">i0.3.IO.44.thtpv4.asm</a> <a  href="https://docs.google.com/i0.3.serial.44.cad">i0.3.serial.44.cad</a> <a  href="https://docs.google.com/i0.3.serial.44.packetv4.asm">i0.3.serial.44.packetv4.asm</a> <a  href="https://docs.google.com/i0.3.hub.4.cad">i0.3.hub.4.cad</a> <a  href="http://www.wireshark.org/">Wireshark</a>, slattach <a  href="https://docs.google.com/thtpv4.py">thtpv4.py</a></span></span><strong></strong></p>
+<p><strong>B. PROCESS</strong></p>
+<p><strong>1. Milling and soldering the  boards<br />
+<span style="font-size: small;"> 1.1 CAD and Milling</span></strong></p>
+<p><strong>1.2 Circuit soldering</strong></p>
+<p><strong>2. Programing<br />
+<span style="font-size: small;"> 2.1 Fuses<br />
+</span></strong><span style="font-size: small;"><span style="font-family: Courier New;"><br />
+<span style="font-size: x-small;"> <strong> Victor Freundt&gt;</strong> </span></span><span style="font-family: Courier New; font-size: x-small;">Things to consider when  programming tiny45, tiny44, mega88, and mega 644. </span><span style="font-family: arial; font-size: x-small;">In case you use a XTAL (</span><span style="font-family: arial; font-size: x-small;">20 MHz</span><span style="font-family: arial; font-size: x-small;">), <span style="color: #ff0000;">do not forget </span>to initialize.</span><br />
+<span style="font-family: Courier New;"><br />
+<span style="font-size: x-small;"><a  href="http://savannah.nongnu.org/projects/avrdude/"> avrdude  in-circuit programmer</a><br />
+tiny45 load hex file, bsd  cable: avrdude -p t45 -c bsd -U flash:w:file.hex<br />
+tiny45  load hex file, dasa cable: avrdude -p t45 -P /dev/ttyUSB0 -c dasa -U  flash:w:file.hex<br />
+tiny45 load hex file, dragon: avrdude -p  t45 -P usb -c dragon_isp -U flash:w:file.hex<br />
+tiny44  load hex file: avrdude -p t44 -c bsd -U flash:w:file.hex<br />
+tiny44 use 20 MHz xtal: avrdude -p t44 -c bsd -U lfuse:w:0&#215;7E:m<br />
+mega88 load hex file: avrdude -p m88 -c bsd -U flash:w:file.hex<br />
+mega88 use 20 MHz xtal: avrdude -p m88 -c bsd -U  lfuse:w:0&#215;76:m<br />
+mega644 load hex file: avrdude -p m644 -c  bsd -U flash:w:file.hex<br />
+mega644 use 20 MHz xtal: avrdude  -p m644 -c bsd -U lfuse:w:0&#215;76:m</span></span></span></p>
+<p>Check  <a  id="evkg" title="http://fab.cba.mit.edu/about/fab/index.html" href="http://fab.cba.mit.edu/about/fab/index.html">http://fab.cba.mit.edu/about/fab/index.html</a> for more info<strong><span style="font-size: small;"><br />
+</span></strong><strong><span><span><span style="font-size: small;"><span></span></span></span></span></strong></p>
+<p><strong><span><span><span style="font-size: small;"><span></span> TEST 0: </span></span><span style="font-family: Courier New; font-size: small;">tiny44 use 20 MHz xtal: avrdude -p  t44 -c bsd -U lfuse:w:0&#215;7E:m</span> <span style="font-size: small;"><span>is working !</span></span></span></strong></p>
+<p>fab@fab-desktop:~/Documents/internet-0$ avrdude -p t44 -c bsd  -U lfuse:w:0&#215;7E:m</p>
+<p>avrdude: AVR device initialized  and ready to accept instructions</p>
+<p>Reading |  ################################################## | 100% 0.00s</p>
+<p>avrdude: Device signature = 0&#215;1e9207<br />
+avrdude:  reading input file &#8220;0&#215;7E&#8221;<br />
+avrdude: writing lfuse (1  bytes):</p>
+<p>Writing |  ################################################## | 100% 0.00s</p>
+<p>avrdude: 1 bytes of lfuse written<br />
+avrdude:  verifying lfuse memory against 0&#215;7E:<br />
+avrdude: load data  lfuse data from input file 0&#215;7E:<br />
+avrdude: input file 0&#215;7E  contains 1 bytes<br />
+avrdude: reading on-chip lfuse data:</p>
+<p>Reading | ################################################## |  100% 0.00s</p>
+<p>avrdude: verifying &#8230;<br />
+avrdude: 1 bytes of lfuse verified</p>
+<p>avrdude:  safemode: Fuses OK</p>
+<p>avrdude done.  Thank you.<br />
+<strong></strong></p>
+<p><strong>2.2 ASM</strong></p>
+<p><strong>TEST 1: </strong><span style="font-size: small;"><span><strong>avrdude programming  <span style="font-size: x-small;">i0.3.serial.44.packetv4.hex  <span style="font-size: small;"><span>nothing, the program is not  working!</span></span></span> </strong></span><strong><br />
+<span style="font-size: x-small;"><br />
+</span></strong></span><strong></strong><span style="font-size: x-small;">fablab@fabmodela:~/Desktop/_academy/_beno$   <span style="font-size: small;">avrdude -p t44 -c bsd -U  flash:w:i0.3.serial.44.packetv4.hex</span><br />
+avrdude: can&#8217;t  open device &#8220;/dev/parport0&#8243;: Permission denied </span><span style="font-size: x-small;"><br />
+avrdude: failed to open parallel port &#8220;/dev/parport0&#8243;</span><strong></strong></p>
+<p><strong>QUESTION 1: </strong><span style="font-size: small;"><span><strong>what could be happening? </strong></span></span><span style="font-size: small;"><span><strong>Do have we write the  speed&#8217;s port ?</strong></span></span></p>
+<p><strong></strong><span style="font-size: x-small;"> <strong>Victor Vina&gt;</strong> When I first tried to use the parallel  port on the lab computer to program my board, it complained about  permissions on the device file:<br />
+<span style="font-family: Courier New;"><br />
+avrdude -p t45 -c bsd -U flash:w:hello.serial.45.hex<br />
+avrdude: can&#8217;t open device &#8220;/dev/parport0&#8243;: Permission denied<br />
+avrdude: failed to open parallel port &#8220;/dev/parport0&#8243;<br />
+</span> </span></p>
+<p><span style="font-size: x-small;"> Luckily, I had access to modify  the permissions, which solved the problem:<br />
+</span></p>
+<p><span style="font-size: x-small;"> <span style="font-family: Courier New;"> $ sudo chmod o+rw /dev/parport0</span></span></p>
+<p>Es buena idea hacerse un comando en usr/cgi/bin, con  este comando, hay que ejecutarlo cada vez que reinicies el sistema para  tener acceso al puerto                        paralelo&#8230; solía estar  anotado en about/fab.<br />
+<strong></strong></p>
+<p><strong>TEST 2: </strong><span style="font-size: medium;"><span><strong>change mode | </strong></span></span></p>
+<p><strong></strong><span style="font-size: x-small;"> fablab@fabmodela:~/Desktop/_academy/_beno$ <span style="font-size: small;"><strong>avrdude  -p t44 -c bsd -U flash:w:i0.3.serial.44.packetv4.hex</strong></span><br />
+avrdude: </span><span style="font-size: x-small;"><span style="font-size: small;"><strong>can&#8217;t open  device &#8220;/dev/parport0&#8243;</strong></span>: Permission denied<br />
+avrdude: failed to open parallel port &#8220;/dev/parport0&#8243;</span></p>
+<p>fablab@fabmodela:~/Desktop/_academy/_beno$<strong> <span style="font-size: small;">sudo  chmod 777 /dev/parport0</span></strong><br />
+[sudo] password for  fablab: <strong><span style="font-size: small;"><span style="font-size: x-small;"><br />
+</span><span><span> </span> </span><br />
+<span><span> </span><span><span style="font-size: small;"><span></span></span></span></span></span></strong><strong>TEST 3</strong><strong>: </strong><strong><span style="font-size: small;"><span>i0.3.serial.44.packetv4.hex </span> <span>is running !</span></span></strong></p>
+<p><strong></strong><span style="font-size: x-small;"> avrdude: 702 bytes of flash written<br />
+avrdude: verifying flash memory against i0.3.serial.44.packetv4.hex:<br />
+avrdude: load data flash data from input file  i0.3.serial.44.packetv4.hex:<br />
+avrdude: input file  i0.3.serial.44.packetv4.hex auto detected as Intel Hex<br />
+avrdude: input file i0.3.serial.44.packetv4.hex contains 702 bytes<br />
+avrdude: reading on-chip flash data:</span></p>
+<p>Reading | ################################################## | 100%  0.22s</p>
+<p>avrdude: verifying &#8230;<br />
+avrdude:  702 bytes of flash verified</p>
+<p>avrdude: safemode: Fuses  OK</p>
+<p>avrdude done.  Thank you.</p>
+<p><strong><span style="font-size: small;"><br />
+<span><span> </span><span><span><span style="font-size: small;"><span><span style="color: #ffffff;"><span>test 4&gt;</span></span></span></span></span></span> i0.3.44.thtpv4.hex </span> <span>is running !</span></span></strong></p>
+<p><strong></strong><span style="font-size: x-small;"> fablab@fabmodela:~/Desktop/_academy/_beno$ avrdude  -p t44 -c bsd -U flash:w:i0.3.IO.44.thtpv4.hex</span></p>
+<p>avrdude: AVR device initialized and ready to accept instructions</p>
+<p>Reading | ################################################## |  100% 0.00s</p>
+<p>avrdude: Device signature = 0&#215;1e9207<br />
+avrdude: NOTE: FLASH memory has been specified, an erase cycle  will be performed<br />
+To disable this feature,  specify the -D option.<br />
+avrdude: erasing chip<br />
+avrdude: reading input file &#8220;i0.3.IO.44.thtpv4.hex&#8221;<br />
+avrdude: input file i0.3.IO.44.thtpv4.hex auto detected as Intel Hex<br />
+avrdude: writing flash (1816 bytes):</p>
+<p>Writing | ################################################## | 100%  0.74s</p>
+<p>avrdude: 1816 bytes of flash written<br />
+avrdude: verifying flash memory against i0.3.IO.44.thtpv4.hex:<br />
+avrdude: load data flash data from input file  i0.3.IO.44.thtpv4.hex:<br />
+avrdude: input file  i0.3.IO.44.thtpv4.hex auto detected as Intel Hex<br />
+avrdude:  input file i0.3.IO.44.thtpv4.hex contains 1816 bytes<br />
+avrdude: reading on-chip flash data:</p>
+<p>Reading |  ################################################## | 100% 0.77s</p>
+<p>avrdude: verifying &#8230;<br />
+avrdude: 1816 bytes of  flash verified</p>
+<p>avrdude: safemode: Fuses OK</p>
+<p>avrdude done.  Thank you.<strong></strong></p>
+<p><span style="color: #000000; font-size: medium;"><span><strong> 2.3 Python</strong></span></span><strong><br />
+</strong><span style="font-size: small;"><span style="color: #000000;"><strong><br />
+<span style="font-size: small;"><span><span style="color: #ffffff;"><span>test 5&gt;</span></span> Run the py code </span> <span><span> the program is not working!</span></span></span></strong></span></span></p>
+<p><span style="font-size: x-small;"><strong> Tomas </strong></span><strong></strong><span style="font-size: x-small;">: </span><span style="color: #000000; font-size: x-small;">Hello out there. </span><span style="color: #000000; font-size: x-small;">Any guess on addressing the serial bridge?? &gt; command line  syntax:</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"> thtp    serial_port  serial_speed THTP_port </span><span style="color: #000000; font-size: x-small;">this  appears when running thtpv4.py</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"> In  the code there are two different speeds, also THTP is not so </span><span style="color: #000000; font-size: x-small;">obvious. Do the computer need a fixed IP  address?</span></p>
+<p><span style="color: #000000; font-size: x-small;"><strong> Shawn Wallace </strong>: </span><span style="color: #000000; font-size: x-small;">Hi  Tomas: </span><span style="color: #000000;"><span style="font-size: x-small;">To run the Thtp  bridge, try the settings:</span></span></p>
+<p><span style="color: #000000; font-size: medium;"> <strong> python thtp.py /dev/ttyS0  115200 1234</strong></span><span style="font-size: medium;"><br />
+</span><span style="color: #000000; font-size: medium;"> <strong> <span style="font-size: x-small;">(/dev/ttyS0  should be whatever port your serial cable is plugged into)</span></strong></span></p>
+<p><strong></strong><span style="color: #000000; font-size: x-small;"> You&#8217;ll find two speeds in the serial bridge assembly code,  but the </span><span style="color: #000000; font-size: x-small;">second one is commented  out with a semicolon. It is programmed to run at 115200 baud. </span><span style="color: #000000; font-size: x-small;"> With the python script  running, turn on your leaf nodes. You should get a solid LED if it  doesn&#8217;t have an I0 address yet. If you don&#8217;t get a </span><span style="color: #000000; font-size: x-small;">solid LED, reflash                 it with the  leaf node assembly code. When you press the button, </span><span style="color: #000000; font-size: x-small;">the leaf should be assigned a random address,  which should pop up in </span><span style="color: #000000; font-size: x-small;">your python  window.                 Use this address to talk to the node from a web  browser by typing this URL in the browser:</span></p>
+<p><strong><a  href="http://localhost:1234/" target="_blank"> http://localhost:1234/</a><span style="color: #000000;">[i0 address]:80</span><br />
+</strong><br />
+<strong><span style="font-size: small;"><span><span> </span><span style="color: #ffffff;"><span>test  6&gt;</span></span> Run the py code </span> <span>perfect, the program is  working!</span></span></strong></p>
+<p><strong> </strong><span style="font-size: small;"><span style="font-size: x-small;">fablab@fabmodela:~/Desktop/_academy/_beno$ </span><span style="font-size: x-small;">python thtpv4.py /dev/ttyS0 115200 1234<br />
+THTP  prefix: http://127.0.1.1:1234/</span><br />
+</span><strong></strong></p>
+<p><span style="color: #ffffff; font-size: medium;"><span><strong>3. Network conection </strong></span></span></p>
+<p><span><strong> </strong></span><span style="font-size: x-small;"><span style="font-size: small;"><span><span style="color: #ffffff;"><span><span><strong> </strong></span><span><strong> </strong></span><strong> Question 2&gt;</strong></span></span><strong> </strong></span></span><strong> the two nodes are working now, and we can see it in the web browser:</strong></span></p>
+<p><strong></strong><span style="font-size: x-small;"><strong><span style="font-size: x-small;"> Tomas</span>&gt;</strong> is only  unidirectional communication? now one node is controlling the other but  not the opposite, we can not see the master in the browser can we              grow the network by adding another hub? the we should use a hacked  router? is possible to play with other outputs? a motor, a speaker?</span></p>
+<p><strong> Kerry&gt; </strong>A. I don&#8217;t think the computer needs a  fixed IP address.  I believe it uses the one it has already.<br />
+The serial bridge definitely does not have one.  It simply receives  a SLIP packet on one port (serial or i0) and sends it out the other  one.  Serial speed is not             a big issue, so long as the PC  serial port and the bridge serial port are both set to the same speed!  I  think you might see the LED on the bridge blink if                     thtpd.py is running and you try to reach any i0 address using this URL: <a  href="http://localhost:1234/" target="_blank">http://localhost:1234/</a>[any  IPv4 address]:80</p>
+<p><span><span> </span>Of course, you will not get a response unless  you&#8217;re using the </span><span>*correct* address for a leaf node.  But this is a  good test to see </span><span>if thtp is talking to the serial    <span> </span><span> </span><span> </span> bridge.</span><br />
+<span> </span><span><span> </span>The  low fuse on the tiny44 needs to be set to 0&#215;7E before the </span><span>serial and i0 ports will  work correctly.</span></p>
+<p><strong> Tomas&gt; </strong><span style="color: #000000; font-size: x-small;">now our network seems to work, but</span> <span style="color: #000000; font-size: x-small;">with <strong>unidirectional communication</strong>: one  node controls the other,<br />
+but</span> <span style="color: #000000; font-size: x-small;"><strong>is not stable</strong>, <strong>we are not able to talk with the  nodes through the web browser</strong>, also </span><span style="color: #000000; font-size: x-small;">we get the message: <strong>i0 timeout</strong> a lot of times</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"> I think we made the mistake of not setting the  fuses on the boards, we</span> <span style="color: #000000; font-size: x-small;">will be  debugging today, let you know progress</span><span style="font-size: x-small;"><strong></strong></span></p>
+<p><strong>Kerry Lynn wrote: </strong><span style="color: #000000; font-size: x-small;">I don&#8217;t think the computer needs a fixed IP  address.  I believe it</span> <span style="color: #000000; font-size: x-small;">uses the  one it has already. </span><span style="color: #000000; font-size: x-small;">The serial  bridge definitely does not have                 one.  It simply receives</span> <span style="color: #000000; font-size: x-small;">a SLIP packet on one port (serial or i0)  and sends it out the other </span><span style="color: #000000; font-size: x-small;">one.   Serial speed is not a big issue, so long as the PC serial port</span> <span style="color: #000000; font-size: x-small;"> and the bridge serial port are  both set to the same speed!  I think </span><span style="color: #000000; font-size: x-small;">you might see the LED on the bridge blink if thtpd.py is  running</span> <span style="color: #000000; font-size: x-small;">and you try to reach any                  i0 address using this URL: </span><span style="font-size: x-small;"><strong><a  href="http://localhost:1234/" target="_blank">http://localhost:1234/</a>[any IPv4 address]:80 </strong></span><span style="color: #000000; font-size: x-small;">Of course, you will not get a response unless  you&#8217;re using the</span> <span style="color: #000000; font-size: x-small;">*correct* address                  for a leaf node.  But this is a good test to see </span><span style="color: #000000; font-size: x-small;">if thtp is talking to the serial bridge.</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"> The low fuse on the <strong>tiny44 needs to be set to  0&#215;7E</strong> before the</span> <span style="color: #000000; font-size: x-small;">serial and i0  ports will work correctly.</span><span style="font-size: x-small;"><br />
+<strong><br />
+T</strong><span style="color: #000000;">: </span></span><span style="color: #000000; font-size: x-small;">the two  nodes are working now, and we can see it in the web browser, </span><span style="color: #000000; font-size: x-small;">questions:</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"><strong> can we grow the network by adding another hub?</strong> the we  should use a </span><span style="color: #000000; font-size: x-small;">hacked</span><span style="color: #000000; font-size: x-small;"> router?</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"> T: is  only unidirectional communication? now one node is controlling the other  but not the opposite, we can not see the master in the browser</span><span style="font-size: x-small;"><strong></strong></span></p>
+<p><strong>K: When  you say &#8220;one node is controlling the other&#8221; do you mean the button of  one is controlling the LED of the other?</strong><br />
+<span style="color: #000000; font-size: x-small;"> T: Yes, but it  does not happen in the opposite direction. Node 1 can control</span> <span style="color: #000000; font-size: x-small;">node 2, but node 2 can not control node 1?</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"><br />
+<strong> K: How did you establish the pairing?  Is  there a</strong></span><span style="font-size: x-small;"><strong> sequence of button presses that you used?</strong></span><span style="color: #000000; font-size: x-small;"><br />
+T: We are finding out that the  last node that is getting IP is the one that</span> <span style="color: #000000; font-size: x-small;">ends up controlled. Is there a specific  sequence?</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"><br />
+<strong> K: When you press the  button on each leaf node, do you see packets from</strong></span><span style="font-size: x-small;"><strong> each one appearing on TFTP?   If so, you should be able to browseboth             addresses.</strong><br />
+</span><span style="color: #000000; font-size: x-small;"> T: Yes, the python program is working fine and we see the IPs  in both</span> <span style="color: #000000; font-size: x-small;">directions, also we can  browse the addresses</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"><br />
+<strong> K: You  should be able to add more nodes by adding hubs.  You may have</strong></span><span style="font-size: x-small;"><strong> trouble if you try to do many  things (like pressing buttons)                                  simultaneously.</strong><br />
+</span><span style="color: #000000; font-size: x-small;"> T: We added another hub, but only  works with 3 nodes, the 4th is not getting</span> <span style="color: #000000; font-size: x-small;">IP and not showing package sending/receiving on the .py app</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"> We will keep testing, is very stable with 3 nodes,  but we get only to</span> <span style="color: #000000; font-size: x-small;">control 2  nodes, there is always one that it cannot be light up from any of</span><span style="font-size: x-small;"><br />
+</span><span style="color: #000000; font-size: x-small;"> the rest, then after few minutes pressing different  sequences ends up with</span> <span style="color: #000000; font-size: x-small;">only one  controlled node, meaning two nodes controlling only one node</span></p>
+<p><span style="color: #000000; font-size: x-small;"> T: is possible to  play with other outputs? a motor, a speaker?</span><span style="font-size: x-small;"><strong><br />
+K: There should be other  hello worlds at <a  href="http://fab.cba.mit.edu/about/fab/" target="_blank">http://fab.cba.mit.edu/about/fab/</a> and you can modify  these to include an i0 interface.</strong></span></p>
+<p><strong>Kerry: </strong><span style="color: #000000; font-size: x-small;">Here&#8217;s how I think it&#8217;s supposed to work:</span><span style="font-size: x-small;"><strong></strong></span></p>
+<p><strong>1. LED </strong><span style="color: #000000; font-size: x-small;">is initially</span><span style="font-size: x-small;"><strong> on </strong></span><span style="color: #000000; font-size: x-small;">to indicate</span><span style="font-size: x-small;"><strong> no IP address<br />
+2. first </strong></span><span style="color: #000000; font-size: x-small;">button press selects </span><span style="font-size: x-small;"><strong>random IP address<br />
+3. next </strong></span><span style="color: #000000; font-size: x-small;">button press sends</span><span style="font-size: x-small;"><strong> set_destination packet </strong></span><span style="color: #000000; font-size: x-small;">(equivalent to &#8220;I&#8217;m a button&#8221;).  All other<strong> leaf nodes </strong></span><span style="font-size: x-small;"><strong>should  blink in response.</strong><br />
+</span><span style="color: #000000; font-size: x-small;"><strong> 4. Pressing </strong>a button on any  of the other leaf nodes </span><span style="color: #000000; font-size: x-small;">should <strong>&#8220;bind&#8221;</strong> it&#8217;s LED to the </span><span style="font-size: x-small;"><strong>button  pressed in 3.<br />
+5. At that point, </strong></span><span style="color: #000000; font-size: x-small;">pressing</span><span style="font-size: x-small;"><strong> the button should toggle </strong></span><span style="color: #000000; font-size: x-small;">the lamp</span><span style="font-size: x-small;"><strong> on and off.</strong></span></p>
+<p><strong>You might want to  implement a code change that, when you hold down the button for an  extended period of time (say, one second) it                                  reinitializes the leaf node.  That will save you from having to  reflash in order to reset it.</strong></p>
+<p><strong>It sounds like the  fourth node you built may have a problem.  Try swapping it with a node  that you know works and keep everything else constant             - same  hub, same cable, etc.  The simplest way to debug a situation like this  is to try and isolate the faulty component.<br />
+</strong></p>
+<p><strong><span style="font-size: small;">C.  REFERENCES</span></strong></p>
+<p><span style="font-size: small;"><strong>1. </strong></span><strong></strong><span style="font-size: small;"><strong>What&#8217;s 10? </strong><br />
+</span></p>
+<div><span style="font-size: small;"><a  href="http://cba.mit.edu/projects/I0/"> http://cba.mit.edu/projects/I0/</a><br />
+</span></div>
+<div><span style="font-size: small;"><a  href="http://cba.mit.edu/events/04.09.I0/"> http://cba.mit.edu/events/04.09.I0/</a><br />
+</span></div>
+<p><span style="font-size: small;"><a  href="http://en.wikipedia.org/wiki/Internet_0"> http://en.wikipedia.org/wiki/Internet_0</a></span><strong></strong></p>
+<p><strong> <span style="font-size: small;">2. </span><span style="font-family: verdana,arial,sans-serif;"><span style="font-size: small;">Seven principles</span></span></strong></p>
+<p><span style="font-family: verdana,arial,sans-serif;"><span style="font-size: x-small;"> The <em><a  title="Scientific American" href="http://www.mywiseowl.com/articles/Scientific_American">Scientific  American</a></em> article Krikorian co-authored (cited in &#8220;References&#8221;)  describes <a  title="7 (number)" href="http://www.mywiseowl.com/articles/7_%28number%29">seven</a> <a  title="Principle" href="http://www.mywiseowl.com/articles/Principle">principles</a> that define Internet-0.</span></span></p>
+<ol>
+<li>
+<ol>
+<li><span style="font-size: small;"><span style="font-family: verdana,arial,sans-serif;">Each Internet-0 device  uses the <a  title="Internet Protocol" href="http://www.mywiseowl.com/articles/Internet_Protocol">Internet  Protocol</a>.</span></span></li>
+<li><span style="font-size: small;"><span style="font-family: verdana,arial,sans-serif;">&#8220;Implementing the <a  title="Communications protocol" href="http://www.mywiseowl.com/articles/Communications_protocol">communications  protocols</a> jointly rather than separately&#8221; simplifies <a  id="hviy" href="http://www.mywiseowl.com/articles/Internet-0#" target="undefined"><span style="text-decoration: underline;"><span style="font-family: verdana,arial,sans-serif;"><span style="color: #0000ff;"><span style="font-size: x-small;">software</span></span></span></span></a>.</span></span></li>
+<li><span style="font-size: small;"><span style="font-family: verdana,arial,sans-serif;">Two Internet-0 devices  &#8220;do not require the existence of a third one in order to operate&#8221;.</span></span></li>
+<li><span style="font-size: small;"><span style="font-family: verdana,arial,sans-serif;">Each Internet-0 device  &#8220;is responsible for keeping track of its own identity&#8221;.</span></span></li>
+<li><span style="font-size: small;"><span style="font-family: verdana,arial,sans-serif;">&#8220;The use of big bits  allows the data that make up a packet to be represented in the same way  no mater what physical medium conveys them.&#8221;</span></span></li>
+<li><span style="font-size: small;"><span style="font-family: verdana,arial,sans-serif;">Internet-0 uses open  standards.</span></span></li>
+<li><span style="font-size: small;"><span style="font-family: verdana,arial,sans-serif;">???</span></span><strong><span style="font-size: small;"><br />
+</span></strong></li>
+</ol>
+</li>
+</ol>
+<p><strong><span style="font-size: small;"><br />
+<span style="font-size: small;">3. FabAcademy / PEOPLE</span><br />
+</span></strong><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.04/people/arikan/08networking.html"> http://fab.cba.mit.edu/classes/MIT/863.04/people/arikan/08networking.html</a> GOOD REFERENCE<br />
+</span></p>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.09/people/dcarr/networking/net.html"> http://fab.cba.mit.edu/classes/MIT/863.09/people/dcarr/networking/net.html</a> meetting<br />
+</span></div>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.09/people/florence/week11/Index.html"> http://fab.cba.mit.edu/classes/MIT/863.09/people/florence/week11/Index.html</a> CASE 1<br />
+</span></div>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.09/people/mellis/communication/index.html"> http://fab.cba.mit.edu/classes/MIT/863.09/people/mellis/communication/index.html</a> IR LED</span></div>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.09/people/john/NWK.PDF"> http://fab.cba.mit.edu/classes/MIT/863.09/people/john/NWK.PDF</a> CASE 2</span></div>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.09/people/hannah/week12.html"> http://fab.cba.mit.edu/classes/MIT/863.09/people/hannah/week12.html</a> GLOBOS</span></div>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.09/people/hannah/week11.html"> http://fab.cba.mit.edu/classes/MIT/863.09/people/hannah/week11.html</a> TWO ARDUINOS</span></div>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.09/people/lifeform/13/index.html"> http://fab.cba.mit.edu/classes/MIT/863.09/people/lifeform/13/index.html</a> RECORD</span></div>
+<p><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.07/people/simon/assign_sysFinale/MAS863_sysFINALE.html"> http://fab.cba.mit.edu/classes/MIT/863.07/people/simon/assign_sysFinale/MAS863_sysFINALE.html</a> <span style="color: #ffffff;">POWER</span><br />
+<a  href="http://fab.cba.mit.edu/classes/MIT/863.06/people/suelin/project10.html"> http://fab.cba.mit.edu/classes/MIT/863.06/people/suelin/project10.html</a> CASE 3<br />
+<a  href="http://fab.cba.mit.edu/classes/MIT/863.06/people/vanessa/WEB/week10.htm"> http://fab.cba.mit.edu/classes/MIT/863.06/people/vanessa/WEB/week10.htm</a>CASE  4<br />
+</span></p>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.06/people/matt/eleven.html"> http://fab.cba.mit.edu/classes/MIT/863.06/people/matt/eleven.html</a> CASE 5<br />
+</span></div>
+<div><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.04/people/harrison/"> http://fab.cba.mit.edu/classes/MIT/863.04/people/harrison/</a> CASE 6<br />
+</span></div>
+<p><span style="font-size: small;"><a  href="http://fab.cba.mit.edu/classes/MIT/863.04/people/jerry/main.html"> http://fab.cba.mit.edu/classes/MIT/863.04/people/jerry/main.html</a> CASE 7</span><strong><span style="font-size: small;"><br />
+</span></strong></p>
+<h1 id="zlhg"><strong><strong><span style="font-family: arial,helvetica,sans-serif;"><strong><span style="font-size: medium;"> 3. Resources</span></strong></span></strong></strong></h1>
+<h1 id="zlhg"><span style="font-family: arial,helvetica,sans-serif;"><span style="font-size: small;"> First 5 Minutes  Programming with Python   <a  href="http://www.youtube.com/watch?v=-_E7xWLvjxc&#038;feature=related">http://www.youtube.com/watch?v=-_E7xWLvjxc&amp;feature=related</a></span></span></h1>
+<p><span style="color: #000000; font-size: small;"><span style="font-family: arial,helvetica,sans-serif;"> Programming Bits and Atoms </span></span><span style="font-size: small;"><span style="font-family: verdana;"><span style="color: #000000;"><a  href="http://www.youtube.com/watch?v=w8ubXgXM7kk">http://www.youtube.com/watch?v=w8ubXgXM7kk</a></span></span></span><strong><span style="font-size: small;"><br />
+</span></strong><span style="font-size: small;"><span style="font-size: small;">PY   TUTORIAL </span><a  href="http://fab.cba.mit.edu/classes/MIT/863.07/people/stephen/tutorialPython.pdf">http://fab.cba.mit.edu/classes/MIT/863.07/people/stephen/tutorialPython.pdf</a><br />
+</span><strong><span style="font-size: small;"><br />
+<span style="font-size: small;">D. COLABORATORS</span></span></strong></p>
+<p><strong></strong><span style="font-size: small;">Tomas Diez<br />
+<span style="font-size: small;"> Shawn  P.  Wallace</span><br />
+Paul Giron<br />
+Victor Freundt<br />
+Kerry<br />
+Sussana Tesconi<br />
+Victor Vina<br />
+Beno Juarez</span><strong><span style="font-size: small;"><br />
+</span></strong></p>
+<div class="post_author_plugin"><span id="post_author_author">Written by:  <a  href="http://fabacademy.org/Barcelona/author/beno-juarez/" title="More about Beno Juarez ">Beno Juarez</a> </span><span id="post_author_create">on April 14, 2010.</span></div></div>
+
+<div class="post-footer">April 14th, 2010 |  Category: <a href="http://fabacademy.org/Barcelona/category/courses/12-embedded-networking-and-communications/" title="View all posts in 12. embedded networking and communications" rel="category tag">12. embedded networking and communications</a> </div>
+</div><!-- / Post -->						
+	
+	
+
+
+			<!-- .... -->
+
+	
+
+
+
+			
+		<!-- Comment Form -->
+		<div id="respond">
+		
+		<a name="commentform"></a><!-- named anchor for skip links -->
+		<h3 class="reply">Leave a Reply</h3>
+	
+		<div id="cancel-comment-reply">
+		<a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2010/04/embedded-networking-and-communications-2/#respond" style="display:none;">Cancel</a>		</div>
+	
+		<form action="http://fabacademy.org/blog/wp-comments-post.php"
+        method="post" id="commentform">
+
+				
+			<p>
+			<input class="text author" type="text" name="author" id="author" value="" size="30" tabindex="1" />&nbsp;
+			<label for="author"> <strong>
+            Name </strong>(required)</label>
+			</p>
+
+			<p>
+			<input class="text email" type="text" name="email" id="email" value="" size="30" tabindex="2" />&nbsp;
+			<label for="email"> <strong>
+            Mail</strong> (will not be published) (required)</label>
+			</p>
+
+			<p>
+			<input class="text url" type="text" name="url" id="url" value="" size="30" tabindex="3" />&nbsp;
+			<label for="url">
+            Website</label>
+			</p>
+			
+			
+						<p class="thesetags clearfix">
+                You can use <a class="xhtmltags" href="#" onclick="return false;">these HTML tags</a></p>
+				<div class="xhtml-tags"><p><code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt;                 </code></p></div>
+
+			
+		<!-- Comment Textarea -->
+		<p><textarea name="comment" id="comment" rows="10" cols="10" tabindex="4"></textarea></p>
+				
+		<!-- Submit -->
+		<p><input name="submit" type="submit" class="button" id="submit"
+        tabindex="5" value="Submit Comment" />
+		<input type='hidden' name='comment_post_ID' value='1132' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+		
+		</form>
+		</div><!-- / respond -->
+		<!-- / Comment Form -->
+
+		
+
+		
+			
+
+
+
+</td>
+<!-- / Main Column -->
+
+
+<!-- Right Sidebar -->
+<td id="right">
+
+			<div id="authors-2" class="widget widget_authors">			<div class="widget-title"><h3>Authors</h3></div>			<ul>
+				<li><a href="http://fabacademy.org/Barcelona/author/anthony-belyaev/" title="Posts by Anthony Belyaev">Anthony Belyaev</a></li>
+<li><a href="http://fabacademy.org/Barcelona/author/aysheshim-tilahun/" title="Posts by Aysheshim Tilahun">Aysheshim Tilahun</a></li>
+<li><a href="http://fabacademy.org/Barcelona/author/beno-juarez/" title="Posts by Beno Juarez">Beno Juarez</a></li>
+<li><a href="http://fabacademy.org/Barcelona/author/bereketnesh-girma/" title="Posts by Bereketnesh Girma">Bereketnesh Girma</a></li>
+<li><a href="http://fabacademy.org/Barcelona/author/melat-asefa/" title="Posts by Melat Assefa">Melat Assefa</a></li>
+<li><a href="http://fabacademy.org/Barcelona/author/susanna-tesconi/" title="Posts by Susanna Tesconi">Susanna Tesconi</a></li>
+<li><a href="http://fabacademy.org/Barcelona/author/victor-freundt/" title="Posts by Victor Freundt">Victor Freundt</a></li>
+			</ul>
+					</div>	<div id="categories-3" class="widget widget_categories"><div class="widget-title"><h3>Fab Academy</h3></div>		<ul>
+	<li class="cat-item cat-item-3"><a href="http://fabacademy.org/Barcelona/category/courses/" title="Fab Academy Courses">Courses</a>
+<ul class='children'>
+	<li class="cat-item cat-item-4"><a href="http://fabacademy.org/Barcelona/category/courses/1-digital-fabrication-principles-and-practices/" title="View all posts filed under 1. digital fabrication principles and practices">1. digital fabrication principles and practices</a>
+</li>
+	<li class="cat-item cat-item-68"><a href="http://fabacademy.org/Barcelona/category/courses/10-sensors-actuators-and-displays/" title="View all posts filed under 10. sensors, actuators, and displays">10. sensors, actuators, and displays</a>
+</li>
+	<li class="cat-item cat-item-81"><a href="http://fabacademy.org/Barcelona/category/courses/11-interface-application-programming/" title="View all posts filed under 11.Interface application programming">11.Interface application programming</a>
+</li>
+	<li class="cat-item cat-item-82"><a href="http://fabacademy.org/Barcelona/category/courses/12-embedded-networking-and-communications/" title="View all posts filed under 12. embedded networking and communications">12. embedded networking and communications</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://fabacademy.org/Barcelona/category/courses/2-computer-aided-design-manufacturing-and-modeling/" title="View all posts filed under 2. computer-aided design, manufacturing, and modeling">2. computer-aided design, manufacturing, and modeling</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://fabacademy.org/Barcelona/category/courses/3-computer-controlled-cutting/" title="View all posts filed under 3. computer-controlled cutting">3. computer-controlled cutting</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://fabacademy.org/Barcelona/category/courses/4-electronics-design-and-production/" title="View all posts filed under 4. electronics design and production">4. electronics design and production</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://fabacademy.org/Barcelona/category/courses/5-computer-controlled-machining/" title="View all posts filed under 5. computer-controlled machining">5. computer-controlled machining</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://fabacademy.org/Barcelona/category/courses/6-embedded-programming/" title="View all posts filed under 6. embedded programming">6. embedded programming</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://fabacademy.org/Barcelona/category/courses/7-3d-molding-and-casting/" title="View all posts filed under 7. 3D molding and casting">7. 3D molding and casting</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://fabacademy.org/Barcelona/category/courses/9-3d-scanning-and-printing/" title="View all posts filed under 9. 3D scanning and printing">9. 3D scanning and printing</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://fabacademy.org/Barcelona/category/final-project/" title="View all posts filed under Final Project">Final Project</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://fabacademy.org/Barcelona/category/tutorials/" title="View all posts filed under Tutorials">Tutorials</a>
+<ul class='children'>
+	<li class="cat-item cat-item-15"><a href="http://fabacademy.org/Barcelona/category/tutorials/3d-printing/" title="View all posts filed under 3D Printing">3D Printing</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://fabacademy.org/Barcelona/category/tutorials/laser-cutting/" title="View all posts filed under Laser Cutting">Laser Cutting</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://fabacademy.org/Barcelona/category/tutorials/pcb-fabrication/" title="View all posts filed under PCB Fabrication">PCB Fabrication</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://fabacademy.org/Barcelona/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+</div><div id="meta-3" class="widget widget_meta"><div class="widget-title"><h3>Meta</h3></div>			<ul>
+						<li><a href="http://fabacademy.org/Barcelona/wp-login.php">Log in</a></li>
+			<li><a href="http://fabacademy.org/Barcelona/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://fabacademy.org/Barcelona/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</div>
+</td>
+<!-- / Right Sidebar -->
+
+</tr>
+<!-- / Main Body -->
+<tr>
+
+<!-- Footer -->
+<td id="footer" colspan="3">
+
+    <p>
+    Copyright &copy; 2010 <a href="http://fabacademy.org/Barcelona/">Fab Academy Barcelona</a> - All Rights Reserved<br />Powered by <a href="http://www.sorben.org/really-static/">really static WordPress</a> &amp; the <a href="http://wordpress.bytesforall.com/" title="Customizable WordPress themes">Atahualpa Theme</a> by <a href="http://www.bytesforall.com/" title="BFA Webdesign">BytesForAll</a>. Discuss on our <a href="http://forum.bytesforall.com/" title="Atahualpa &amp; WordPress">WP Forum</a>    </p>
+    
+    
+    <script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {
+	next: "Next &gt;",
+	prev: "&lt; Prev",
+	image: "Image",
+	of: "of",
+	close: "Close"
+};
+try{convertEntities(thickboxL10n);}catch(e){};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://fabacademy.org/blog/wp-includes/js/thickbox/thickbox.js?ver=3.1-20091124'></script>
+
+<script type="text/javascript">
+var tb_pathToImage = "http://fabacademy.org/blog/wp-includes/js/thickbox/loadingAnimation.gif";
+var tb_closeImage = "http://fabacademy.org/blog/wp-includes/js/thickbox/tb-close.png";
+</script>
+
+</td>
+<!-- / Footer -->
+
+</tr>
+</table><!-- / layout -->
+</div><!-- / container -->
+</div><!-- / wrapper -->
+</body>
+</html>

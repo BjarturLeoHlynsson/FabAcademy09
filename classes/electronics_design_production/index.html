@@ -1,0 +1,165 @@
+<html>
+<head>
+<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+<body link="black" alink="black" vlink="black">
+<font face="bitstream vera sans,arial,helvetica,sans-serif">
+<div style="margin-left: 5%; margin-right: 5%">
+<center>
+<img src=../../images/logo.jpg width="20%"><br>
+<br>
+<font style="font-size:125%; color:#bb0000">
+<b>The Fab Academy</b><br>
+</font>
+
+<br>
+<div style="font-size:125%">
+<b><i>Electronics Design and Production</i></b>
+</div>
+</center>
+
+<div style="font-size:100%;margin-left:2.5%">
+
+<pre>
+<b>PCB design</b>
+   <a href=http://www.cadsoftusa.com/>Eagle</a>
+      <a href=http://fab.cba.mit.edu/about/fab/dist/ng.lbr>ng.lbr</a>
+   <a href=http://fab.cba.mit.edu/about/fab/dist/cad.py>cad.py</a>
+      <a href=http://fab.cba.mit.edu/about/fab/dist/pcb.cad>pcb.cad</a>
+
+<b>PCB fabrication</b>
+   etching
+      ferric chloride, cupric chloride, ammonium/sodium persulfate
+   <a href=http://fab.cba.mit.edu/content/processes/PCB/modela.html>machining</a>
+      <a href=http://www.carbidedepot.com/detail.aspx?ID=70711>0.010</a>
+      <a href=http://www.carbidedepot.com/detail.aspx?ID=23253>1/64</a>
+      <a href=http://www.carbidedepot.com/detail.aspx?ID=23254>1/32</a>
+   <a href=http://fab.cba.mit.edu/content/processes/PCB/vinylcut.html>cutting</a>
+   printing
+   plating
+   <a href=http://portal.acm.org/citation.cfm?id=1011448>sewing</a>
+
+<b>PCB materials</b>
+   rigid
+      FR4 (epoxy glass)
+      <a href=http://www.globallaminates.com/pcbservices.html>FR1</a> (phenolic paper)
+   flex
+      <a href=http://www2.dupont.com/Kapton/en_US/>Kapton</a>
+      <a href=http://solutions.3m.com/wps/portal/3M/en_US/3MElectrical/Home/ProductsServices/Products/?PC_7_RJH9U5230GE3E02LECIE20OES1_nid=M9M7J7SW5Mbe2R3TDRZMR3gl>#1 epoxy film</a>, <a href=http://solutions.3m.com/wps/portal/3M/en_US/3MElectrical/Home/ProductsServices/Products/?PC_7_RJH9U5230GE3E02LECIE20OES1_nid=781VJDMC6Lbe870G8G819Fgl>#1126 copper tape</a>
+   high-frequency
+      teflon
+      glass
+   copper
+      0.5 oz: 17.5 um
+      1.0 oz: 35 um
+      2.0 oz: 70 um
+
+<b>board houses</b>
+   <A href=http://www.apcircuits.com/>AP Circuits</a>, <a href=http://www.4pcb.com/>Advanced</a>, <a href=http://www.protoexpress.com/>Sierra</a>, <a href=http://www.goldphoenixpcb.biz/>Gold Phoenix</a>
+   design rules
+      width/spacing (15, 5 mils)
+   layers
+      1, 1.5, 2, 4, N
+   solder mask, silk screen
+   vias
+      blind, buried
+
+<a href=http://www.digikey.com/><b>components</b></a>
+   through-hole
+   surface-mount
+   chip-scale
+
+<b>assembly</b>
+   solder
+      eutectic
+      wetting
+      flux
+      wire, paste, bar
+      <a href=http://www.rohs.eu>ROHS</a>
+   desoldering
+   reflow
+   wave
+   stuffing
+      tacking down parts
+      bottom to top, inside to outside
+      fumes
+      washing
+   <a href=http://www.apsgold.com/l-series.html>pick-and-place</a>
+   encapsulation
+
+<b>in-circuit programming</b>
+   <a href=http://www.atmel.com/dyn/Products/tools_card.asp?tool_id=2725>AVR Studio</a>
+   <a href=http://savannah.nongnu.org/projects/avrdude/>avrdude</a>
+      <a href=http://winavr.sourceforge.net/>WinAVR</a>
+      <a href=http://www.obdev.at/products/crosspack/index.html>CrossPack</a>
+   <a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=ATAVRDRAGON-ND>Dragon</a>
+      avrdude -p t45 -P usb -c dragon_isp -U flash:w:file.hex 
+   header plug <-> DB25M parallel (bsd) cable (wire side view):
+      avrdude -p t45 -c bsd -U flash:w:file.hex
+   <tt>
+       plug                 DB25
+    MISO (1)   ------------- 10
+       V   (2) ------------- no connection
+ --  SCK (3)   --- cable --- 8
+ -- MOSI   (4) - direction - 9
+   RESET (5)   ------------- 7
+     GND   (6) ------------- 18
+
+   plug               1   4   3   5     6
+   DB25  13  12  11  10   9   8   7   6   5   4   3   2   1
+   DB25    25  24  23  22  21  20  19  18  17  16  15  14
+   </tt>
+   header plug <-> DB9F serial (dasa) cable (wire side view):
+      avrdude -p t45 -P /dev/ttyUSB0 -c dasa -U flash:w:file.hex
+   <tt>
+       plug                 DB9
+    MISO (1)   ------------- 8
+       V   (2) ------------- no connection
+ --  SCK (3)   --- cable --- 4
+ -- MOSI   (4) - direction - 3
+   RESET (5)   ------------- 7
+     GND   (6) ------------- 5
+
+   plug         5 4 1 3   6        
+         DCD  Rx  Tx DTR GND
+           DSR RTS CTS  RI
+   DB9    1   2   3   4   5
+   DB9      6   7   8   9
+   </tt>
+   serial programming voltage limiter: <A href=http://fab.cba.mit.edu/about/fab/dist/dasa.cad>dasa.cad</A>
+
+<b>connectors</b>
+   IDC
+   <a href=http://www.mouser.com/ProductDetail/FCI/95278-101A06LF/?qs=AwD%252bQufC0y6awc4Pvf/c%252bg==>header</a>, <a href=http://www.mouser.com/ProductDetail/FCI/71600-006LF/?qs=yJYkLTYh5760qKJxwPD6hA==>plug</a>
+   <a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=HFP09H-ND>DB9</a>, <a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=HMP25H-ND>DB25</a>
+
+<b>RS232</b>
+   serial header plug <-> DB9F cable (wire side view):
+   <tt>
+      plug                 DB9
+    GND (1)   ------------- 5
+ -- DTR   (2) --- cable --- 4
+ --  Tx (3)   - direction - 3
+     Rx   (4) ------------- 2
+
+   plug      4   3   2   1
+        DCD  Rx  Tx DTR GND
+          DSR RTS CTS  RI
+   DB9   1   2   3   4   5
+   DB9     6   7   8   9
+
+   <a href=http://pyserial.sourceforge.net/>pySerial</a>
+   <a href=http://fab.cba.mit.edu/about/fab/hello/python/rx.py>rx.py</a>: serial receive, DTR power
+      python rx.py /dev/ttyUSB0 9600
+   <a href=http://fab.cba.mit.edu/about/fab/hello/python/term.py>term.py</a>: serial transmit/receive, DTR power
+      python term.py /dev/ttyUSB0 9600
+
+<b>assignment</b>
+   make and program the serial <a href=http://fab.cba.mit.edu/about/fab>hello-world</a>:
+      <a href=http://fab.cba.mit.edu/about/fab/hello/serial/hello.serial.45.cad>hello.serial.45.cad</a>
+      <a href=http://fab.cba.mit.edu/about/fab/hello/serial/hello.serial.45.asm>hello.serial.45.asm</a>
+      <a href=http://fab.cba.mit.edu/about/fab/hello/serial/hello.serial.45.hex>hello.serial.45.hex</a>
+   remember DTR power
+
+<b>gurus</b>
+

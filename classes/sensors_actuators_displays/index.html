@@ -1,0 +1,140 @@
+<html>
+<head>
+<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+<body link="black" alink="black" vlink="black">
+<font face="bitstream vera sans,arial,helvetica,sans-serif">
+<div style="margin-left: 5%; margin-right: 5%">
+<center>
+<img src=../../images/logo.jpg width="20%"><br>
+<br>
+<font style="font-size:125%; color:#bb0000">
+<b>The Fab Academy</b><br>
+</font>
+
+<br>
+<div style="font-size:125%">
+<b><i>Sensors, Actuators, and Displays</i></b>
+</div>
+</center>
+
+<div style="font-size:100%;margin-left:2.5%">
+
+<pre>
+
+<font face="bitstream vera sans,arial,helvetica,sans-serif"><b>electrical safety</b>
+   ~1 mA: OK
+   ~10 mA: shock, contraction
+   ~100 mA: fibrillation
+   body: M ohm external, k ohm internal
+   skin depth: ~1/f^(1/2)
+   dielectric breakdown: ~kV/mm
+
+<a href="http://fab.cba.mit.edu/about/fab/inv.html"><b>inventory</b></a>
+
+<b><a href="http://www.atmel.com/dyn/resources/prod_documents/doc2586.pdf">pin driver, comparator, A/D, PWM</a></b>
+
+<b><a href="through-hole.cad">through-hole</a></b>
+</pre>
+
+<div style="font-size:125%"><center><i>Sensors</i></center></div>
+
+<pre>
+<b>switch</b>
+   <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=SW262CT-ND">button</a> <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=401-2012-1-ND">slide</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/button/hello.button.45.cad">hello.button.45.cad</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/button/hello.button.45.asm">hello.button.45.asm</a>
+<b>light</b>
+   <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=365-1157-1-ND">visible</a> <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=365-1155-1-ND">IR</a> phototransistor
+   <a href="http://fab.cba.mit.edu/about/fab/hello/light/hello.light.45.cad">hello.light.45.cad</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/light/hello.light.45.asm">hello.light.45.asm</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/light/hello.light.45.py">hello.light.45.py</a>
+   <a href="http://www.sparkfun.com/commerce/product_info.php?products_id=8618">color</a>
+<b>temperature</b>
+   <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=235-1109-1-ND">NTC</a> thermistor
+   <a href="http://fab.cba.mit.edu/about/fab/hello/temp/hello.temp.45.cad">hello.temp.45.cad</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/temp/hello.temp.45.asm">hello.temp.45.asm</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/temp/hello.temp.45.py">hello.temp.45.py</a>
+   bridges
+<b>step response</b>
+   resistance, capacitance, inductance, position, pressure, proximity, tilt, acceleration, humidity, ...
+   <a href="http://fab.cba.mit.edu/about/fab/hello/step/hello.step.45.cad">hello.step.45.cad</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/step/hello.step.45.asm">hello.step.45.asm</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/step/hello.step.45.py">hello.step.45.py</a>
+<b>sound</b>
+   <a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?vendor=0&keywords=102-1727-ND>microphone</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/mic/hello.mic.44.cad">hello.mic.44.cad</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/mic/hello.mic.44.asm">hello.mic.44.asm</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/mic/hello.mic.44.py">hello.mic.44.py</a>
+   <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=AD8605ARTZREEL7CT-ND">op-amp</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/mic/hello.mic.44.op_amp.cad">hello.mic.44.op_amp.cad</a>
+<b>sonar</b>
+   <a href="http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&amp;storeId=10001&amp;catalogId=10001&amp;productId=139492">ultrasonic</a> transmitter, receiver
+<b>vibration</b>
+   <a href="http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&amp;storeId=10001&amp;catalogId=10001&amp;productId=1956784">piezo</a>
+<b>magnetic field</b>
+   <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=620-1023-1-ND">Hall effect</a>
+<b>acceleration, orientation</b>
+   <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=MMA1270EG-ND">accelerometer</a>
+<b>motion</b>
+   <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail?name=IRA-E700ST0-ND">pyroelectric</a>
+<b>force, loading</b>
+   <a href="http://www.omega.com/toc_asp/subsectionSC.asp?subsection=E02&amp;book=Pressure">strain gage</a>
+<b>image</b>
+   <a href="http://www.sparkfun.com/commerce/product_info.php?products_id=8667">CMOS camera</a>
+</pre>
+
+<div style="font-size:125%"><center><i>Displays</i></center></div>
+
+<pre>
+<b>
+<a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=365-1212-1-ND>RGB</a> LED</b>
+   PWM
+   <a href="http://fab.cba.mit.edu/about/fab/hello/RGB/hello.RGB.45.cad">hello.RGB.45.cad</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/RGB/hello.RGB.45.asm">hello.RGB.45.asm</a>
+<b><a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=160-1167-1-ND>LED</a> array</b>
+   Charlieplexing
+   <a href="http://fab.cba.mit.edu/about/fab/hello/array/hello.array.44.cad">hello.array.44.cad</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/array/hello.array.44.2.cad">hello.array.44.2.cad</a> (2 layer vinylcutter)
+   <a href="http://fab.cba.mit.edu/about/fab/hello/array/hello.array.44.asm">hello.array.44.asm</a> 
+<b><a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?vendor=0&keywords=67-1781-N>LCD</a></b>
+   44780
+   <a href="http://fab.cba.mit.edu/about/fab/hello/LCD/hello.LCD.44.cad">hello.LCD.44.cad</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/LCD/hello.LCD.44.asm">hello.LCD.44.asm</a> 
+<b><a href=http://fab.cba.mit.edu/classes/MIT/863.09/people/cranor/How_to_Make_(Almost)_Anything/David_Cranor/Entries/2009/11/16_Week_9__Output_Devices.html>video</a></b>
+   <a href="RS-170.jpg">RS170</a>, NTSC, PAL, SECAM
+   <a href="http://fab.cba.mit.edu/about/fab/hello/video/hello.video.44.cad">hello.video.44.cad</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/video/hello.video.44.asm">hello.video.44.asm</a> 
+</pre>
+
+<div style="font-size:125%"><center><i>Actuators</i></center></div>
+
+<pre>
+<b><a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?vendor=0&keywords=GC0351M-ND>speaker</a></b>
+   <a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=NDS355ANCT-ND>MOSFET</a>
+   <a href="http://fab.cba.mit.edu/about/fab/hello/speaker/hello.speaker.45.cad">hello.speaker.45.cad</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/speaker/hello.speaker.45.pwm.asm">hello.speaker.45.pwm.asm</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/speaker/hello.speaker.45.wave.asm">hello.speaker.45.wave.asm</a> 
+<b><a href=http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&productId=1810099&catalogId=10001&freeText=1810099&app.products.maxperpage=15&storeId=10001&search_type=jamecoall&ddkey=http:StoreCatalogDrillDownView>DC motor</a></b>
+   <a href=http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=ZXMHC3A01T8CT-ND>H-bridge</a>
+   torque, power, efficiency, gearing
+   <a href="http://fab.cba.mit.edu/about/fab/hello/H-bridge/hello.H-bridge.44.cad">hello.H-bridge.44.cad</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/H-bridge/hello.H-bridge.44.asm">hello.H-bridge.44.asm</a> 
+<b><a href=http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&productId=171601&catalogId=10001&freeText=171601&app.products.maxperpage=15&storeId=10001&search_type=jamecoall&ddkey=http:StoreCatalogDrillDownView>stepper motor</a></b>
+   full, wave, half-, micro- stepping
+   unipolar, bipolar
+   <a href="http://fab.cba.mit.edu/about/fab/hello/stepper/hello.stepper.44.cad">hello.stepper.44.cad</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/stepper/hello.stepper.44.full.asm">hello.stepper.44.full.asm</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/stepper/hello.stepper.44.wave.asm">hello.stepper.44.wave.asm</a> 
+   <a href="http://fab.cba.mit.edu/about/fab/hello/stepper/hello.stepper.44.half.asm">hello.stepper.44.half.asm</a> 
+<b>motor control</b>
+   <a href="http://www.rohm.com/products/lsi/motor/">Rohm</a>
+   <a href="http://www.allegromicro.com/en/Products/Categories/ICs/motor.asp">Allegro</a>
+   <a href="http://www.freescale.com/webapp/sps/site/taxonomy.jsp?nodeId=0143597996">Freescale</a>
+<b><a href="http://www.jameco.com/webapp/wcs/stores/servlet/StoreCatalogDrillDownView?langId=-1&amp;storeId=10001&amp;catalogId=10001&amp;categoryName=cat_7545&amp;subCategoryName=Robotics%20/%20Motors%20/%20Servos,%20Analog&amp;category=754530&amp;refine=1&amp;position=1&amp;history=bg9tjul9%7CsubCategoryName%7ERobotics%5Ecategory%7E75%5EcategoryName%7Ecategory_root%5EprodPage%7E15%5Epage%7ESEARCH%252BNAV@333fnygn%7Ccategory%7E7545%5EcategoryName%7Ecat_75%5Eposition%7E1%5Erefine%7E1%5EsubCategoryName%7ERobotics+%252F+Motors%5EprodPage%7E15%5Epage%7ESEARCH%252BNAV">servos</a></b>
+</pre>
+
+<div style="font-size:125%"><center><i>Assignment</i></center></div>
+
+<pre>
+interface an input device with an output device

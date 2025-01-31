@@ -1,0 +1,66 @@
+body {
+margin: 0;
+padding: 0;
+font-family: Georgia, Times, "Times New Roman", serif;
+color: black;
+width: 800px;
+border-right: 0px solid black;
+}
+#kop {
+background-color: #666;
+color: white;
+font-size: 19px;
+border-bottom: 1px solid #333;
+}
+#navigatie {
+ float: left;
+ font-family: verdana, Helvetica, Arial, sans-serif;
+ font-size: 14px;
+ font-weight: bold;
+ width: 12em;
+ border-right: 1px solid #666;
+ padding: 0;
+ margin-top: 50px;
+ margin-right: 40px;
+ margin-bottom: 1em;
+ background-color: #9cc;
+ color: #333;
+}
+
+#navigatie ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+#navigatie ul li {
+ margin: 0;
+ border-top: 1px solid #003;
+}
+
+#navigatie ul li a {
+ display: block;
+ padding: 2px 2px 2px 4px;
+ border-left: 10px solid #666;
+ border-right: 1px solid #69c;
+ border-bottom: 1px solid #666;
+ background-color: #333;
+ color: #fff;
+ text-decoration: nonep
+}
+
+html>body #navigatie ul li a {
+ width: auto;
+}
+
+#navigatie ul li a:hover {
+ border-left: 10px solid #333;
+ border-right: 1px solid #69c;
+ border-bottom: 1px solid #333;
+ background-color: #666;
+ color: #fff;
+}
+#inhoud {
+padding-top: 1em;
+margin: 0 2em 0 200px;
+}

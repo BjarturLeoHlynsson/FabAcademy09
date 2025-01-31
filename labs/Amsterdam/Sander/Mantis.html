@@ -1,0 +1,872 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mantis assembling Part 1 | Fablab Amsterdam</title>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" 
+href="http://amsterdam.fablab.nl/sites/all/themes/fablab/favicon.ico" 
+type="image/x-icon">
+    <link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/views.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/node.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/defaults.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/system.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/system-menus.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/user.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/content-module.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/date.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/datepicker.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/timeentry.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/nice_menus.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/nice_menus_default.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/simplenews.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/tagadelic.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/calendar.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/farbtastic.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/fieldgroup.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/addtoany.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="Mantis_files/printlinks.css">
+    <script type="text/javascript" src="Mantis_files/js_bda3369feebd19dbe5166a1972c61c71.js"></script><script src="Mantis_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/" });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) { $(document).ready(function() { $('body').addClass('yui-skin-sam'); } ); };
+//--><!]]>
+</script>
+        <style type="text/css" media="all">@import "/sites/all/themes/fablab/basestyle.css";</style>
+    <script type="text/javascript"> </script>
+  <style type="text/css">.a2a_menu *{margin:0;padding:0}.a2a_menu table{border-collapse:collapse;border-spacing:0;width:auto}.a2a_menu table,.a2a_menu tbody,.a2a_menu td,.a2a_menu tr{border:0;margin:0;padding:0;background-color:transparent;_background-color:#FFF}.a2a_menu td{vertical-align:top}.a2a_menu,.a2a_menu_border{display:none;z-index:9999999;position:absolute;margin:0;padding:0;-webkit-border-radius:16px;-moz-border-radius:16px}.a2a_menu{display:none;direction:ltr;min-width:200px;background-color:#FFF;font:12px Arial,Helvetica,sans-serif;color:#000;line-height:12px;border:1px solid #CCC;vertical-align:baseline;padding:8px;overflow:hidden}.a2a_menu_border{border:1px solid #EEE;background-color:#EEE;opacity:.6;filter:alpha(opacity=60)}.a2a_menu a,#a2a_hist_list a,.a2a_tabs div{color:#00F;text-decoration:none;font:12px Arial,Helvetica,sans-serif;line-height:12px;height:auto;width:auto;clear:none;outline:none;-moz-outline:none;-webkit-border-radius:8px;-moz-border-radius:8px}.a2a_menu a:visited,#a2a_hist_list a:visited{color:#00F;clear:right}.a2a_menu a:hover,.a2a_menu a:active,.a2a_menu a.a2a_i:focus,.a2a_tabs div:hover{color:#000;border:1px solid #CCC;background-color:#EEE;text-decoration:none}.a2a_menu img,.a2a_menu a img,.a2a_img{width:16px;height:16px;border:0;padding:0;background:url(http://static.addtoany.com/menu/icons_19.png) no-repeat}.a2a_menu img{display:inline;vertical-align:middle;margin:0 4px 2px 0}.a2a_menu img.a2a_i_find{position:absolute;left:5px;top:2px}#a2a_menu_container{display:inline-block}#a2a_menu_container{_display:inline}.a2a_menu_title_container{margin-bottom:2px;padding:6px}.a2a_menu_find_container{position:relative;text-align:left;margin:4px 1px;padding:1px 24px 1px 0;border:1px solid #CCC;-webkit-border-radius:8px;-moz-border-radius:8px}input.a2a_menu_title{display:block;color:#000;background-color:#FFF;border:0;margin:0;padding:0;width:100%}input.a2a_menu_find{display:block;position:relative;left:24px;color:#000;font-size:12px;padding:2px 0;outline:0;border:0;background-color:transparent;_background-color:#FFF;width:250px}table.a2a_cols_container{width:100%}.a2a_cols{width:50%}.a2a_clear{clear:both} .a2a_default_style a{float:left;padding:0 2px}.a2a_default_style .a2a_img{display:block;line-height:16px;overflow:hidden}.a2a_default_style .a2a_img,.a2a_default_style .a2a_dd{float:left}.a2a_kit a{cursor:pointer}.a2a_hr{margin:0 12px 12px;padding:1px;background:none;background-color:#EEE}.a2a_nowrap{white-space:nowrap}.a2a_note{margin:0 auto;padding:9px;font-size:11px;text-align:center}.a2a_note .a2a_note_note{margin:0 0 9px;color:#000}.a2a_wide a{display:block;margin-top:3px;border:1px solid #EEE;padding:3px;text-align:center}.a2a_tabs{float:left;margin:0 0 3px}.a2a_tabs a,.a2a_tabs div{margin:1px;background-color:#EEE;border:1px solid #EEE;font-size:11px;padding:6px 12px 2px;white-space:nowrap}.a2a_tabs a img,.a2a_tabs div img{margin-bottom:4px}.a2a_tabs a,.a2a_tabs a:visited,.a2a_tabs a:hover,.a2a_tabs div,.a2a_tabs div:hover{cursor:pointer;border-bottom:1px solid #EEE;color:#000;-webkit-border-bottom-left-radius:0;-moz-border-radius-bottomleft:0;-webkit-border-bottom-right-radius:0;-moz-border-radius-bottomright:0}a.a2a_tab_selected,a.a2a_tab_selected:visited,a.a2a_tab_selected:hover,a.a2a_tab_selected:active,a.a2a_tab_selected:focus,div.a2a_tab_selected,div.a2a_tab_selected:hover{color:#00F;background-color:#FFF;border:1px solid #CCC;border-bottom:1px solid #FFF}a.a2a_i{display:block;padding:4px 6px 2px;border:1px solid #FFF;text-align:left;white-space:nowrap}a.a2a_sss{font-weight:700}a.a2a_ind{display:inline;margin:0;padding:0}a.a2a_emailer{display:inline-block;border:1px solid #EEE;margin:0 9px;text-align:center}a.a2a_menu_show_more_less{margin:4px 0 8px;padding:0}a.a2a_menu_show_more_less img{vertical-align:baseline;height:12px}a.a2a_menu_powered_by,a.a2a_menu_powered_by:visited{background-color:#EEE;font-size:9px;color:#999}.a2a_i_a2a{background-position:0 0!important}.a2a_i_agregator{background-position:0 -17px!important}.a2a_i_aiderss{background-position:0 -34px!important}.a2a_i_aim{background-position:0 -51px!important}.a2a_i_allvoices{background-position:0 -68px!important}.a2a_i_amazon{background-position:0 -85px!important}.a2a_i_aol{background-position:0 -102px!important}.a2a_i_apple_mail{background-position:0 -119px!important}.a2a_i_arto{background-position:0 -136px!important}.a2a_i_ask{background-position:0 -153px!important}.a2a_i_avantgo{background-position:0 -170px!important}.a2a_i_backflip{background-position:0 -187px!important}.a2a_i_bebo{background-position:0 -204px!important}.a2a_i_bibsonomy{background-position:0 -221px!important}.a2a_i_bitty{background-position:0 -238px!important}.a2a_i_blinklist{background-position:0 -255px!important}.a2a_i_blogger{background-position:0 -272px!important}.a2a_i_bloglines{background-position:0 -289px!important}.a2a_i_blogmarks{background-position:0 -306px!important}.a2a_i_blogrovr{background-position:0 -323px!important}.a2a_i_bookmark{background-position:0 -340px!important}.a2a_i_bookmarks_fr{background-position:0 -357px!important}.a2a_i_box{background-position:0 -374px!important}.a2a_i_buddymarks{background-position:0 -391px!important}.a2a_i_buzmob{background-position:0 -408px!important}.a2a_i_buzz{background-position:0 -425px!important}.a2a_i_bzzster{background-position:0 -442px!important}.a2a_i_care2{background-position:0 -459px!important}.a2a_i_chrome{background-position:0 -476px!important}.a2a_i_citeulike{background-position:0 -493px!important}.a2a_i_clear{background-position:0 -510px!important}.a2a_i_connotea{background-position:0 -527px!important}.a2a_i_current{background-position:0 -544px!important}.a2a_i_dailyme{background-position:0 -561px!important}.a2a_i_dailyrotation{background-position:0 -578px!important}.a2a_i_darr{background-position:0 -595px!important}.a2a_i_darr_wt{background-position:0 -612px!important}.a2a_i_default{background-position:0 -629px!important}.a2a_i_delicious{background-position:0 -646px!important}.a2a_i_designfloat{background-position:0 -663px!important}.a2a_i_digg{background-position:0 -680px!important}.a2a_i_diglog{background-position:0 -697px!important}.a2a_i_diigo{background-position:0 -714px!important}.a2a_i_dzone{background-position:0 -731px!important}.a2a_i_email{background-position:0 -748px!important}.a2a_i_eskobo{background-position:0 -765px!important}.a2a_i_evernote{background-position:0 -782px!important}.a2a_i_excitemix{background-position:0 -799px!important}.a2a_i_expression{background-position:0 -816px!important}.a2a_i_facebook{background-position:0 -833px!important}.a2a_i_fark{background-position:0 -850px!important}.a2a_i_faves{background-position:0 -867px!important}.a2a_i_feed{background-position:0 -884px!important}.a2a_i_feedblitz{background-position:0 -901px!important}.a2a_i_feedbucket{background-position:0 -918px!important}.a2a_i_feedlounge{background-position:0 -935px!important}.a2a_i_feedm8{background-position:0 -952px!important}.a2a_i_feedmailer{background-position:0 -969px!important}.a2a_i_feedreader_net{background-position:0 -986px!important}.a2a_i_feedshow{background-position:0 -1003px!important}.a2a_i_find{background-position:0 -1020px!important}.a2a_i_fireant{background-position:0 -1037px!important}.a2a_i_firefox{background-position:0 -1054px!important}.a2a_i_flurry{background-position:0 -1071px!important}.a2a_i_folkd{background-position:0 -1088px!important}.a2a_i_foxiewire{background-position:0 -1105px!important}.a2a_i_friendfeed{background-position:0 -1122px!important}.a2a_i_friendster{background-position:0 -1139px!important}.a2a_i_funp{background-position:0 -1156px!important}.a2a_i_furl{background-position:0 -1173px!important}.a2a_i_fwicki{background-position:0 -1189px!important}.a2a_i_gabbr{background-position:0 -1206px!important}.a2a_i_global_grind{background-position:0 -1223px!important}.a2a_i_gmail{background-position:0 -1240px!important}.a2a_i_google{background-position:0 -1257px!important}.a2a_i_google_buzz{background-position:0 -1274px!important}.a2a_i_healthranker{background-position:0 -1291px!important}.a2a_i_hellotxt{background-position:0 -1308px!important}.a2a_i_hemidemi{background-position:0 -1325px!important}.a2a_i_hi5{background-position:0 -1342px!important}.a2a_i_hubdog{background-position:0 -1359px!important}.a2a_i_hugg{background-position:0 -1376px!important}.a2a_i_hyves{background-position:0 -1393px!important}.a2a_i_identica{background-position:0 -1410px!important}.a2a_i_im{background-position:0 -1427px!important}.a2a_i_imera{background-position:0 -1444px!important}.a2a_i_instapaper{background-position:0 -1461px!important}.a2a_i_iterasi{background-position:0 -1478px!important}.a2a_i_itunes{background-position:0 -1495px!important}.a2a_i_jamespot{background-position:0 -1512px!important}.a2a_i_jots{background-position:0 -1529px!important}.a2a_i_jumptags{background-position:0 -1546px!important}.a2a_i_khabbr{background-position:0 -1563px!important}.a2a_i_kledy{background-position:0 -1580px!important}.a2a_i_klipfolio{background-position:0 -1597px!important}.a2a_i_linkagogo{background-position:0 -1614px!important}.a2a_i_linkatopia{background-position:0 -1631px!important}.a2a_i_linkedin{background-position:0 -1648px!important}.a2a_i_live{background-position:0 -1665px!important}.a2a_i_livejournal{background-position:0 -1682px!important}.a2a_i_ma_gnolia{background-position:0 -1699px!important}.a2a_i_maple{background-position:0 -1716px!important}.a2a_i_meneame{background-position:0 -1733px!important}.a2a_i_mindbodygreen{background-position:0 -1750px!important}.a2a_i_miro{background-position:0 -1767px!important}.a2a_i_mister-wong{background-position:0 -1784px!important}.a2a_i_mixx{background-position:0 -1801px!important}.a2a_i_mobile{background-position:0 -1818px!important}.a2a_i_mozillaca{background-position:0 -1835px!important}.a2a_i_msdn{background-position:0 -1852px!important}.a2a_i_multiply{background-position:0 -1869px!important}.a2a_i_my_msn{background-position:0 -1886px!important}.a2a_i_mylinkvault{background-position:0 -1903px!important}.a2a_i_myspace{background-position:0 -1920px!important}.a2a_i_netimechannel{background-position:0 -1937px!important}.a2a_i_netlog{background-position:0 -1954px!important}.a2a_i_netomat{background-position:0 -1971px!important}.a2a_i_netvibes{background-position:0 -1988px!important}.a2a_i_netvouz{background-position:0 -2005px!important}.a2a_i_newgie{background-position:0 -2022px!important}.a2a_i_newsalloy{background-position:0 -2039px!important}.a2a_i_newscabby{background-position:0 -2056px!important}.a2a_i_newsgator{background-position:0 -2073px!important}.a2a_i_newshutch{background-position:0 -2090px!important}.a2a_i_newsisfree{background-position:0 -2107px!important}.a2a_i_newstrust{background-position:0 -2124px!important}.a2a_i_newsvine{background-position:0 -2141px!important}.a2a_i_nowpublic{background-position:0 -2158px!important}.a2a_i_odeo{background-position:0 -2175px!important}.a2a_i_oneview{background-position:0 -2192px!important}.a2a_i_openbm{background-position:0 -2209px!important}.a2a_i_orkut{background-position:0 -2226px!important}.a2a_i_outlook{background-position:0 -2243px!important}.a2a_i_pageflakes{background-position:0 -2260px!important}.a2a_i_pdf{background-position:0 -2277px!important}.a2a_i_phonefavs{background-position:0 -2294px!important}.a2a_i_ping{background-position:0 -2311px!important}.a2a_i_plaxo{background-position:0 -2328px!important}.a2a_i_plurk{background-position:0 -2345px!important}.a2a_i_plusmo{background-position:0 -2362px!important}.a2a_i_podnova{background-position:0 -2379px!important}.a2a_i_posterous{background-position:0 -2396px!important}.a2a_i_print{background-position:0 -2413px!important}.a2a_i_printfriendly{background-position:0 -2430px!important}.a2a_i_propeller{background-position:0 -2447px!important}.a2a_i_protopage{background-position:0 -2464px!important}.a2a_i_pusha{background-position:0 -2481px!important}.a2a_i_rapidfeeds{background-position:0 -2498px!important}.a2a_i_rasasa{background-position:0 -2515px!important}.a2a_i_reader{background-position:0 -2532px!important}.a2a_i_reddit{background-position:0 -2549px!important}.a2a_i_rssfwd{background-position:0 -2566px!important}.a2a_i_segnalo{background-position:0 -2583px!important}.a2a_i_share{background-position:0 -2600px!important}.a2a_i_shoutwire{background-position:0 -2617px!important}.a2a_i_shyftr{background-position:0 -2634px!important}.a2a_i_simpy{background-position:0 -2651px!important}.a2a_i_sitejot{background-position:0 -2668px!important}.a2a_i_skimbit{background-position:0 -2685px!important}.a2a_i_slashdot{background-position:0 -2702px!important}.a2a_i_smaknews{background-position:0 -2719px!important}.a2a_i_sodahead{background-position:0 -2736px!important}.a2a_i_sofomo{background-position:0 -2753px!important}.a2a_i_spaces{background-position:0 -2770px!important}.a2a_i_sphere{background-position:0 -2787px!important}.a2a_i_sphinn{background-position:0 -2803px!important}.a2a_i_spurl{background-position:0 -2820px!important}.a2a_i_squidoo{background-position:0 -2837px!important}.a2a_i_startaid{background-position:0 -2854px!important}.a2a_i_strands{background-position:0 -2871px!important}.a2a_i_stumbleupon{background-position:0 -2888px!important}.a2a_i_stumpedia{background-position:0 -2905px!important}.a2a_i_symbaloo{background-position:0 -2922px!important}.a2a_i_taggly{background-position:0 -2939px!important}.a2a_i_tagza{background-position:0 -2956px!important}.a2a_i_tailrank{background-position:0 -2973px!important}.a2a_i_technet{background-position:0 -2990px!important}.a2a_i_technorati{background-position:0 -3007px!important}.a2a_i_technotizie{background-position:0 -3024px!important}.a2a_i_thefreedictionary{background-position:0 -3041px!important}.a2a_i_thefreelibrary{background-position:0 -3058px!important}.a2a_i_thunderbird{background-position:0 -3075px!important}.a2a_i_tipd{background-position:0 -3092px!important}.a2a_i_toolbar_google{background-position:0 -3109px!important}.a2a_i_tumblr{background-position:0 -3126px!important}.a2a_i_twiddla{background-position:0 -3143px!important}.a2a_i_twine{background-position:0 -3160px!important}.a2a_i_twitter{background-position:0 -3177px!important}.a2a_i_txtvox{background-position:0 -3194px!important}.a2a_i_typepad{background-position:0 -3211px!important}.a2a_i_uarr{background-position:0 -3228px!important}.a2a_i_uarr_wt{background-position:0 -3245px!important}.a2a_i_unalog{background-position:0 -3262px!important}.a2a_i_viadeo{background-position:0 -3279px!important}.a2a_i_webnews{background-position:0 -3296px!important}.a2a_i_webwag{background-position:0 -3314px!important}.a2a_i_wikio{background-position:0 -3331px!important}.a2a_i_windows_mail{background-position:0 -3348px!important}.a2a_i_wink{background-position:0 -3365px!important}.a2a_i_winksite{background-position:0 -3382px!important}.a2a_i_wists{background-position:0 -3399px!important}.a2a_i_wordpress{background-position:0 -3416px!important}.a2a_i_xanga{background-position:0 -3433px!important}.a2a_i_xerpi{background-position:0 -3450px!important}.a2a_i_xianguo{background-position:0 -3467px!important}.a2a_i_yahoo{background-position:0 -3484px!important}.a2a_i_yample{background-position:0 -3501px!important}.a2a_i_yigg{background-position:0 -3518px!important}.a2a_i_yim{background-position:0 -3535px!important}.a2a_i_yoolink{background-position:0 -3552px!important}.a2a_i_youmob{background-position:0 -3569px!important}.a2a_i_yourminis{background-position:0 -3586px!important}.a2a_i_zaptxt{background-position:0 -3603px!important}.a2a_i_zhuaxia{background-position:0 -3620px!important}.a2a_i_zune{background-position:0 -3637px;  }</style></head><body
+ class="yui-skin-sam"><iframe src="Mantis_files/sm1.html" 
+allowtransparency="true" transparency="true" style="border: 0pt none; 
+left: 0pt; top: 0pt; position: absolute; z-index: 100000; display: 
+none;" id="a2apage_sm_ifr" frameborder="0" height="1" width="1"></iframe><div
+ style="position: static;"><div id="a2apage_border" 
+class="a2a_menu_border" onmouseover="a2a.onMouseOver_stay()" 
+onmouseout="a2a.onMouseOut_delay()"></div><div id="a2apage_dropdown" 
+class="a2a_menu" onmouseover="a2a.onMouseOver_stay()" 
+onmouseout="a2a.onMouseOut_delay()"><table><tbody><tr><td><div 
+id="a2apage_title_container" class="a2a_menu_title_container" 
+style="display: none;"><input id="a2apage_title" class="a2a_menu_title"></div><div
+ class="a2apage_wide a2a_wide"><div class="a2a_tabs"><div 
+id="a2apage_DEFAULT" class="a2a_tab_selected" style="margin-right: 1px;"
+ onclick="return a2a.tabs('DEFAULT')"><img class="a2a_i_share" 
+src="Mantis_files/transparent.gif">Share / Save</div></div><div 
+class="a2a_tabs"><div title="Share via e-mail" id="a2apage_EMAIL" 
+style="margin-right: 1px;" onclick="return a2a.tabs('EMAIL',true)"><img 
+class="a2a_i_email" src="Mantis_files/transparent.gif">E-mail</div></div><div
+ class="a2a_tabs"><div onclick="a2a.bmBrowser()" title="Bookmark in your
+ browser" id="a2apage_BROWSER" style="margin-left: 1px;"><img 
+class="a2a_i_bookmark" src="Mantis_files/transparent.gif">Bookmark</div></div></div><div
+ class="a2a_clear"></div><div id="a2apage_find_container" 
+class="a2a_menu_find_container"><input id="a2apage_find" 
+class="a2a_menu_find" onclick="a2a.focus_find()" onkeyup="a2a.do_find()"
+ autocomplete="off" 
+onfocus="a2a['page'].find_focused=true;a2a.onMouseOver_stay()" 
+onblur="a2a.blur_find()" title="Instantly find any service to add to" 
+type="text"><img id="a2apage_find_icon" class="a2a_i_find" 
+src="Mantis_files/transparent.gif" onclick="a2a.focus_find()"></div><table
+ id="a2apage_cols_container" class="a2a_cols_container"><tbody><tr><td 
+class="a2a_cols"><div id="a2apage_col1"><a target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i a2a_sss" rel="nofollow" 
+id="a2apage_facebook"><img class="a2a_i_facebook" 
+src="Mantis_files/transparent.gif" height="16" width="16">Facebook</a><a
+ style="" target="_blank" href="http://amsterdam.fablab.nl/" 
+class="a2a_i a2a_sss" rel="nofollow" id="a2apage_symbaloo_feeds"><img 
+class="a2a_i_symbaloo" src="Mantis_files/transparent.gif" height="16" 
+width="16">Symbaloo Feeds</a><a target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_delicious"><img class="a2a_i_delicious" 
+src="Mantis_files/transparent.gif" height="16" width="16">Delicious</a><a
+ target="_blank" href="http://amsterdam.fablab.nl/" class="a2a_i" 
+rel="nofollow" id="a2apage_google_bookmarks"><img class="a2a_i_google" 
+src="Mantis_files/transparent.gif" height="16" width="16">Google 
+Bookmarks</a><a target="_blank" href="http://amsterdam.fablab.nl/" 
+class="a2a_i" rel="nofollow" id="a2apage_myspace"><img 
+class="a2a_i_myspace" src="Mantis_files/transparent.gif" height="16" 
+width="16">MySpace</a><a target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_yahoo_buzz"><img class="a2a_i_buzz" 
+src="Mantis_files/transparent.gif" height="16" width="16">Yahoo Buzz</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_stumbleupon"><img class="a2a_i_stumbleupon" 
+src="Mantis_files/transparent.gif" height="16" width="16">StumbleUpon</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_bebo"><img class="a2a_i_bebo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Bebo</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_wordpress"><img class="a2a_i_wordpress" 
+src="Mantis_files/transparent.gif" height="16" width="16">WordPress</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_orkut"><img class="a2a_i_orkut" 
+src="Mantis_files/transparent.gif" height="16" width="16">Orkut</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_netvibes_share"><img class="a2a_i_netvibes" 
+src="Mantis_files/transparent.gif" height="16" width="16">Netvibes Share</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_strands"><img class="a2a_i_strands" 
+src="Mantis_files/transparent.gif" height="16" width="16">Strands</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_dailyme"><img class="a2a_i_dailyme" 
+src="Mantis_files/transparent.gif" height="16" width="16">DailyMe</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_technet"><img class="a2a_i_technet" 
+src="Mantis_files/transparent.gif" height="16" width="16">TechNet</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_arto"><img class="a2a_i_arto" 
+src="Mantis_files/transparent.gif" height="16" width="16">Arto</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_smaknews"><img class="a2a_i_smaknews" 
+src="Mantis_files/transparent.gif" height="16" width="16">SmakNews</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_aim"><img class="a2a_i_aim" 
+src="Mantis_files/transparent.gif" height="16" width="16">AIM</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_identi_ca"><img class="a2a_i_identica" 
+src="Mantis_files/transparent.gif" height="16" width="16">Identi.ca</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_blogger_post"><img class="a2a_i_blogger" 
+src="Mantis_files/transparent.gif" height="16" width="16">Blogger Post</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_box_net"><img class="a2a_i_box" 
+src="Mantis_files/transparent.gif" height="16" width="16">Box.net</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_netlog"><img class="a2a_i_netlog" 
+src="Mantis_files/transparent.gif" height="16" width="16">Netlog</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_shoutwire"><img class="a2a_i_shoutwire" 
+src="Mantis_files/transparent.gif" height="16" width="16">Shoutwire</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_jumptags"><img class="a2a_i_jumptags" 
+src="Mantis_files/transparent.gif" height="16" width="16">Jumptags</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_hemidemi"><img class="a2a_i_hemidemi" 
+src="Mantis_files/transparent.gif" height="16" width="16">Hemidemi</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_instapaper"><img class="a2a_i_instapaper" 
+src="Mantis_files/transparent.gif" height="16" width="16">Instapaper</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_xerpi"><img class="a2a_i_xerpi" 
+src="Mantis_files/transparent.gif" height="16" width="16">Xerpi</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_wink"><img class="a2a_i_wink" 
+src="Mantis_files/transparent.gif" height="16" width="16">Wink</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_bibsonomy"><img class="a2a_i_bibsonomy" 
+src="Mantis_files/transparent.gif" height="16" width="16">BibSonomy</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_blogmarks"><img class="a2a_i_blogmarks" 
+src="Mantis_files/transparent.gif" height="16" width="16">BlogMarks</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_startaid"><img class="a2a_i_startaid" 
+src="Mantis_files/transparent.gif" height="16" width="16">StartAid</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_khabbr"><img class="a2a_i_khabbr" 
+src="Mantis_files/transparent.gif" height="16" width="16">Khabbr</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_yoolink"><img class="a2a_i_yoolink" 
+src="Mantis_files/transparent.gif" height="16" width="16">Yoolink</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_technotizie"><img class="a2a_i_technotizie" 
+src="Mantis_files/transparent.gif" height="16" width="16">Technotizie</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_multiply"><img class="a2a_i_multiply" 
+src="Mantis_files/transparent.gif" height="16" width="16">Multiply</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_plaxo_pulse"><img class="a2a_i_plaxo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Plaxo Pulse</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_squidoo"><img class="a2a_i_squidoo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Squidoo</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_blinklist"><img class="a2a_i_blinklist" 
+src="Mantis_files/transparent.gif" height="16" width="16">Blinklist</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_yigg"><img class="a2a_i_yigg" 
+src="Mantis_files/transparent.gif" height="16" width="16">YiGG</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_segnalo"><img class="a2a_i_segnalo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Segnalo</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_youmob"><img class="a2a_i_youmob" 
+src="Mantis_files/transparent.gif" height="16" width="16">YouMob</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_fark"><img class="a2a_i_fark" 
+src="Mantis_files/transparent.gif" height="16" width="16">Fark</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_jamespot"><img class="a2a_i_jamespot" 
+src="Mantis_files/transparent.gif" height="16" width="16">Jamespot</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_twiddla"><img class="a2a_i_twiddla" 
+src="Mantis_files/transparent.gif" height="16" width="16">Twiddla</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_mindbodygreen"><img class="a2a_i_mindbodygreen" 
+src="Mantis_files/transparent.gif" height="16" width="16">MindBodyGreen</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_hugg"><img class="a2a_i_hugg" 
+src="Mantis_files/transparent.gif" height="16" width="16">Hugg</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_nowpublic"><img class="a2a_i_nowpublic" 
+src="Mantis_files/transparent.gif" height="16" width="16">NowPublic</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_tumblr"><img class="a2a_i_tumblr" 
+src="Mantis_files/transparent.gif" height="16" width="16">Tumblr</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_current"><img class="a2a_i_current" 
+src="Mantis_files/transparent.gif" height="16" width="16">Current</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_spurl"><img class="a2a_i_spurl" 
+src="Mantis_files/transparent.gif" height="16" width="16">Spurl</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_oneview"><img class="a2a_i_oneview" 
+src="Mantis_files/transparent.gif" height="16" width="16">Oneview</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_simpy"><img class="a2a_i_simpy" 
+src="Mantis_files/transparent.gif" height="16" width="16">Simpy</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_buddymarks"><img class="a2a_i_buddymarks" 
+src="Mantis_files/transparent.gif" height="16" width="16">BuddyMarks</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_viadeo"><img class="a2a_i_viadeo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Viadeo</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_wists"><img class="a2a_i_wists" 
+src="Mantis_files/transparent.gif" height="16" width="16">Wists</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_backflip"><img class="a2a_i_backflip" 
+src="Mantis_files/transparent.gif" height="16" width="16">Backflip</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_sitejot"><img class="a2a_i_sitejot" 
+src="Mantis_files/transparent.gif" height="16" width="16">SiteJot</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_health_ranker"><img class="a2a_i_healthranker" 
+src="Mantis_files/transparent.gif" height="16" width="16">Health Ranker</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_care2_news"><img class="a2a_i_care2" 
+src="Mantis_files/transparent.gif" height="16" width="16">Care2 News</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_sphere"><img class="a2a_i_sphere" 
+src="Mantis_files/transparent.gif" height="16" width="16">Sphere</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_gabbr"><img class="a2a_i_gabbr" 
+src="Mantis_files/transparent.gif" height="16" width="16">Gabbr</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_tagza"><img class="a2a_i_tagza" 
+src="Mantis_files/transparent.gif" height="16" width="16">Tagza</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_folkd"><img class="a2a_i_folkd" 
+src="Mantis_files/transparent.gif" height="16" width="16">Folkd</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_newstrust"><img class="a2a_i_newstrust" 
+src="Mantis_files/transparent.gif" height="16" width="16">NewsTrust</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_printfriendly"><img class="a2a_i_printfriendly" 
+src="Mantis_files/transparent.gif" height="16" width="16">PrintFriendly</a></div><div
+ id="a2apage_2_col1" style="display: none;"><a target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_yahoo_mail"><img class="a2a_i_yahoo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Yahoo Mail</a><a
+ target="_blank" href="http://amsterdam.fablab.nl/" class="a2a_i" 
+rel="nofollow" id="a2apage_aol_mail"><img class="a2a_i_aol" 
+src="Mantis_files/transparent.gif" height="16" width="16">AOL Mail</a></div></td><td
+ class="a2a_cols"><div id="a2apage_col2"><a target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i a2a_sss" rel="nofollow" 
+id="a2apage_twitter"><img class="a2a_i_twitter" 
+src="Mantis_files/transparent.gif" height="16" width="16">Twitter</a><a 
+target="_blank" href="http://amsterdam.fablab.nl/" class="a2a_i a2a_sss"
+ rel="nofollow" id="a2apage_google_buzz"><img class="a2a_i_google_buzz" 
+src="Mantis_files/transparent.gif" height="16" width="16">Google Buzz</a><a
+ target="_blank" href="http://amsterdam.fablab.nl/" class="a2a_i" 
+rel="nofollow" id="a2apage_digg"><img class="a2a_i_digg" 
+src="Mantis_files/transparent.gif" height="16" width="16">Digg</a><a 
+target="_blank" href="http://amsterdam.fablab.nl/" class="a2a_i" 
+rel="nofollow" id="a2apage_reddit"><img class="a2a_i_reddit" 
+src="Mantis_files/transparent.gif" height="16" width="16">Reddit</a><a 
+target="_blank" href="http://amsterdam.fablab.nl/" class="a2a_i" 
+rel="nofollow" id="a2apage_windows_live_favorites"><img 
+class="a2a_i_live" src="Mantis_files/transparent.gif" height="16" 
+width="16">Windows Live Favorites</a><a target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_yahoo_bookmarks"><img class="a2a_i_yahoo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Yahoo 
+Bookmarks</a><a style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_mister_wong"><img class="a2a_i_mister-wong" 
+src="Mantis_files/transparent.gif" height="16" width="16">Mister-Wong</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_google_reader"><img class="a2a_i_reader" 
+src="Mantis_files/transparent.gif" height="16" width="16">Google Reader</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_evernote"><img class="a2a_i_evernote" 
+src="Mantis_files/transparent.gif" height="16" width="16">Evernote</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_stumpedia"><img class="a2a_i_stumpedia" 
+src="Mantis_files/transparent.gif" height="16" width="16">Stumpedia</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_posterous"><img class="a2a_i_posterous" 
+src="Mantis_files/transparent.gif" height="16" width="16">Posterous</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_msdn"><img class="a2a_i_msdn" 
+src="Mantis_files/transparent.gif" height="16" width="16">MSDN</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_expression"><img class="a2a_i_expression" 
+src="Mantis_files/transparent.gif" height="16" width="16">Expression</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_tipd"><img class="a2a_i_tipd" 
+src="Mantis_files/transparent.gif" height="16" width="16">Tipd</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_plurk"><img class="a2a_i_plurk" 
+src="Mantis_files/transparent.gif" height="16" width="16">Plurk</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_yahoo_messenger"><img class="a2a_i_yim" 
+src="Mantis_files/transparent.gif" height="16" width="16">Yahoo 
+Messenger</a><a style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_mozillaca"><img class="a2a_i_mozillaca" 
+src="Mantis_files/transparent.gif" height="16" width="16">Mozillaca</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_typepad_post"><img class="a2a_i_typepad" 
+src="Mantis_files/transparent.gif" height="16" width="16">TypePad Post</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_mixx"><img class="a2a_i_mixx" 
+src="Mantis_files/transparent.gif" height="16" width="16">Mixx</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_technorati_favorites"><img class="a2a_i_technorati" 
+src="Mantis_files/transparent.gif" height="16" width="16">Technorati 
+Favorites</a><a style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_citeulike"><img class="a2a_i_citeulike" 
+src="Mantis_files/transparent.gif" height="16" width="16">CiteULike</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_windows_live_spaces"><img class="a2a_i_spaces" 
+src="Mantis_files/transparent.gif" height="16" width="16">Windows Live 
+Spaces</a><a style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_funp"><img class="a2a_i_funp" 
+src="Mantis_files/transparent.gif" height="16" width="16">FunP</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_phonefavs"><img class="a2a_i_phonefavs" 
+src="Mantis_files/transparent.gif" height="16" width="16">PhoneFavs</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_netvouz"><img class="a2a_i_netvouz" 
+src="Mantis_files/transparent.gif" height="16" width="16">Netvouz</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_diigo"><img class="a2a_i_diigo" 
+src="Mantis_files/transparent.gif" height="16" width="16">Diigo</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_taggly"><img class="a2a_i_taggly" 
+src="Mantis_files/transparent.gif" height="16" width="16">Taggly</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_tailrank"><img class="a2a_i_tailrank" 
+src="Mantis_files/transparent.gif" height="16" width="16">Tailrank</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_kledy"><img class="a2a_i_kledy" 
+src="Mantis_files/transparent.gif" height="16" width="16">Kledy</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_meneame"><img class="a2a_i_meneame" 
+src="Mantis_files/transparent.gif" height="16" width="16">Meneame</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_bookmarks_fr"><img class="a2a_i_bookmarks_fr" 
+src="Mantis_files/transparent.gif" height="16" width="16">Bookmarks.fr</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_newsvine"><img class="a2a_i_newsvine" 
+src="Mantis_files/transparent.gif" height="16" width="16">NewsVine</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_friendfeed"><img class="a2a_i_friendfeed" 
+src="Mantis_files/transparent.gif" height="16" width="16">FriendFeed</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_ping"><img class="a2a_i_ping" 
+src="Mantis_files/transparent.gif" height="16" width="16">Ping</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_protopage_bookmarks"><img class="a2a_i_protopage" 
+src="Mantis_files/transparent.gif" height="16" width="16">Protopage 
+Bookmarks</a><a style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_faves"><img class="a2a_i_faves" 
+src="Mantis_files/transparent.gif" height="16" width="16">Faves</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_webnews"><img class="a2a_i_webnews" 
+src="Mantis_files/transparent.gif" height="16" width="16">Webnews</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_pusha"><img class="a2a_i_pusha" 
+src="Mantis_files/transparent.gif" height="16" width="16">Pusha</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_slashdot"><img class="a2a_i_slashdot" 
+src="Mantis_files/transparent.gif" height="16" width="16">Slashdot</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_allvoices"><img class="a2a_i_allvoices" 
+src="Mantis_files/transparent.gif" height="16" width="16">Allvoices</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_imera_brazil"><img class="a2a_i_imera" 
+src="Mantis_files/transparent.gif" height="16" width="16">Imera Brazil</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_linkagogo"><img class="a2a_i_linkagogo" 
+src="Mantis_files/transparent.gif" height="16" width="16">LinkaGoGo</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_unalog"><img class="a2a_i_unalog" 
+src="Mantis_files/transparent.gif" height="16" width="16">unalog</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_diglog"><img class="a2a_i_diglog" 
+src="Mantis_files/transparent.gif" height="16" width="16">Diglog</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_propeller"><img class="a2a_i_propeller" 
+src="Mantis_files/transparent.gif" height="16" width="16">Propeller</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_livejournal"><img class="a2a_i_livejournal" 
+src="Mantis_files/transparent.gif" height="16" width="16">LiveJournal</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_hellotxt"><img class="a2a_i_hellotxt" 
+src="Mantis_files/transparent.gif" height="16" width="16">HelloTxt</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_yample"><img class="a2a_i_yample" 
+src="Mantis_files/transparent.gif" height="16" width="16">Yample</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_linkatopia"><img class="a2a_i_linkatopia" 
+src="Mantis_files/transparent.gif" height="16" width="16">Linkatopia</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_linkedin"><img class="a2a_i_linkedin" 
+src="Mantis_files/transparent.gif" height="16" width="16">LinkedIn</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_ask_com_mystuff"><img class="a2a_i_ask" 
+src="Mantis_files/transparent.gif" height="16" width="16">Ask.com 
+MyStuff</a><a style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_maple"><img class="a2a_i_maple" 
+src="Mantis_files/transparent.gif" height="16" width="16">Maple</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_connotea"><img class="a2a_i_connotea" 
+src="Mantis_files/transparent.gif" height="16" width="16">Connotea</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_mylinkvault"><img class="a2a_i_mylinkvault" 
+src="Mantis_files/transparent.gif" height="16" width="16">MyLinkVault</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_sphinn"><img class="a2a_i_sphinn" 
+src="Mantis_files/transparent.gif" height="16" width="16">Sphinn</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_dzone"><img class="a2a_i_dzone" 
+src="Mantis_files/transparent.gif" height="16" width="16">DZone</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_hyves"><img class="a2a_i_hyves" 
+src="Mantis_files/transparent.gif" height="16" width="16">Hyves</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_bitty_browser"><img class="a2a_i_bitty" 
+src="Mantis_files/transparent.gif" height="16" width="16">Bitty Browser</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_foxiewire"><img class="a2a_i_foxiewire" 
+src="Mantis_files/transparent.gif" height="16" width="16">Foxiewire</a><a
+ style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_vodpod"><img class="a2a_i_default" 
+src="Mantis_files/transparent.gif" height="16" width="16">VodPod</a><a 
+style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_amazon_wish_list"><img class="a2a_i_amazon" 
+src="Mantis_files/transparent.gif" height="16" width="16">Amazon Wish 
+List</a><a style="display: none;" target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_read_it_later"><img class="a2a_i_default" 
+src="Mantis_files/transparent.gif" height="16" width="16">Read It Later</a></div><div
+ id="a2apage_2_col2" style="display: none;"><a target="_blank" 
+href="http://amsterdam.fablab.nl/" class="a2a_i" rel="nofollow" 
+id="a2apage_google_gmail"><img class="a2a_i_gmail" 
+src="Mantis_files/transparent.gif" height="16" width="16">Google Gmail</a><a
+ target="_blank" href="http://amsterdam.fablab.nl/" class="a2a_i" 
+rel="nofollow" id="a2apage_hotmail"><img class="a2a_i_live" 
+src="Mantis_files/transparent.gif" height="16" width="16">Hotmail</a></div></td></tr></tbody></table><div
+ id="a2apage_note_BROWSER" class="a2a_note" style="display: none;"></div><div
+ id="a2apage_note_EMAIL" class="a2a_note" style="display: none;"><div 
+class="a2a_hr"></div><div class="a2a_note_note">Send from any other 
+e-mail address or e-mail program:</div><div class="a2a_nowrap"><a 
+href="http://amsterdam.fablab.nl/" id="a2apage_any_email" class="a2a_i 
+a2a_emailer" target="_blank" servicename="Email (form)" 
+safename="email_form" 
+customserviceuri="http://www.addtoany.com/email?linkurl=A2A_LINKURL_ENC&amp;linkname=A2A_LINKNAME_ENC"
+ onkeydown="a2a.linker(this)" onmousedown="a2a.linker(this)" 
+onmouseup="a2a.a2a_track('testShare1', 
+'Email');if(a2a.c.track_pub)a2a.a2a_track('z_'+a2a.c.track_pub+'Share', 
+'Email')" style="margin-right: 9px;"><img class="a2a_i_email" 
+src="Mantis_files/transparent.gif">Any e-mail</a><a 
+href="http://amsterdam.fablab.nl/" class="a2a_i a2a_emailer" 
+id="a2apage_email_client" servicename="Email (mailto)" 
+safename="email_mailto" 
+customserviceuri="mailto:?subject=A2A_LINKNAME_ENC&amp;body=A2A_LINKURL_ENC"
+ onkeydown="a2a.linker(this)" onmousedown="a2a.linker(this)" 
+onmouseup="a2a.a2a_track('testShare1', 
+'Email');if(a2a.c.track_pub)a2a.a2a_track('z_'+a2a.c.track_pub+'Share', 
+'Email')" style="margin-left: 9px;"><img class="a2a_i_outlook" 
+src="Mantis_files/transparent.gif"><img class="a2a_i_windows_mail" 
+src="Mantis_files/transparent.gif"><img class="a2a_i_apple_mail" 
+src="Mantis_files/transparent.gif"><img class="a2a_i_thunderbird" 
+src="Mantis_files/transparent.gif"></a></div></div><div 
+class="a2apage_wide a2a_wide"><a href="javascript:void(0)" 
+id="a2apage_show_more_less" class="a2a_menu_show_more_less" 
+onclick="return a2a.show_more_less(0)" 
+onmouseover="img=this.firstChild;if(a2a.c.color_arrow_hover=='fff'){if(img.className.indexOf('_wt')==-1)img.className+='_wt'}else
+ img.className=img.className.replace(/_wt/,'')" 
+onmouseout="img=this.firstChild;if(a2a.c.color_arrow=='fff'){if(img.className.indexOf('_wt')==-1)img.className+='_wt'}else
+ img.className=img.className.replace(/_wt/,'')" title="Show all"><img 
+class="a2a_i_darr" src="Mantis_files/transparent.gif"></a></div><div 
+class="a2apage_wide a2a_wide"><a href="http://www.addtoany.com/" 
+id="a2apage_powered_by" class="a2a_menu_powered_by" target="_blank" 
+title="Share &amp; Subscribe buttons" 
+onmouseover="if(!window.opera)this.innerHTML=this.orig;this.style.textAlign='center'">Powered
+ by AddToAny</a></div></td></tr></tbody></table></div></div>
+<!-- content centered --> 
+	<div id="content">
+
+							</div>
+
+		<div id="boxes">
+			<!-- main content -->
+			<div id="column2" class="boxcolumn_wide">
+				<div id="main" class="main">
+			    <h1 class="title">Mantis assembling Part 1</h1>
+			    				       				   				  <div class="tabs"></div>
+				      <div class="node">
+
+      
+    <em class="info">&nbsp;&nbsp;Submitted by sanderoak on Tue, 
+04/20/2010 - 17:38</em>
+    <div class="content">
+   <span class="print-link"></span><fieldset class="fieldgroup 
+group-relatie"><div class="field field-type-nodereference 
+field-field-project">
+      <div class="field-label">project:&nbsp;</div>
+    <div class="field-items">
+            <div class="field-item odd">
+                    <a href="http://amsterdam.fablab.nl/node/2861">Fablab
+ 2.0 machine building</a>        </div>
+        </div>
+</div>
+<div class="field field-type-nodereference field-field-program">
+      <div class="field-label">program:&nbsp;</div>
+    <div class="field-items">
+            <div class="field-item odd">
+                    <a 
+href="http://amsterdam.fablab.nl/content/fab-academy">Fab Academy</a>   
+     </div>
+        </div>
+</div>
+</fieldset>
+<div class="field field-type-text field-field-fablab-location">
+      <div class="field-label">Fablab Location:&nbsp;</div>
+    <div class="field-items">
+            <div class="field-item odd">
+                    Waag Society        </div>
+        </div>
+</div>
+<p>copyleft info: </p>
+<p>- Machine design by David Carr</p>
+<p>- Electronics by Ilan Moyer</p>
+<p>Thanks guys!!</p>
+<p></p>
+<p>This tutorial is about how to assemble the mantis mini cnc machine.<br>
+This is a really nice machine capable of making very precise pcb’s, and<br>
+off course a lot more;) But maybe the best thing about it is that its<br>
+total cost is less that $100!&nbsp;</p>
+<div style="text-align: left;">This<br>
+ tutorial will be how to assemble the kit send by MIT to a lot of<br>
+fablabs around the world. Soon we will build one from scratch, and<br>
+document it of course.</div>
+<div style="text-align: left;">Fist<br>
+of all here’s the official mantis webpage:&nbsp;&nbsp;&nbsp; <a 
+href="http://makeyourbot.org/" title="http://makeyourbot.org">http://makeyourbot.org</a>,
+ .</div>
+<p>And<br>
+ here’s a link to the assembly video’s : &nbsp;&nbsp;&nbsp;<br>
+<a href="http://makeyourbot.org/mantis9-build/" 
+title="http://makeyourbot.org/mantis9-build/">http://makeyourbot.org/mantis9-build/</a></p>
+<p>Here you can download the files to make the plywood parts:</p>
+<p>And here you can find the how-to make electronics:</p>
+<p><strong>index:</strong></p>
+<p>1.&nbsp; Opening the package</p>
+<p>2.&nbsp; Grinding</p>
+<p>3.&nbsp; Countersinking</p>
+<p>4.&nbsp; Teenuts</p>
+<p>5.&nbsp; Assembling the rods</p>
+<p>6.&nbsp; |Assembling the Z-axis</p>
+<p></p>
+<p>7. Making the electronics</p>
+<p><strong><br></strong></p>
+<p><strong>Opening the package:</strong></p>
+<p>First<br>
+ unpack youre kit, and make sure that you check if all the parts are<br>
+available. <br>In my packet there were a couple parts missing witch were<br>
+ mentioned on the parts list, namely: - the Acme nut ( but this will get<br>
+ replaces by the plastic tube).</p>
+<p></p>
+<p></p>
+<p><img alt="opening up!" title="opening up!" 
+src="Mantis_files/DSC_0228.jpg"></p>
+<p></p>
+<p>Te next step is naming al of the special parts:</p>
+<p>click on a name to see the picture:</p>
+<p><span style="text-decoration: underline;"><span>Groundplane</span>,</span>
+ frontplate, backplate, higherstage, lowerstage, toolhead parts, 
+sideplates, teenuts,</p>
+<p></p>
+<p><strong>Grinding:</strong><br>Next we need to grind the edges of the 
+plywood just a little bit, just the little bits sticking out: </p>
+<p></p>
+<p><img alt="grinding" title="grinding" src="Mantis_files/grinding.jpg"></p>
+<p>Make sure you’re not grinding anything else, since you need to make 
+absolutely sure youre not chancing any of the dimensions of the plywood.
+ </p>
+<p><img alt="" src="Mantis_files/DSC_0229.jpg"></p>
+<p><strong>Countersinking:</strong></p>
+<p>Next we have to countersink a couple of the holes. The holes thad 
+needs to be drilled are:<br>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+<p>&nbsp;This means we need to drill just the top of a couple of the 
+holes to make sure the woodscrews will fit in perfectly. <br><img 
+alt="countersinking" title="countersinking" 
+src="Mantis_files/DSC_0231.jpg"></p>
+<p>The best way to do this is is using a countersink, but since this 
+part was not in the kit I used a big drill head on a drill press.<br><img
+ alt="countersink2" title="countersink2" src="Mantis_files/DSC_0233.jpg"></p>
+<p>Now just only drill the very top of the holes.:<br><img 
+alt="countersink 3" title="countersink 3" 
+src="Mantis_files/DSC_0234.jpg"></p>
+<p><strong>Teenut :</strong><br>Next we have to put the teenuts in 
+place, <br><img alt="teenut 1" title="teenut 1" 
+src="Mantis_files/DSC_0245.jpg"></p>
+<p>You have to put them in all 4 holes in the lowerstage, and aswell in 
+all tree of the z axis plane;<br><img alt="teenut 2" title="teenut 2" 
+src="Mantis_files/DSC_0247.jpg"></p>
+<p><strong>Assembling the rods:</strong><br>Now its time to assemble the
+ rods in place, this is allso the time to start using the epoxy.</p>
+<p>well be using the 6 minute epoxy;<br><img alt="" 
+src="Mantis_files/DSC_0264.jpg"></p>
+<p>Mix them both in equal amounts in the little plastic cup. Now from 
+the moment you start mixing them you have about six min. before its 
+hardend. </p>
+<p><img alt="epoxy has hardened" title="epoxy has hardened" 
+src="Mantis_files/DSC_0266.jpg"> <br>when you're epoxy looks like this, 
+you need to mix new one.</p>
+<p>now to assemble the rods you need a soft hammer aswel,<br><img 
+alt="all parts needed for the y-axis rod" title="all parts needed for 
+the y-axis rod" src="Mantis_files/DSC_0248.jpg"></p>
+<p>begin with putting some epoxy in the holes for the rod, and around 
+the end of the rods<br>next get your soft hammer and gently hit the 
+other end of the rod till its al the way thrue the plate:<br><img alt=""
+ src="Mantis_files/DSC_0290.jpg"><br>Repeat the same step dfor the other
+ rod, next place two bearings on each rod;</p>
+<p><img alt="" src="Mantis_files/DSC_0251.jpg"><br>make sure the rods 
+allign perfectly with the plywood.</p>
+<p><img alt="" src="Mantis_files/DSC_0252.jpg"></p>
+<p><img alt="" src="Mantis_files/DSC_0253.jpg"><br>Next put some epoxy 
+on the other ends of the rods, and inside the holes of the frondplate.</p>
+<p><img alt="" src="Mantis_files/DSC_0254.jpg"><br>and check if the top 
+side is allinged aswel </p>
+<p>repeat for the other rods, but not the z-axis.!</p>
+<p><img alt="" src="Mantis_files/DSC_0255.jpg"></p>
+<p><img alt="" src="Mantis_files/DSC_0256.jpg"></p>
+<p><img alt="" src="Mantis_files/DSC_0257.jpg"><br>When done with the 
+x-axis rod, repeat the same steps for the y-axis rods.</p>
+<p><img alt="" src="Mantis_files/DSC_0259.jpg"><br>next place the y-axis
+ subset inside the x-asis subset.</p>
+<p><img alt="" src="Mantis_files/DSC_0260.jpg"><br>make sure you allign 
+youre pieces perfectly.</p>
+<p><img alt="" src="Mantis_files/DSC_0261.jpg"><br>starting to look like
+ something doesn't it?</p>
+<p><img alt="" src="Mantis_files/DSC_0263.jpg"><br>next its time to add 
+the lowerstage to the bearings. place youre parts something like this.</p>
+<p><img alt="" src="Mantis_files/DSC_0265.jpg"><br>and then apply epoxy 
+to the bearings.</p>
+<p><img alt="" src="Mantis_files/DSC_0267.jpg"><br>make sure you put 
+enough epoxy, but dont make it touch the rods. first put the epoxy on 
+the outer sides of the bearings, if it slides ok, place some epoxy on 
+the inside aswel.</p>
+<p><img alt="" src="Mantis_files/DSC_0269.jpg"><br>put some pressure on 
+top,and let the epoxy harden.</p>
+<p><img alt="" src="Mantis_files/DSC_0268.jpg"><br>repeat the same step 
+for the x-axis.</p>
+<p><img alt="" src="Mantis_files/DSC_0271.jpg"><br>Again first only 
+epoxy the outersides, if its ok do the inside aswel.</p>
+<p><strong>Assembling the Z-axis</strong></p>
+<p>Next its time to assemble the z-axis, the most difficult axis of the 
+machine.</p>
+<p><img alt="" src="Mantis_files/DSC_0272.jpg"><br>first take a marker 
+and mark the top and middel plywood part, so later ou know wich part has
+ to go on top.</p>
+<p><img alt="" src="Mantis_files/DSC_0273.jpg"><br>For this axis we'll 
+be using 60 min. epoxy to have a little more time.</p>
+<p><img alt="" src="Mantis_files/DSC_0275.jpg"><br>first start by 
+putting some tape on the rod, higher than the two bottum plywood plates,
+ so that later on you wont glue youre bearings to roure rods.</p>
+<p><img alt="" src="Mantis_files/DSC_0276.jpg"><br>next start with the 
+most bottum plate( without a mark).</p>
+<p><img alt="" src="Mantis_files/DSC_0277.jpg"><br>start mixing the 
+epoxy.</p>
+<p><img alt="" src="Mantis_files/DSC_0278.jpg"><br>put some inside the 
+biggest hole.</p>
+<p><img alt="" src="Mantis_files/DSC_0279.jpg"><br>and put some on the 
+biggest bearing.</p>
+<p><img alt="" src="Mantis_files/DSC_0280.jpg"><br>when both have the 
+epoxy attached, take a soft hammer and gently smack in in there.</p>
+<p><img alt="" src="Mantis_files/DSC_0281.jpg"><br>apply some epoxy to 
+the higher plate.</p>
+<p><img alt="" src="Mantis_files/DSC_0283.jpg"><br>and put the two 
+plates on eachother, make sure the're alligned.</p>
+<p><img alt="" src="Mantis_files/DSC_0284.jpg"><br>when the two plates 
+are on top of eachother, apply some epoxy in the smaller holes.</p>
+<p><img alt="" src="Mantis_files/DSC_0287.jpg"><br>and some on the end 
+of the rods.</p>
+<p><img alt="" src="Mantis_files/DSC_0288.jpg"><br>use youre soft hammer
+ again.</p>
+<p><img alt="" src="Mantis_files/DSC_0290_0.jpg"><br>place the bearing 
+over the rods.</p>
+<p><img alt="" src="Mantis_files/DSC_0291.jpg"><br>apply some epoxy on 
+the top of the rods.</p>
+<p><img alt="" src="Mantis_files/DSC_0293.jpg"><br>and put the top plate
+ on top, with the marking on the left side(marking is not upside down 
+mirrored, but left/right)</p>
+<p><img alt="" src="Mantis_files/DSC_0294.jpg"><br>again use youre 
+hammer.and wait for the epoxy to dry.</p>
+<p><strong>Assembling the z-axis part2</strong></p>
+<p><img alt="" src="Mantis_files/DSC_0296.jpg"><br>next place youre 
+z-axis laying down like this.</p>
+<p><img alt="" src="Mantis_files/DSC_0297.jpg"><br>make sure the 
+plywoodplates are alligend well.</p>
+<p><strong>AttachingThe motors<br></strong><br><img alt="" 
+src="Mantis_files/DSC_0300.jpg"><br>Before we do anything with the 
+motors we clean the tips with some alcohol containing fluid like acetone
+ </p>
+<p>
+</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+  </div>
+     </body></html>

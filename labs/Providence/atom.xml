@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Fab Academy at AS220</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/" />
+    <link rel="self" type="application/atom+xml" href="http://as220.org/labs/fabacademy/atom.xml" />
+    <id>tag:as220.org,2009-09-21:/labs/fabacademy//33</id>
+    <updated>2010-06-02T11:17:47Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type 4.261</generator>
+
+<entry>
+    <title>PuppetMaster Final Project Page</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/06/puppetmaster-final-project-page.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1607</id>
+
+    <published>2010-06-02T11:11:15Z</published>
+    <updated>2010-06-02T11:17:47Z</updated>
+
+    <summary>The project page for my PuppetMaster project is located here: http://as220.org/~anna/...</summary>
+    <author>
+        <name>Anna France</name>
+        <uri>http://www.kaziunas.com</uri>
+    </author>
+    
+        <category term="Anna France" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>The project page for my PuppetMaster project is located here: http://as220.org/~anna/<a href="http://as220.org/~anna/"></a></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="IMG_2718.jpg" src="http://as220.org/labs/fabacademy/IMG_2718.jpg" width="695" height="521" class="mt-image-none" style="" /></span></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>The world is broken</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/06/the-world-is-broken.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1606</id>
+
+    <published>2010-06-01T20:45:43Z</published>
+    <updated>2010-06-01T20:54:00Z</updated>
+
+    <summary>I put 1.5g of salt in 1L of water and it went from 2 megaohms to 4 megaohms. Does that seem right to you?...</summary>
+    <author>
+        <name>Noah Bedford</name>
+        
+    </author>
+    
+        <category term="14 project development" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Noah Bedford" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="magicalmysteries" label="magical mysteries" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>I put 1.5g of salt in 1L of water and it went from 2 megaohms to 4 megaohms. 
+Does that seem right to you?</p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Encoded Building Materials with Computer Numerical Control Assembly</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/encoded-building-materials-with-computer-numerical-control-assembly.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1587</id>
+
+    <published>2010-05-19T12:49:34Z</published>
+    <updated>2010-05-19T12:50:46Z</updated>
+
+    <summary>View the project page here....</summary>
+    <author>
+        <name>Makeda Stephenson</name>
+        <uri>http://msfabacad0910.wordpress.com/</uri>
+    </author>
+    
+        <category term="Makeda Stephenson" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>View the <a href="http://as220.org/~makeda/semester-project/semester_project_report.html">project page here.</a></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Continuing the final project</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/continuing-the-final-project.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1586</id>
+
+    <published>2010-05-19T11:14:30Z</published>
+    <updated>2010-05-19T11:17:09Z</updated>
+
+    <summary>Can be found here: http://eclapp.com/fabacademy/final/...</summary>
+    <author>
+        <name>Elliot Clapp</name>
+        
+    </author>
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>Can be found here:</p>
+
+<p><a href="http://eclapp.com/fabacademy/final/">http://eclapp.com/fabacademy/final/</a></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Final Project Plan:    PuppetMaster Universal Remote</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/final-project-plan-puppetmaster-universal-remote.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1584</id>
+
+    <published>2010-05-19T05:54:44Z</published>
+    <updated>2010-05-19T12:09:53Z</updated>
+
+    <summary> Final Project Overview My final project for Fab Academy is a universal remote I am calling PuppetMaster, due to its ability to wirelessly control out of reach objects / devices using the fingers. This device enables the user to...</summary>
+    <author>
+        <name>Anna France</name>
+        <uri>http://www.kaziunas.com</uri>
+    </author>
+    
+        <category term="06 collaborative technical development" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="13 IP and business models" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Anna France" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<h3><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/wwwwIMG_2505.png"><img class="alignnone size-full wp-image-1592" title="wwwwIMG_2505" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/wwwwIMG_2505.png" alt="puppetmaster" width="411" height="548" /></a></h3>
+
+<h3>Final Project Overview</h3>
+
+<p>My final project for Fab Academy is a universal remote I am calling  PuppetMaster, due to its ability to wirelessly control out of reach  objects / devices using the fingers.  This device enables the user to  remotely control infrared receiving devices (such as a television or  stereo) from a maximum distance of 100 - 150 feet. The user of  PuppetMaster will be able to operate the remote by using switches  embedded in the  fingertips. The board and power supply will be worn  around the wrist like a watch or bracelet.  (This makes weight and a  small form factor a major design consideration for this project).  Additional controls will be added in later stages. (see details below)</p>
+
+<p><strong>Form Factor / General Idea Mockup </strong></p>
+
+<p>If IR model - Infrared LED would be placed on top of hand in wrist strap.</p>
+
+<h3><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2495.jpg"><img class="alignnone size-medium wp-image-1590" title="IMG_2495" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2495-285x213.jpg" alt="" width="285" height="213" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2496.jpg"><img class="alignnone size-medium wp-image-1589" title="IMG_2496" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2496-285x213.jpg" alt="puppetmaster" width="285" height="213" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2491.jpg"><img class="alignnone size-medium wp-image-1588" title="IMG_2491" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2491-285x213.jpg" alt="puppetmaster" width="285" height="213" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2494.jpg"><img class="alignnone size-medium wp-image-1586" title="IMG_2494" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/IMG_2494-285x213.jpg" alt="puppetmaster" width="285" height="213" /></a></h3>
+
+<p>I intend to fab the boards myself, using the standard fab inventory parts with a few exceptions, (especially the sensors used in the later stages). The first stage (to be completed by June 1 for the fab academy final project) consists of one mode of control (IR) but other modes (radio, bluetooth and additional gestural sensors) will be added as the project progresses.  (See stages outlined below.)  A dial or switching mechanism will be added to switch between the modes.  These additional modes (combined with the necessary code) will allow the user to control almost any device with hand gestures.  I am also keen to develop a gestural language in tandem with the addition of  6-axis sensors (3 axis gyro, 3 axis accelerometer) to the device.</p>
+
+<h3>Standing On The Shoulders of Giants - What I Will Borrow</h3>
+
+<p>I intend to stand on the shoulders of giants for the first stage (infrared) of this project.  The IR transmitter portion of this project is based on <strong>Mitch Altman</strong>&#8217;s popular <strong>TV-Be-Gone</strong> device - as modified to transmit 150 feet by <strong>Lady Ada</strong>.</p>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/tvbgone_schematic1.png"><img class="alignnone size-large wp-image-1568" title="tvbgone_schematic" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/tvbgone_schematic1-580x516.png" alt="" width="580" height="516" /></a></p>
+
+<p>I intend to use a lithium battery for lighter weight and longer life - that power supply will be based on the <strong>LiPower design</strong> by <strong>Leah Buechley</strong>, but I intend to make mine slightly smaller.</p>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/2845764065_95fbdc81e5.jpg"><img class="alignnone size-full wp-image-1566" title="2845764065_95fbdc81e5" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/2845764065_95fbdc81e5.jpg" alt="" width="423" height="428" /></a></p>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/05/LilyPad-PowerSupply-Lipoimg.jpg"><img class="alignnone size-large wp-image-1574" title="LilyPad-PowerSupply-Lipoimg" src="http://blog.kaziunas.com/wp-content/uploads/2010/05/LilyPad-PowerSupply-Lipoimg-580x448.jpg" alt="" width="580" height="448" /></a></p>
+
+<h3>Overall Project Goals:</h3>
+
+<ul>
+    <li>Create a remote control that takes input from finger movements / gestures</li>
+    <li>Remote is small and wearable (will likely look like a bracelet or a watch) with connections to the fingertips.</li>
+    <li>Remote is comfortable enough for long-term wear, will help to relieve hand / joint fatigue</li>
+</ul>
+
+<h3>Short Term Goals By Stage</h3>
+
+<p>Prototype in stages, adding functionality and additional control channels / technologies in each stage</p>
+
+<p><strong>1.0 </strong><strong>Stage 1:  Infrared</strong></p>
+
+<p>1.1.  Use infrared to turn off on devices, navigate devices (most likely television)</p>
+
+<p style="padding-left: 30px;">1.1.1.   Most likely commands:</p>
+
+<p style="padding-left: 60px;">1.1.1.1.On</p>
+
+<p style="padding-left: 60px;">1.1.1.2.Off</p>
+
+<p style="padding-left: 60px;">1.1.1.3.Up channel</p>
+
+<p style="padding-left: 60px;">1.1.1.4.Down channel</p>
+
+<p style="padding-left: 60px;">1.1.1.5.Other specialty features?</p>
+
+<p>1.2. Power supply -&gt; LiPo model uses lightweight lithium battery and outputs 5V</p>
+
+<p style="padding-left: 30px;">1.2.1 This is perfect for the TV-B-Gone style board I want to create / modify / fab</p>
+
+<p>1.3 Parts List for puppetmaster (phase 1 - IR)</p>
+
+<p>1.4.  Complete working prototype by 6/01/2010</p>
+
+<p><strong>2.0 </strong><strong>Stage 2: Radio Control</strong></p>
+
+<p>2.1.  Add radio control to Stage 1 prototype</p>
+
+<p>2.2.  Enable mode switching on input device - different modes - different gestures</p>
+
+<p>2.3.  Experiment with driving a RC device.</p>
+
+<p>2.4.  Complete working prototype by 6/30/2010</p>
+
+<p><strong>3.0 </strong><strong>Stage 3: Bluetooth</strong></p>
+
+<p>3.1.  Add Bluetooth to Stage 1 prototype</p>
+
+<p>3.2.  Enable mode switching on input device - different modes - different gestures</p>
+
+<p>3.3.  Experiment with driving a RC device.</p>
+
+<p>3.4.  Complete working prototype by 7/30/2010</p>
+
+<p><strong>4.0 </strong><strong>Stage 4:  6-axis motion sensors</strong></p>
+
+<p>4.1.  Add additional sensors to interface:</p>
+
+<p style="padding-left: 30px;">4.1.1.     6-axis motion sensors (3 axis gyro, 3 axis accelerometer) to input gestures.</p>
+
+<p>4.2.  Complete working prototype by 11/01/2010</p>
+
+<p><strong>5.0 </strong><strong>Stage 5:  Gestural Language</strong></p>
+
+<p>5.1.  Utilize 6-axis motion sensors (3 axis gyro, 3 axis accelerometer) to input gestures.</p>
+
+<p>5.2.  Creation of full blown gestural language (possibly based on sign language)</p>
+
+<p>5.3.  Complete working prototype by 11/01/2010</p>
+
+<p>6.0  <strong>Stage 6:  Personal LAN</strong></p>
+
+<p>6.1.  Connect to the internet to create personal LAN.</p>
+
+<p style="padding-left: 30px;">6.1.1.     Most likely by fabbing a board that can plug into an iphone,</p>
+
+<p style="padding-left: 30px;">6.1.2.     This board could then provide any other user devices with data access</p>
+
+<p style="padding-left: 30px;">6.1.3.     Could connect to Premonition system</p>
+
+<p>6.2.  Complete working prototype by 11/01/2010</p>
+
+<h3>Schedule:</h3>
+
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="44" valign="top"><strong>Stage</strong><strong> </strong></td>
+<td width="223" valign="top"><strong>Description</strong><strong> </strong></td>
+<td width="139" valign="top"><strong>Deliverable</strong><strong> </strong></td>
+<td width="97" valign="top"><strong>Date Range</strong><strong> </strong></td>
+</tr>
+<tr>
+<td width="44" valign="top">1.0</td>
+<td width="223" valign="top">Infrared</td>
+<td width="139" valign="top">Working   infrared remote prototype</td>
+<td width="97" valign="top">05/16/2010 -   06/01/2010</td>
+</tr>
+<tr>
+<td width="44" valign="top">2.0</td>
+<td width="223" valign="top">Radio Control</td>
+<td width="139" valign="top">Working   infrared remote prototype + radio control</td>
+<td width="97" valign="top">06/01/2010 -   06/30/2010</td>
+</tr>
+<tr>
+<td width="44" valign="top">3.0</td>
+<td width="223" valign="top">Bluetooth</td>
+<td width="139" valign="top">Working   infrared remote prototype + radio control + bluetooth</td>
+<td width="97" valign="top">07/01/2010 -   7/30/2010</td>
+</tr>
+<tr>
+<td width="44" valign="top">4.0</td>
+<td width="223" valign="top">6-axis   Sensors (gyro, acelorometer)</td>
+<td width="139" valign="top">Stages 1 or 2   plus working sensor prototype</td>
+<td width="97" valign="top">06/01/2010 -   11/01/2010</td>
+</tr>
+<tr>
+<td width="44" valign="top">5.0</td>
+<td width="223" valign="top">Gestural   Language</td>
+<td width="139" valign="top">Gestural   language mapped to the 6-axis sensors</td>
+<td width="97" valign="top">06/01/2010 -
+
+11/01/2010</td>
+</tr>
+<tr>
+<td width="44" valign="top">6.0</td>
+<td width="223" valign="top">Personal LAN</td>
+<td width="139" valign="top">Local area   network driven by iphone data access that can wirelessly provide data to   other personal devices.</td>
+<td width="97" valign="top">08/01/2010 -
+
+11/01/2010</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Distribution Plan</h3>
+
+<p>I plan to distribute this project through my website as downloadable schematics and board files.  Releases will be made available as individual stages are completed.  If the project becomes popular, I may consider distributing it as a kit.</p>
+
+<p>It is unlikely that I will patent this device, as patents are expensive and afford little protection unless you are the owner of a large company with deep pockets who is  prepared to litigate.</p>
+
+<p>I instead intend to use the Creative Commons for both licensing and enableling others to find these plans. (a non-commercial - modifications allowed - share alike license seems to make the most sense).  This will enable me to keep the copyright to my work while allowing others to us, modify and improve it.</p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Towards the final project</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/towards-the-final-project.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1585</id>
+
+    <published>2010-05-19T05:33:24Z</published>
+    <updated>2010-05-19T13:16:00Z</updated>
+
+    <summary> I&apos;ve been lasercutting a lot of textiles for a while now. My diorama will be illuminated by a chandelier of lasercut textile and flameworked glass plants. The LEDs will be attached to a photosensor. As ambient light fades, the...</summary>
+    <author>
+        <name>Jenine Bressner</name>
+        <uri>http://JenineBressner.blogspot.com</uri>
+    </author>
+    
+        <category term="Jenine Bressner" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="jenine" label="Jenine" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="leds" label="LEDs" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="lasercut" label="lasercut" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="textiles" label="textiles" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3730-3883.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3730-3883.html','popup','width=2816,height=2112,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3730-thumb-600x450-3883.jpg" width="600" height="450" alt="IMG_3730.JPG" class="mt-image-none" style="" /></a></span>
+I've been lasercutting a lot of textiles for a while now. My diorama will be illuminated by a chandelier of lasercut textile and flameworked glass plants.
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3880-3886.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3880-3886.html','popup','width=2719,height=1637,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3880-thumb-600x361-3886.jpg" width="600" height="361" alt="IMG_3880.jpg" class="mt-image-none" style="" /></a></span>
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/-1-3907.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/-1-3907.html','popup','width=3456,height=2592,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/-1-thumb-600x450-3907.jpg" width="600" height="450" alt="-1.jpg" class="mt-image-none" style="" /></a></span>
+The LEDs will be attached to a photosensor. As ambient light fades, the LEDs will get brighter.
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3877-3889.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3877-3889.html','popup','width=2141,height=1346,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/IMG_3877-thumb-600x377-3889.jpg" width="600" height="377" alt="IMG_3877.jpg" class="mt-image-none" style="" /></a></span>
+These are LEDs that will be within the textile plants.
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/Jenine/Jenine%20chandelier.jpg"><img alt="Jenine chandelier.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/05/Jenine chandelier-thumb-375x500-3892.jpg" width="375" height="500" class="mt-image-none" style="" /></a></span></p>
+
+<p>I assembled these form studies to get a better sense of scale for larger chandeliers.
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/4. Crafts-3897.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/4. Crafts-3897.html','popup','width=784,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/4. Crafts-thumb-600x765-3897.jpg" width="600" height="765" alt="4. Crafts.jpg" class="mt-image-none" style="" /></a></span>
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/5. Crafts-3900.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/5. Crafts-3900.html','popup','width=776,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/5. Crafts-thumb-600x1000-3900.jpg" width="600" height="773" alt="5. Crafts.jpg" class="mt-image-none" style="" /></a></span>
+I flameworked these glass components. These forms will also house LEDs. 
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/10. large doll group-3903.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/10. large doll group-3903.html','popup','width=2098,height=2371,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/10. large doll group-thumb-600x2371-3903.jpg" width="600" height="678" alt="10. large doll group.jpg" class="mt-image-none" style="" /></a></span>
+Above are some dolls that I sculpted. I also lampworked the glass eyes, and made the clothes and wigs.</p>
+
+<p>The diorama will display automated figures controlled by servo motors. The figures and the diorama itself will include some cast parts.</p>
+
+<p>My method of distribution for this project is to document the animation, and to use photographs of the diorama as illustrations. My intention is to make a series of these animated dioramas, and use the documents to delineate longer narratives; to illustrate books and compose longer animations that can be distributed.</p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Final project notes</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/final-project-notes.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1583</id>
+
+    <published>2010-05-19T02:25:16Z</published>
+    <updated>2010-05-19T03:49:00Z</updated>
+
+    <summary>I initially wanted to do reverse-osmosis water desalination, but then I discovered forward osmosis, which uses ammonia salt to pull the water through membrane, detailed in this page about Yale&apos;s evaporative draw-solution system, but then Shawn emailed me a link...</summary>
+    <author>
+        <name>Noah Bedford</name>
+        
+    </author>
+    
+        <category term="14 project development" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Noah Bedford" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>I initially wanted to do reverse-osmosis water desalination, but then I discovered forward osmosis, which uses ammonia salt to pull the water through membrane, detailed <a href="http://www.yale.edu/env/elimelech/News_Page/files/membrane_technology_jan2007.pdf">in this page about Yale's evaporative draw-solution system</a>, but then Shawn emailed me a link to <a href="http://www.nature.com/nnano/journal/vaop/ncurrent/abs/nnano.2010.34.html">Ion Concentration Polarization</a>, which reduces filter clogging, and decided to switch to making an ICP water filtration device with <a href="http://www.rsc.org/Publishing/ChemTech/Volume/2008/01/Shrinky-Dink_microfluidics.asp">shrinky-dinks</a>
+In the mean time I noticed that water desalination isn't very fabby, so decided to tack on a 
+<a href="http://www.octiva.net/projects/ppm/>PPM/Ph meter</a> and use feedback to calibrate the device.
+I then proceeded to accomplish nothing. I don't know how to attach electrodes to anything small, and DuPont doesn't provide samples of Nafion, so I'll have to order some, and right now I'm just concentrating on getting parts together for the salinity meter, but that's a well-documented project I haven't done any research of my own on.
+I'm considering switching to building a long-range capacitative+inductive RFID meter with an SD card to do a generic survey of RFID at this point, I guess I didn't panic early enough.</p>
+
+<p>-\n</p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Final project: pinball machine themed on an unfinished opera by Dylan Thomas and Stravinsky</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/pinball-led-burst-boards.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1553</id>
+
+    <published>2010-05-19T01:45:55Z</published>
+    <updated>2010-06-02T12:53:49Z</updated>
+
+    <summary> Stravinsky&apos;s first opera was The Rake&apos;s Progress, and for years after he always intended to compose another. In 1953 he met with Dylan Thomas in New York to hash out the details of a libretto for an ambitious opera...</summary>
+    <author>
+        <name>Shawn Wallace</name>
+        <uri>http://www.fluxly.com</uri>
+    </author>
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p><img src="http://as220.org/shawn/FinalProject/playfield1.jpg"/>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="photo.jpg" src="http://as220.org/labs/fabacademy/2010/06/02/photo.jpg" width="600" height="800" class="mt-image-none" style="" /></span>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="mzo1.jpg" src="http://as220.org/labs/fabacademy/2010/05/18/mzo1.jpg" width="200" height="200" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></span>
+Stravinsky's first opera was <i>The Rake's Progress</i>, and for years after he always intended to compose another. In 1953 he met with Dylan Thomas in New York to hash out the details of a libretto for an ambitious opera to be commissioned by Boston University. Several possible scenarios were tossed out, including a postapocalyptic love story and a libretto written by a large number of monkeys on typewriters. As fortune would have it, the poet died before the opera could be realized. This machine tells the story of the unfinished opera using the vernacular designs and mechanisms of pinball.</p>
+
+<h2>Design</h2>
+
+<p>The game components will tell the story of the opera by combining the following elements:</p>
+
+<pre><code>4 possible scripts
+12 characters
+12 props
+12 locales
+26 typewriter keys
+</code></pre>
+
+<p>Each of the elements is keyed to a target on the playfield and has corresponding LED feedback.</p>
+
+<p>General color guidelines for the design are:</p>
+
+<pre><code>Black and white cross-hatch  
+Spot complementary colors: orange/blue, purple/yellow  
+Collaged b&amp;w paper images
+</code></pre>
+
+<h2>Components</h2>
+
+<p>The various components fall into these categories:</p>
+
+<pre>
+ Manual Input
+       Flipper
+       Plunger
+       Coin op
+
+Automatic mechanisms
+    Ball return
+    Tilt and bump sensing
+
+Tracked Input
+    Targets
+    Bumpers
+    Holes
+    Switches
+
+Output
+    Lights
+    Sound and music
+    Score
+    Backglass display
+</pre>
+
+<p>In the triage process of the final week I have focused on getting two output systems working; the LED array drivers and the sound and music generator.</p>
+
+<h3>The Electronics</h3>
+
+<p>The two working playfield ornaments are based on the Fabian
+Arduino-compatible board.  </p>
+
+<p><b>The Fluxamafet</B>: sixteen N channel MOSFETs on an Atmega168. Controls
+banks of LED arrays.  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="fluxamafetschematic.png" src="http://as220.org/labs/fabacademy/2010/06/02/fluxamafetschematic.png" width="600" height="405" class="mt-image-none" style="" /></span>  </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/fluxamafetboard.png"/>  </p>
+
+<p><b>The Fluxamamidi</B>: An Atmega168 that generates MIDI sequences for all
+the sound effects and music in the game. Can read MIDI patches from an
+SD card and play back according to script and input.  </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/fluxamamidi2.png"/> </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/fluxamamidiboard2.png"/>  </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/fluxamamidiback1.png"/> </p>
+
+<p><b>The Fluxamabox (UNFINISHED)</B>: A MIDI to audio sound generator based on the
+ATSAM2195.  </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/Fluxamamidi.png"/> </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/fluxamamidiboard.png"/>   </p>
+
+<h3>The LED arrays</h3>
+
+<p>I started by milling a bunch of breakout boards grouping six LEDs into different configurations:  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="pinballSnap3.png" src="http://as220.org/labs/fabacademy/2010/05/12/pinballSnap3.png" width="600" height="420" class="mt-image-none" style="" /></span>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="photobb.jpg" src="http://as220.org/labs/fabacademy/2010/05/12/photobb.jpg" width="600" height="450" class="mt-image-none" style="" /></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="pinballLED1.jpg" src="http://as220.org/labs/fabacademy/2010/04/27/pinballLED1.jpg" width="599" height="400" class="mt-image-none" style="" /></span>  </p>
+
+<p>Coupled with the controller, they formed a dreaded floating octopus of wires:  </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/playfieldLEDs3.jpg"/>  </p>
+
+<p>Although they look nice from the front:  </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/playfieldLEDs2.JPG"/>  </p>
+
+<p>For the next group I decided to use the vinyl cutter, which works well for this kind of application:  </p>
+
+<p><img src="http://as220.org/shawn/FinalProject/playfieldLEDs1.jpg"/>  </p>
+
+<h3>Programming interface</h3>
+
+<p>A Processing interface for visualizing the array. Because Processing
+is syntactically similar to Arduino, you can cut and paste the model
+and upload as working firmware.</p>
+
+<p><img src="http://as220.org/shawn/FinalProject/ledprogrammingTool.png"/>  </p>
+
+<p>Here's the <a href="http://as220.org/shawn/FinalProject/PinballLEDTool.pde">Processing code.</a></p>
+
+<h3>Flippers</h3>
+
+<p>For now, the flippers are activated by (120V AC) sewing machine solenoids that I happen to have a lot of. I also have a bunch of 5V electromechanical relays that can switch them. Eventually I will swap these out for two-coil flipper solenoids comparable to those at pinballmedic.net.  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="flipper2.JPG" src="http://as220.org/labs/fabacademy/2010/05/19/flipper2.JPG" width="600" height="316" class="mt-image-none" style="" /></span>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="photo.jpg" src="http://as220.org/labs/fabacademy/2010/05/19/photo.jpg" width="600" height="402" class="mt-image-none" style="" /></span>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="flipper.jpg" src="http://as220.org/labs/fabacademy/2010/05/19/flipper.jpg" width="597" height="364" class="mt-image-none" style="" /></span>  </p>
+
+<h3>The Playfield</h3>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="pinballSnap1.png" src="http://as220.org/labs/fabacademy/2010/05/12/pinballSnap1.png" width="600" height="395" class="mt-image-none" style="" /></span>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="playfield.jpg" src="http://as220.org/labs/fabacademy/2010/05/19/playfield.jpg" width="600" height="470" class="mt-image-none" style="" /></span>  </p>
+
+<p>Just got my pinball balls in the mail:  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="pinballs.jpg" src="http://as220.org/labs/fabacademy/2010/05/19/pinballs.jpg" width="600" height="336" class="mt-image-none" style="" /></span></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Final project progress</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/final-project-progress.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1576</id>
+
+    <published>2010-05-12T18:11:28Z</published>
+    <updated>2010-05-12T18:24:19Z</updated>
+
+    <summary>Here&apos;s a picture of the piece of acrylic I cut some holes into for electrodialysis (which also functions as a rough model of a potential ion concentration polarization device.) Note that I have lack knowledge of even basic electrohydrodynamics, so...</summary>
+    <author>
+        <name>Noah Bedford</name>
+        
+    </author>
+    
+        <category term="14 project development" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Noah Bedford" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>Here's a picture of the piece of acrylic I cut some holes into for 
+electrodialysis (which also functions as a rough model of a potential ion concentration polarization device.)<br />
+Note that I have lack knowledge of even basic electrohydrodynamics, so it's likely this implementation of both of these concepts is completely unsound.<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/2010/05/12/filter-proto0.jpg"><img alt="filter-proto0.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/05/filter-proto0-thumb-800x533-3855.jpg" width="800" height="533" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Levitating Elephant</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/levitating-elephant.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1575</id>
+
+    <published>2010-05-12T17:08:42Z</published>
+    <updated>2010-05-12T18:10:23Z</updated>
+
+    <summary>I wrote a small clutter program to change the position of a picture of a Muybridge elephant based on the output of the step response board: hello.elephant.py This is the code that runs on the FTDI version of the step...</summary>
+    <author>
+        <name>Noah Bedford</name>
+        
+    </author>
+    
+        <category term="08 sensors, actuators, and displays" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="09 interface programming" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Noah Bedford" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>I wrote a small clutter program to change the position of a picture of a Muybridge elephant based on the output of the step response board:<br />
+<span class="mt-enclosure mt-enclosure-file" style="display: inline;"><a href="http://as220.org/labs/fabacademy/2010/05/12/hello.elephant.py">hello.elephant.py</a></span><br />
+<span class="mt-enclosure mt-enclosure-file" style="display: inline;"><a href="http://as220.org/labs/fabacademy/2010/05/12/hello.ftdi.step.45.asm">This is the code that runs on the FTDI version of the step response board</a></span><br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/2010/05/12/elephant-screenshot.png"><img alt="elephant-screenshot.png" src="http://as220.org/labs/fabacademy/assets_c/2010/05/elephant-screenshot-thumb-800x468-3853.png" width="800" height="468" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Big pile of crap</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/big-pile-of-crap.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1574</id>
+
+    <published>2010-05-12T16:51:04Z</published>
+    <updated>2010-05-12T17:05:30Z</updated>
+
+    <summary>It was going to be a skateboard... Source File...</summary>
+    <author>
+        <name>Noah Bedford</name>
+        
+    </author>
+    
+        <category term="03 computer-controlled machining" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Noah Bedford" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>It was going to be a skateboard... <br />
+<span class="mt-enclosure mt-enclosure-file" style="display: inline;"><a href="http://as220.org/labs/fabacademy/2010/05/12/skateboard.svg">Source File</a></span><br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/2010/05/12/somethingbig.jpg"><img alt="somethingbig.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/05/somethingbig-thumb-800x533-3849.jpg" width="800" height="533" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Electronics design and production</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/electronics-design-and-production.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1573</id>
+
+    <published>2010-05-12T16:41:05Z</published>
+    <updated>2010-05-12T16:43:00Z</updated>
+
+    <summary>I built Shawn&apos;s modified FTDI version of the step response board and got it working, I&apos;ll edit this entry to add pictures later. -\n...</summary>
+    <author>
+        <name>Noah Bedford</name>
+        
+    </author>
+    
+        <category term="02 electronics design and production" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Noah Bedford" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p>I built Shawn's modified FTDI version of the step response board and got it working, I'll edit this entry to add pictures later.</p>
+
+<p>-\n</p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Faboost 0.0</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/faboost-00.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1571</id>
+
+    <published>2010-05-05T19:58:10Z</published>
+    <updated>2010-05-07T03:56:56Z</updated>
+
+    <summary>Faboost is an automatix-style script to download dependencies for and set up Fab Lab computers. -\n...</summary>
+    <author>
+        <name>Noah Bedford</name>
+        
+    </author>
+    
+        <category term="Miscellaneous" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Noah Bedford" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p><a href="http://as220.org/~noah/faboost">Faboost</a> is an automatix-style script to download dependencies for and set up Fab Lab computers.</p>
+
+<p>-\n</p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Final Project Progress</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/05/final-project-progress-1.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1569</id>
+
+    <published>2010-05-05T13:48:11Z</published>
+    <updated>2010-05-05T14:05:54Z</updated>
+
+    <summary> Clay model to determine form factor. Structured light scanning attempt. Figuring out slices for laser cut frame. PCB designs for buttons and bridge....</summary>
+    <author>
+        <name>Elliot Clapp</name>
+        
+    </author>
+    
+        <category term="Elliot Clapp" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay7-3804.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay7-3804.html','popup','width=664,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay7-thumb-250x376-3804.jpg" width="250" height="376" alt="chorder-clay7.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay8-3805.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay8-3805.html','popup','width=664,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay8-thumb-250x376-3805.jpg" width="250" height="376" alt="chorder-clay8.jpg" class="mt-image-none" style="" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay10-3806.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay10-3806.html','popup','width=664,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay10-thumb-250x376-3806.jpg" width="250" height="376" alt="" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay11-3807.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay11-3807.html','popup','width=664,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder-clay11-thumb-250x376-3807.jpg" width="250" height="376" alt="chorder-clay11.jpg" class="mt-image-none" style="" /></a></span></p>
+
+<p>Clay model to determine form factor.</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/three phase-3811.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/three phase-3811.html','popup','width=330,height=285,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/three phase-thumb-250x215-3811.png" width="250" height="215" alt="three phase.png" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder61-3809.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/chorder61-3809.html','popup','width=1000,height=987,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder61-thumb-250x246-3809.jpg" width="250" height="246" alt="chorder61.jpg" class="mt-image-none" style="" /></a></span></p>
+
+<p>Structured light scanning attempt. 
+Figuring out slices for laser cut frame.</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder63-3810.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/chorder63-3810.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/chorder63-thumb-250x166-3810.jpg" width="250" height="166" alt="chorder63.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/traces-3812.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/traces-3812.html','popup','width=1314,height=875,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/traces-thumb-250x166-3812.png" width="250" height="166" alt="traces.png" class="mt-image-none" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p>PCB designs for buttons and bridge.</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/05/serialtrace-3813.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/05/serialtrace-3813.html','popup','width=532,height=815,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/05/serialtrace-thumb-250x382-3813.png" width="250" height="382" alt="serialtrace.png" class="mt-image-none" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+]]>
+        
+
+    </content>
+</entry>
+
+<entry>
+    <title>Servo motor mosh</title>
+    <link rel="alternate" type="text/html" href="http://as220.org/labs/fabacademy/2010/04/stepper-motor-mosh.html" />
+    <id>tag:as220.org,2010:/labs/fabacademy//33.1556</id>
+
+    <published>2010-04-28T14:05:57Z</published>
+    <updated>2010-04-28T17:11:56Z</updated>
+
+    <summary> Here is a very brief clip of a nodding head. I attached a doll head that I sculpted (with flameworked glass eyes) to a servo motor. This will be part of a larger diorama of dancing automatons that I&apos;m...</summary>
+    <author>
+        <name>Jenine Bressner</name>
+        <uri>http://JenineBressner.blogspot.com</uri>
+    </author>
+    
+        <category term="08 sensors, actuators, and displays" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Jenine Bressner" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="Year-long Projects" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="jeninebressner" label="Jenine Bressner" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="servomotor" label="servo motor" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="en" xml:base="http://as220.org/labs/fabacademy/">
+        <![CDATA[<p><object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/bf8u_cuwyvw&amp;hl=en_US&amp;fs=1&amp;color1=0xe1600f&amp;color2=0xfebd01"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/bf8u_cuwyvw&amp;hl=en_US&amp;fs=1&amp;color1=0xe1600f&amp;color2=0xfebd01" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object></p>
+
+<p>Here is a very brief clip of a nodding head. </p>
+
+<p>I attached a doll head that I sculpted (with flameworked glass eyes) to a servo motor. This will be part of a larger diorama of dancing automatons that I'm working on.</p>
+]]>
+        
+
+    </content>
+</entry>
+
+</feed>

@@ -1,0 +1,998 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Movable Type 4.261" />
+<link rel="stylesheet" href="http://as220.org/labs/fabacademy/styles.css" type="text/css" />
+<link rel="start" href="http://as220.org/labs/fabacademy/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://as220.org/labs/fabacademy/atom.xml" />
+<script type="text/javascript" src="http://as220.org/labs/fabacademy/mt.js"></script>
+
+
+    <title>Fab Academy at AS220: March 2010 Archives</title>
+
+
+    <link rel="prev" href="http://as220.org/labs/fabacademy/2010/02/" title="February 2010" />
+    <link rel="next" href="http://as220.org/labs/fabacademy/2010/04/" title="April 2010" />
+
+</head>
+<body id="mt-blog" class="mt-archive-listing mt-datebased-monthly-archive layout-wtt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://as220.org/labs/fabacademy/" accesskey="1">Fab Academy at AS220</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <h1 id="page-title" class="archive-title">March 2010 Archives</h1>
+
+
+
+
+
+                            
+                            <div id="entry-1513" class="entry-asset asset hentry">
+<p class="date">March 31, 2010 11:07 AM</p>
+<p class="title">Best Error Message Ever</p>
+by <a href="http://www.kaziunas.com">Anna France</a><br/>
+
+        <div class="asset-body">
+            <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="best_processing_error_ever.jpg" src="http://as220.org/labs/fabacademy/best_processing_error_ever.jpg" width="599" height="262" class="mt-image-none" style="" /></span></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/best-error-message-ever.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1512" class="entry-asset asset hentry">
+<p class="date">March 31, 2010  9:07 AM</p>
+<p class="title">Using a GUI to Control Processing Output with ControlIP5, Firmata via Serial</p>
+by <a href="http://www.kaziunas.com">Anna France</a><br/>
+
+        <div class="asset-body">
+            <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="580" height="435">
+  <param name="base" value="." />
+  <param name="SRC" value="http://kaziunas.com/MT/button.swf" />
+  <!--[if !IE]>-->
+            <object type="application/x-shockwave-flash" data="http://kaziunas.com/MT/button.swf" width="580" height="435">
+              <param name="base" value="." /><param name="PLAY" value="false" />
+              <!--<![endif]-->
+  <img src="MT/IMG_2299.jpg" alt="" />
+  <!--[if !IE]>-->
+            </object>
+            <!--<![endif]-->
+</object></p>
+
+<p>I created this simple interface to control turning on and off an LED that is attached to a microcontroller via the serial port on my Mac.  I wanted to see if I could get the ControlIP5 (used to create the GUI), Firmata and serial libraries working together before I tried using more complex hardware.  I intend to experiment with driving multiple servos and possibly tinkering with bluetooth using the NXT library as an "cheap" way (it's "cheap" because I already own the Mindstorms hardware) to play around with bluetooth without buying additional bluetooth modules. </p>
+
+<h3>The Interface: Default / Initial State:</h3>
+
+<p>The interface is simple - the Turn On button turns the light on and the Turn Off button turns it off.
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="None_selected.png" src="http://as220.org/labs/fabacademy/None_selected.png" width="600" height="471" class="mt-image-none" style="" /></span></p>
+
+<h3>The Interface: Button Rollover State:</h3>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="rollover.png" src="http://as220.org/labs/fabacademy/rollover.png" width="600" height="478" class="mt-image-none" style="" /></span></p>
+
+<h3>Here's the Processing code:</h3>
+
+<p><font size = -1></p>
+
+<pre>
+
+/*-------------------------------------------------------------------
+ * Fab Academy -- Module 09: Interface Programming
+ *--------------------------------------------------------------------
+ * Assignment: Write a user interface for an input &/or output 
+ * device.
+ *--------------------------------------------------------------------
+ * Purpose:  This program is a test to get the controlIP5, Firmata, 
+ * and serial libraries working together through the serial port.  
+ * This program uses a simple button GUI interface to turn on / of an
+ * LED.
+ *--------------------------------------------------------------------
+ * Anna Kaziunas France - 30 March 2010
+ * Combined / Modified example code from:
+ * controlIP5 buttons example (included the library download)
+ *------------------------------------------------------------------*/
+
+
+import processing.serial.*;
+import cc.arduino.*;
+import controlP5.*;
+
+ControlP5 controlP5;
+// we have to use controlP5.Button here since there
+// would be a conflict if we only use Button to declare button b.
+controlP5.Button b;
+Arduino arduino;
+
+// Variables
+int ledPin = 11;
+int buttonValue = 0;
+int myColor = color(0);
+
+void setup() {
+  arduino = new Arduino(this, Arduino.list()[2], 57600);
+  arduino.pinMode(ledPin, Arduino.OUTPUT);
+  size(640,480);
+  smooth();
+  frameRate(30);
+  controlP5 = new ControlP5(this);
+  controlP5.addButton("Turn_On",255,200,80,100,70);
+  controlP5.addButton("Turn_Off",0,200,160,100,70);
+  println(Arduino.list());
+}
+
+void draw()
+{
+  background(myColor);
+  fill(buttonValue);
+  rect(20,20,width-40,height-40);
+}
+
+public void controlEvent(ControlEvent theEvent) {
+  println(theEvent.controller().name());
+
+}
+
+// function buttonA will receive changes from 
+// controller with name Turn_On
+public void Turn_On(int theValue) {
+  println("a button event from Turn_On: "+theValue);
+  myColor = theValue;
+  arduino.digitalWrite(ledPin, Arduino.HIGH);
+}
+
+// function buttonB will receive changes from 
+// controller with name Turn_Off
+public void Turn_Off(int theValue) {
+  println("a button event from Turn_Off: "+theValue);
+  myColor = theValue;
+  arduino.digitalWrite(ledPin, Arduino.LOW);
+}
+
+</pre>
+
+<p></font></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/using-a-gui-to-controling-processing-output-with-controlip5-firmata-via-serial.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1509" class="entry-asset asset hentry">
+<p class="date">March 31, 2010 12:35 AM</p>
+<p class="title">Pure Data Frequency Modulator</p>
+by <a href="">Elliot Clapp</a><br/>
+
+        <div class="asset-body">
+            <p><object width="400" height="300"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=10708541&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=10708541&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="300"></embed></object><p><a href="http://vimeo.com/10708541">The Fluxamaphonic by Elliot Clapp</a> from <a href="http://vimeo.com/user1523138">Shawn Wallace</a> on <a href="http://vimeo.com">Vimeo</a>.</p>  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/pdcapture-3605.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/pdcapture-3605.html','popup','width=1790,height=1301,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/pdcapture-thumb-600x436-3605.jpg" width="600" height="436" alt="pdcapture.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/interace1.jpg"><img alt="interace1.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/interace1-thumb-600x398-3608.jpg" width="600" height="398" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/interace3.jpg"><img alt="interace3.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/interace3-thumb-600x398-3610.jpg" width="600" height="398" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/interace5.jpg"><img alt="interace5.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/interace5-thumb-600x398-3611.jpg" width="600" height="398" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/interace7.jpg"><img alt="interace7.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/interace7-thumb-600x398-3613.jpg" width="600" height="398" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/interace9.jpg"><img alt="interace9.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/interace9-thumb-600x398-3615.jpg" width="600" height="398" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/interace8.jpg"><img alt="interace8.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/interace8-thumb-600x398-3617.jpg" width="600" height="398" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><object width="501" height="284"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=10708541&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=ffffff&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=10708541&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=ffffff&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="501" height="284"></embed></object></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/pure-data-frequency-modulator.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1510" class="entry-asset asset hentry">
+<p class="date">March 30, 2010 12:45 AM</p>
+<p class="title">DIY hobo game controllers</p>
+by <a href="http://www.fluxly.com">Shawn Wallace</a><br/>
+
+        <div class="asset-body">
+            <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="IMG_0285.jpg" src="http://as220.org/labs/fabacademy/2010/03/31/IMG_0285.jpg" width="600" height="450" class="mt-image-none" style="" /></span>  </p>
+
+<p>These DIY game controllers are made from pennies and cigar boxes.  </p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="IMG_0287.JPG" src="http://as220.org/labs/fabacademy/2010/03/31/IMG_0287.JPG" width="600" height="450" class="mt-image-none" style="" /></span>  </p>
+
+<p>They are a sample controller for the Fluxly video game, a wizard duel where you have to build your own controller to compete. The interface for the game is implemented in Actionscript and compiled using Adobe's free mxmlc compiler.  </p>
+
+        </div>
+
+
+
+  <div class="more">
+    <a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">Read more... </a>
+  </div>
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/diy-hobo-game-controllers.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1505" class="entry-asset asset hentry">
+<p class="date">March 29, 2010 10:37 AM</p>
+<p class="title">My favorite python/GTK reference</p>
+by <a href="">Noah Bedford</a><br/>
+
+        <div class="asset-body">
+            <p><a href="http://svn.majorsilence.com/pygtknotebook/trunk/pygtk-notebook-latest.html">Python-GTK notebook</a></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/my-favorite-pythongtk-reference.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1489" class="entry-asset asset hentry">
+<p class="date">March 22, 2010 12:24 PM</p>
+<p class="title">A soldering video tutorial</p>
+by <a href="http://JenineBressner.blogspot.com">Jenine Bressner</a><br/>
+
+        <div class="asset-body">
+            <p>I demonstrate soldering components onto a step response circuit board that was milled on a Modela CNC router. My technique is informed by my soldering experience in silversmithing.</p>
+
+<p><object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/k7LjbC1XISA&amp;hl=en_US&amp;fs=1&amp;color1=0x234900&amp;color2=0x4e9e00"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/k7LjbC1XISA&amp;hl=en_US&amp;fs=1&amp;color1=0x234900&amp;color2=0x4e9e00" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object></p>
+
+<p>At first, the camera wouldn't focus on close- up shots. Brandon had the great idea of placing a magnifying lens in front of the camera. This setup worked wonderfully!
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/IMG_3692.JPG"><img alt="IMG_3692.JPG" src="http://as220.org/labs/fabacademy/assets_c/2010/03/IMG_3692-thumb-600x450-3551.jpg" width="600" height="450" class="mt-image-none" style="" /></a></span></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/a-soldering-video-tutorial.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1487" class="entry-asset asset hentry">
+<p class="date">March 17, 2010 11:02 PM</p>
+<p class="title">Motion Sensing Glow Skull</p>
+by <a href="http://www.kaziunas.com">Anna France</a><br/>
+
+        <div class="asset-body">
+            <p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2034.jpg"><img title="IMG_2034" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2034.jpg" alt="Voodoo Glow Skull" height="435" width="580" /></a><br /><br />
+I am ready for Halloween early this year.  For my I/O sensor project for Fab Academy I put together a Arduino-controlled motion sensing glowing skull.  When motion is detected by the parallax motion sensor, the board turns on the LEDs in the mouth and fades in and out the LEDs glued into the eye sockets.</p>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2036.jpg"><img title="IMG_2036" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2036.jpg" alt="Voodoo Glow Skull" height="435" width="580" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2103.jpg"><img title="IMG_2103" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2103.jpg" alt="Voodoo Glow Skull" height="435" width="580" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2030.jpg"><img title="IMG_2030" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2030.jpg" alt="Voodoo Glow Skull" height="435" width="580" /></a></p>
+
+<h4>Parts List:</h4>
+
+<ul>
+<li>1 Parallax PIR [Pyroelectric  ("Passive") InfraRed)] motion sensor</li>
+<li>A few lengths of wire</li>
+<li>1 Arduino compatible board (I used a Seeduino (<a href="http://www.seeedstudio.com/" target="_blank">Seeed Studios</a>) I had laying around).  I like this board because I can flip the power source switch to turn it off / on.</li>
+<li>1 9 volt battery</li>
+<li>Mouth: 10mm Red LED (3) </li>
+<li>Eyes:  5mm Red Wide-Angle LED (2)</li>
+<li>5 in or so metal strip with holes (to house mouth LEDs</li>
+<li>3 plastic LED holders (to insulate the mouth LED wires from the metal strip)</li>
+<li>super glue / hot glue</li>
+</ul>
+
+<h4>Prototyping the Circuit / Interaction + Putting It Together:</h4>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_19811.jpg"><img class="alignnone size-thumbnail wp-image-1458" title="IMG_1981" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_19811-180x180.jpg" alt="prototyping" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_19871.jpg"><img class="alignnone size-thumbnail wp-image-1457" title="IMG_1987" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_19871-180x180.jpg" alt="prototyping - jumbo LED" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_19851.jpg"><img class="alignnone size-thumbnail wp-image-1455" title="IMG_1985" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_19851-180x180.jpg" alt="prototyping" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1997.jpg"><img class="alignnone size-thumbnail wp-image-1454" title="IMG_1997" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1997-180x180.jpg" alt="prototyping" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1988.jpg"><img title="IMG_1988" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1988-180x180.jpg" alt="prototyping" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2015.jpg"><img title="IMG_2015" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2015-180x180.jpg" alt="soldering the motion sensor" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2004.jpg"><img class="alignnone size-thumbnail wp-image-1464" title="IMG_2004" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2004-180x180.jpg" alt="LED harness" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2022.jpg"><img class="alignnone size-thumbnail wp-image-1463" title="IMG_2022" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2022-180x180.jpg" alt="LED harness" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_0659_11.jpg"><img title="IMG_0659_1" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_0659_11-180x180.jpg" alt="soldering wires / LED" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_06652.jpg"><img title="IMG_0665" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_06652-180x180.jpg" alt="gluing LEDs into eye sockets" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2114.jpg"><img title="IMG_2114" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2114-180x180.jpg" alt="close up" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2123.jpg"><img class="alignnone size-thumbnail wp-image-1465" title="IMG_2123" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2123-180x180.jpg" alt="skull wiring" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2115.jpg"><img class="alignnone size-thumbnail wp-image-1462" title="IMG_2115" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2115-180x180.jpg" alt="wiring container" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2117.jpg"><img class="alignnone size-thumbnail wp-image-1460" title="IMG_2117" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2117-180x180.jpg" alt="wiring container open" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2110.jpg"><img class="alignnone size-thumbnail wp-image-1430" title="IMG_2110" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2110-180x180.jpg" alt="all wired up - ready to test" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2032.jpg"><img class="alignnone size-thumbnail wp-image-1453" title="IMG_2032" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_2032-180x180.jpg" alt="Glow!" height="180" width="180" /></a></p>
+
+<h4>Code:</h4>
+
+<p>The code works - but needs to be modified, right now after the motion is activated, the lights stay on / fade in and out in an infinite loop until the power is switched off.  Look for an update to this post.</p>
+
+<p>Arduino code for the LEDs and Parallax PIR Motion Sensor:</p>
+
+<p>/* -----------------------------------------------------------------<br />&nbsp;Anna Kaziunas France<br />&nbsp;--------------------------------------------------------------------<br />&nbsp;Fab Academy - Sensors I/O Module<br />&nbsp;Glowing Skull Project<br />&nbsp;03/02/2010<br />&nbsp;--------------------------------------------------------------------<br />&nbsp;Motion Sensor code:<br />&nbsp;Motion Sensor code:I have seen this code a few places, <br />&nbsp;it is never attributed to anyone in particular.&nbsp; <br />&nbsp;I saw it last at: http://www.ladyada.net/learn/sensors/pir.html<br />&nbsp;--------------------------------------------------------------------<br />&nbsp;LED Fader code by: By David A. Mellis - Created 1 Nov 2008<br />&nbsp;Modified 17 June 2009: By Tom Igoe<br />&nbsp;http://arduino.cc/en/Tutorial/Fading<br />&nbsp;--------------------------------------------------------------------<br />&nbsp;Combined / Modified by Anna Kaziuans France - 03 March 2010<br />&nbsp;--------------------------------------------------------------------<br />&nbsp;<br />&nbsp;--------------------------------------------------------------------<br />&nbsp;Purpose of this Program<br />&nbsp;--------------------------------------------------------------------<br />&nbsp;Read input value from the sensor<br />&nbsp;Determine if motion is present (input is HIGH)<br />&nbsp;<br />&nbsp;When motion is detected via motion sensor:<br />&nbsp;1. Eyes slowly glow red (fade in and out - continue)<br />&nbsp;2. Mouth glows (steady)<br />&nbsp;<br />&nbsp;When motion is not detected after (length of time) <br />&nbsp;Switch off LEDs<br />&nbsp;<br />&nbsp;Switch turns Skull on and off (hardware only)<br />&nbsp;------------------------------------------------------------------*/<br /><br />// Variables<br />int ledPinSolid = 13; // choose the pin for the LED<br />int ledPinFade = 11; // <br />int inputPinSensor = 2; // choose the input pin (for PIR sensor)<br />int pirState = LOW; // we start, assuming no motion detected<br />int val = 0; // variable for reading the pin status<br /><br />void setup() {<br />&nbsp; pinMode(ledPinSolid, OUTPUT); // declare Solid LEDs as output<br />&nbsp; pinMode(ledPinFade, OUTPUT); // declare Fader LEDs as output<br />&nbsp; pinMode(inputPinSensor, INPUT); // declare sensor as input<br /><br />&nbsp; Serial.begin(9600);<br />}<br /><br />// Begin Motion Detection<br />void loop(){<br />&nbsp; val = digitalRead(inputPinSensor); // reading input value<br />&nbsp; if (val == HIGH) { // if the input is HIGH<br />&nbsp;&nbsp;&nbsp; digitalWrite(ledPinSolid, HIGH); // turn LED ON<br />&nbsp;&nbsp;&nbsp; // sets the value (range from 0 to 255):<br />&nbsp;&nbsp;&nbsp; analogWrite(ledPinFade, HIGH); // turn LED ON<br />&nbsp;&nbsp;&nbsp; // fade in from min to max in increments of 5 points:<br />&nbsp;&nbsp;&nbsp; for(int fadeValue = 0 ; fadeValue &lt;= 255; fadeValue +=10) { <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // wait for 30 milliseconds to see the fade in effect&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; delay(400);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; } <br /><br />&nbsp;&nbsp;&nbsp; // fade out from max to min in increments of 5 points:<br />&nbsp;&nbsp;&nbsp; for(int fadeValue = 255 ; fadeValue &gt;= 0; fadeValue -=10) { <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // sets the value (range from 0 to 255):<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; analogWrite(ledPinFade, fadeValue);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // wait for 10 milliseconds to see the dimming effect&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; delay(110);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; } <br />&nbsp;&nbsp;&nbsp; if (pirState == LOW) {&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // we have just turned on<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial.println("Motion detected Huzzah!");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // We only want to print on the output change, not state<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pirState = HIGH;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp; } <br />&nbsp; else {<br />&nbsp;&nbsp;&nbsp; digitalWrite(ledPinFade, LOW); // turn Fader LEDs OFF<br />&nbsp;&nbsp;&nbsp; digitalWrite(ledPinSolid, LOW); // turn Solid LEDs OFF<br />&nbsp;&nbsp;&nbsp; if (pirState == HIGH){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // we have just turned of<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial.println("Motion ended :-(");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // We only want to print on the output change, not state<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pirState = LOW;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp; }<br />}<br /><br /></p>
+
+        </div>
+
+
+
+  <div class="more">
+    <a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Read more... </a>
+  </div>
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/motion-sensing-glow-skull.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1486" class="entry-asset asset hentry">
+<p class="date">March 17, 2010  8:52 AM</p>
+<p class="title">The Gellerizer</p>
+by <a href="">Elliot Clapp</a><br/>
+
+        <div class="asset-body">
+            <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer1.jpg"><img alt="gellerizer1.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer1-thumb-500x332-3529.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer2.jpg"><img alt="gellerizer2.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer2-thumb-500x332-3530.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer3.jpg"><img alt="gellerizer3.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer3-thumb-500x332-3531.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer5.jpg"><img alt="gellerizer5.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer5-thumb-500x332-3533.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer6.jpg"><img alt="gellerizer6.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer6-thumb-500x332-3534.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer7.jpg"><img alt="gellerizer7.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer7-thumb-500x332-3535.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer8.jpg"><img alt="gellerizer8.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer8-thumb-500x332-3536.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer9.jpg"><img alt="gellerizer9.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer9-thumb-500x332-3537.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/gellerizer10.jpg"><img alt="gellerizer10.jpg" src="http://as220.org/labs/fabacademy/assets_c/2010/03/gellerizer10-thumb-500x332-3538.jpg" width="500" height="332" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/the-gellerizer.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1473" class="entry-asset asset hentry">
+<p class="date">March  9, 2010  8:03 PM</p>
+<p class="title">Completed TARDIS Cast | Working Light</p>
+by <a href="http://www.kaziunas.com">Anna France</a><br/>
+
+        <div class="asset-body">
+            <p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1958.jpg"><img class="alignnone size-full wp-image-1381" title="IMG_1958" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1958.jpg" alt="finished model" height="773" width="580" /></a></p>
+
+<p>This project went through many adaptations and in the end, it did not turn out as a blue box, but more like a weathered garden statue.  The hydrostone  did not turn out completely white, but grime on the urethane molds made little swirls, further enhancing the marbleized look.  It is not bigger on the inside, but the wiring and battery did fit nicely within the internal cavity.  A switch turns it on and off.  Although this endeavour did not turn out exactly as planned, I learned many things about thinking in 3D and many more about construction and molding objects in 3D.</p>
+
+<p>So what makes this model a &#8220;TARDIS&#8221; not just a model of a British police box that looks like a light-up garden statue?  Honestly, nothing but my intent.  I set out to make a model of the <span class="caps">TARDIS </span>and that is what it will be called.</p>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/2IMG_19401.jpg"><img class="alignnone size-full wp-image-1392" title="2IMG_1940" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/2IMG_19401.jpg" alt="finished model" height="773" width="580" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1965.jpg"><img class="alignnone size-full wp-image-1377" title="IMG_1965" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1965.jpg" alt="finished model" height="773" width="580" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1964.jpg"><img class="alignnone size-full wp-image-1378" title="IMG_1964" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1964.jpg" alt="finished model" height="435" width="580" /></a></p>
+
+<h2>The process I used to create this model:</h2>
+
+<h3>Previous Posts:</h3>
+
+<ol>
+<li><p>I designed the <span class="caps">TARDIS </span>in Google Sketchup.
+&gt; See Previous Post: <a href="http://as220.org/labs/fabacademy/2010/01/tardis-3d-modeling-1.html" target="_blank"><span class="caps">TARDIS</span>: 3D Modeling</a></p></li>
+<li><p>I used the Modela to mill out the front, individual sides and roof of the model in machinable wax.
+&gt; See Previous Post:  <a href="http://as220.org/labs/fabacademy/2010/02/tardis-moldmaking.html" target="_blank"><span class="caps">TARDIS</span>: Moldmaking</a></p></li>
+<li><p>I used the block of machinable wax to create urethane molds of each of the pieces.
+&gt; See Previous Post:  <a href="http://as220.org/labs/fabacademy/2010/02/tardis-moldmaking.html"><span class="caps">TARDIS</span>: Moldmaking</a></p></li>
+</ol>
+
+<h3>Laser-Cut The Casting Container:</h3>
+
+<ul><li>I designed and laser cut an adjustable press-fit box to place the individual urethane molds in order to cast the <span class="caps">TARDIS </span>in hydrostone. (I also custom-cut shims to key in the urethane mold edges.)</li></ul>
+
+<p></p>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1669.jpg"><img class="alignnone size-thumbnail wp-image-1297" title="IMG_1669" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1669-190x190.jpg" alt="Inside Box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1667.jpg"><img class="alignnone size-thumbnail wp-image-1290" title="IMG_1667" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1667-190x190.jpg" alt="Inside Box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1664.jpg"><img class="alignnone size-thumbnail wp-image-1291" title="IMG_1664" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1664-190x190.jpg" alt="Taped Up Box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1661.jpg"><img class="alignnone size-thumbnail wp-image-1299" title="IMG_1661" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1661-190x190.jpg" alt="preparing to cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1660.jpg"><img class="alignnone size-thumbnail wp-image-1301" title="IMG_1660" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1660-190x190.jpg" alt="rubber mold" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1668.jpg"><img class="alignnone size-thumbnail wp-image-1293" title="IMG_1668" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1668-190x190.jpg" alt="Inside Box" height="180" width="180" /></a></p>
+
+<h3>Putting Together the Casting Container / Aligning the Mold:<br /></h3><ul><li>When casting, I did my best to align the sides and roof together  at the appropriate angles and hoped for the best. An additional laser-cut box with an empty pen casing was inserted into the larger mold when pouring the hydrostone in order to create a cavity for the wires to run form the <span class="caps">LED </span>on the top through the cast down into the base where the wiring, battery and other components are housed.  The inside box then became part of the cast.</li></ul>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1674.jpg"><img title="IMG_1674" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1674-180x180.jpg" alt="taped up box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1671.jpg"><img title="IMG_1671" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1671-190x190.jpg" alt="pouring cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_16731.jpg"><img class="alignnone size-thumbnail wp-image-1334" title="IMG_1673" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_16731-180x180.jpg" alt="casting" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1687.jpg"><img title="IMG_1687" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1687-180x180.jpg" alt="Box Removal" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1677.jpg"><img title="IMG_1677" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1677-180x180.jpg" alt="Removing the Box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1686.jpg"><img title="IMG_1686" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1686-180x180.jpg" alt="Removing the box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1680.jpg"><img title="IMG_1680" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1680-180x180.jpg" alt="removing box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1689.jpg"><img title="IMG_1689" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1689-180x180.jpg" alt="removing box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1683.jpg"><img title="IMG_1683" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1683-180x180.jpg" alt="Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1690.jpg"><img class="alignnone size-thumbnail wp-image-1335" title="IMG_1690" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1690-180x180.jpg" alt="Removing the Box" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1688.jpg"><img title="IMG_1688" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1688-180x180.jpg" alt="Box Parts - Mess" height="180" width="180" /></a></p>
+
+<h3>Removing the Casting Container:<br /></h3>
+
+<ul><li>When taking apart the mold, I found that some of the fine details of the windows and the moldings became stuck in the urethane mold or broke off easily.  I may not have mixed the hydrostone long enough, or there may have been an issue with the proportions I used.  Further experimentation is this matter is needed to determine the source of the problem.  This breaking away of the fine detail gave the statuette a weathered appearance, like a tombstone left out in the elements.</li></ul>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1696.jpg"><img class="alignnone size-thumbnail wp-image-1354" title="IMG_1696" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1696-180x180.jpg" alt="" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1711.jpg"><img class="alignnone size-thumbnail wp-image-1353" title="IMG_1711" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1711-180x180.jpg" alt="" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1705.jpg"><img class="alignnone size-thumbnail wp-image-1352" title="IMG_1705" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1705-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1699.jpg"><img class="alignnone size-thumbnail wp-image-1351" title="IMG_1699" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1699-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1710.jpg"><img class="alignnone size-thumbnail wp-image-1350" title="IMG_1710" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1710-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1692.jpg"><img class="alignnone size-thumbnail wp-image-1349" title="IMG_1692" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1692-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1714.jpg"><img class="alignnone size-thumbnail wp-image-1348" title="IMG_1714" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1714-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1706.jpg"><img class="alignnone size-thumbnail wp-image-1347" title="IMG_1706" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1706-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1693.jpg"><img class="alignnone size-thumbnail wp-image-1346" title="IMG_1693" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1693-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1701.jpg"><img class="alignnone size-thumbnail wp-image-1345" title="IMG_1701" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1701-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1695.jpg"><img class="alignnone size-thumbnail wp-image-1344" title="IMG_1695" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1695-180x180.jpg" alt="Freshly Cast" height="180" width="180" /></a></p>
+
+<h3>Adding the Electrical Components:</h3>
+
+<ul><li>In addition - I wanted to have a <span class="caps">LED </span>light on the top to simulate the police box light, so when cutting the outside casting box,  I cut a congruent interior  box (see number 4. pictures above.)  This small inside box allows for an open area for the wiring  from the <span class="caps">LED </span>through the top of the hole in the stone to the battery.  The wiring consists of:</li>
+<ul><ul><li>1 ultra bright white 10 mm <span class="caps">LED</span></li>
+<li>1 330 ohm resistor</li><li>1 small switch</li><li>1 battery connector and a 9V battery</li><li>A few lengths of wire</li></ul></ul></ul>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1729.jpg"><img class="alignnone size-medium wp-image-1358" title="IMG_1729" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1729-285x213.jpg" alt="Prototyping the circuit" height="213" width="285" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1737.jpg"><img title="IMG_1737" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1737-285x213.jpg" alt="protyping the circuit" height="213" width="285" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1736.jpg"><img title="IMG_1736" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1736-285x213.jpg" alt="prototyping the circuit" height="213" width="285" /></a><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1742.jpg"><img title="IMG_1742" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/IMG_1742-285x213.jpg" alt="prototyping the circuit" height="213" width="285" /></a></p>
+
+<p>I dedicate this project to David Tennant for his the excellent portrayal of the 10th Doctor, which has just come to an end. ;-)</p>
+
+<p><a href="http://blog.kaziunas.com/wp-content/uploads/2010/03/tardis-tennant.jpg"><img class="alignnone size-full wp-image-1369" title="tardis-tennant" src="http://blog.kaziunas.com/wp-content/uploads/2010/03/tardis-tennant.jpg" alt="The 10th Doctor and His Tardis" height="580" width="387" /></a><br />Image © <span class="caps">BBC</span><br /></p>
+
+<p><p><b><font style="font-size: 1.25em;"><em>
+Anna Kaziunas France
+<br /><font style="font-size: 0.8em;">[<a href="http://www.kaziunas.com/">http://www.kaziunas.com</a>]</font></em></font></b></p><b><font style="font-size: 1.25em;"></em></font></b></p>
+
+        </div>
+
+
+
+  <div class="more">
+    <a href="http://as220.org/labs/fabacademy/2010/03/completed-tardis-cast-working-light.html">Read more... </a>
+  </div>
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/completed-tardis-cast-working-light.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1435" class="entry-asset asset hentry">
+<p class="date">March  4, 2010 10:19 PM</p>
+<p class="title">Licensing</p>
+by <a href="">Noah Bedford</a><br/>
+
+        <div class="asset-body">
+            <p>Everything I've posted here is hereby licensed CC-NC-SA, unless otherwise specified (or, y'know, if it's a derivative work.)</p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/licensing.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1434" class="entry-asset asset hentry">
+<p class="date">March  3, 2010  9:43 AM</p>
+<p class="title">Half drill bit!</p>
+by <a href="">Noah Bedford</a><br/>
+
+        <div class="asset-body">
+            <p>The Fuxamascanner is still in progress, so I did a quick (20 minutes) scan of a drill bit
+in Dr. Picza just for the lulz. </p>
+
+<p><span class="mt-enclosure mt-enclosure-file" style="display: inline;"><a href="http://academy.cba.mit.edu/labs/Providence/noah_bedford/halfdrill.stl">halfdrill-blender.stl</a></span></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/half-drill-bit.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+                            
+                            <div id="entry-1428" class="entry-asset asset hentry">
+<p class="date">March  2, 2010 11:21 PM</p>
+<p class="title">F(l)uxamascanner</p>
+by <a href="">Elliot Clapp</a><br/>
+
+        <div class="asset-body">
+            <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_012-3290.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_012-3290.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_012-thumb-600x398-3290.jpg" width="600" height="398" alt="3d-printing_012.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0116-3292.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0116-3292.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0116-thumb-600x398-3292.jpg" width="600" height="398" alt="3d-printing_0116.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_019-3291.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_019-3291.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_019-thumb-600x398-3291.jpg" width="600" height="398" alt="3d-printing_019.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0120-3293.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0120-3293.html','popup','width=664,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0120-thumb-600x903-3293.jpg" width="600" height="903" alt="3d-printing_0120.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0124-3295.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0124-3295.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0124-thumb-600x398-3295.jpg" width="600" height="398" alt="3d-printing_0124.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0125-3296.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0125-3296.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0125-thumb-600x398-3296.jpg" width="600" height="398" alt="3d-printing_0125.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0126-3297.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0126-3297.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0126-thumb-600x398-3297.jpg" width="600" height="398" alt="3d-printing_0126.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0127-3298.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0127-3298.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0127-thumb-600x398-3298.jpg" width="600" height="398" alt="3d-printing_0127.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0123-3294.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0123-3294.html','popup','width=664,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0123-thumb-600x903-3294.jpg" width="600" height="903" alt="3d-printing_0123.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0130-3299.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0130-3299.html','popup','width=1000,height=664,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0130-thumb-600x398-3299.jpg" width="600" height="398" alt="3d-printing_0130.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0129-3300.html" onclick="window.open('http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0129-3300.html','popup','width=664,height=1000,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://as220.org/labs/fabacademy/assets_c/2010/03/3d-printing_0129-thumb-600x903-3300.jpg" width="600" height="903" alt="3d-printing_0129.jpg" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></span></p>
+
+        </div>
+
+
+
+<div style="float:right;" class="asset-body" >
+<a href="http://as220.org/labs/fabacademy/2010/03/fluxamascanner.html">Permalink</a></div>
+</div>
+    <div class="asset-footer"></div>
+
+
+
+
+
+                            <div class="content-nav">
+                                <a href="http://as220.org/labs/fabacademy/2010/02/">&laquo; February 2010</a> |
+                                <a href="http://as220.org/labs/fabacademy/">Main Index</a> |
+                                <a href="http://as220.org/labs/fabacademy/archives.html">Archives</a>
+                                | <a href="http://as220.org/labs/fabacademy/2010/04/">April 2010 &raquo;</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">Categories</h3>
+    <div class="widget-content">
+    
+        
+        <ul>
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/01-computer-controlled-cutting/">01 computer-controlled cutting (7)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/02-electronics-design-and-production/">02 electronics design and production (5)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/03-computer-controlled-machining/">03 computer-controlled machining (4)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/04-embedded-programming/">04 embedded programming (2)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/05-3d-molding-and-casting/">05 3D molding and casting (9)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/06-collaborative-technical-development/">06 collaborative technical development (3)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/07-3d-scanning-and-printing/">07 3D scanning and printing (3)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/08-sensors-actuators-and-displays/">08 sensors, actuators, and displays (4)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/09-interface-programming/">09 interface programming (5)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/10-embedded-networking/">10 embedded networking (1)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/11-machine-design/">11 machine design (3)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li>12 applications and implications
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/13-ip-and-business-models/">13 IP and business models (2)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/14-project-development/">14 project development (2)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/anna-france/">Anna France (8)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li>Computer-Rendered Art
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/elliot-clapp/">Elliot Clapp (7)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/fluxamacutter/">Fluxamacutter (1)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/jenine-bressner/">Jenine Bressner (8)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/jeremy-radtke/">Jeremy Radtke (2)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li>John Williams
+        
+        
+            </li>
+        
+    
+        
+        
+            <li>Kipp Bradford
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/makeda-stephenson/">Makeda Stephenson (5)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/miscellaneous/">Miscellaneous (2)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/news/">News (3)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/noah-bedford/">Noah Bedford (21)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li>Norlan Olivo
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/other-projects/">Other Projects (4)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/shawn-wallace/">Shawn Wallace (6)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/tutorials/">Tutorials (3)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li>Uncategorized
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://as220.org/labs/fabacademy/year-long-projects/">Year-long Projects (9)</a>
+        
+        
+            </li>
+        
+        </ul>
+        
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">Monthly <a href="http://as220.org/labs/fabacademy/archives.html">Archives</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://as220.org/labs/fabacademy/2010/05/">May 2010 (10)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2010/04/">April 2010 (8)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2010/03/">March 2010 (12)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2010/02/">February 2010 (7)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2010/01/">January 2010 (13)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2009/12/">December 2009 (2)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2009/11/">November 2009 (9)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2009/10/">October 2009 (10)</a></li>
+        
+    
+        
+            <li><a href="http://as220.org/labs/fabacademy/2009/09/">September 2009 (6)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">Pages</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://as220.org/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://as220.org/labs/fabacademy/atom.xml">Subscribe to this blog's feed</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.movabletype.com/"><img src="http://as220.org/mt/mt-static/images/mt4-bug-pbmt-white.png" alt="Powered by Movable Type 4.261" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+    
+<div id="gamma">
+    <div id="gamma-inner">
+    <div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+        <form method="get" action="http://as220.org/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="33" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="Search" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-about-this-page widget">
+    <h3 class="widget-header">
+
+    
+        About this Archive
+    
+
+
+    </h3>
+    <div class="widget-content">
+
+
+
+
+
+        <p class="first">This page is an archive of entries from <strong>March 2010</strong> listed from newest to oldest.</p>
+    
+        <p><a href="http://as220.org/labs/fabacademy/2010/02/">February 2010</a> is the previous archive.</p>
+    
+    
+        <p><a href="http://as220.org/labs/fabacademy/2010/04/">April 2010</a> is the next archive.</p>
+    
+
+
+        <p>Find recent content on the <a href="http://as220.org/labs/fabacademy/">main index</a> or look in the <a href="http://as220.org/labs/fabacademy/archives.html">archives</a> to find all content.</p>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.movabletype.com/" rel="generator">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

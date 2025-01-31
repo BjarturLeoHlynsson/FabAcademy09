@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
+<service>
+<engineName>Movable Type 4.261</engineName>
+<engineLink>http://www.sixapart.com/movabletype/</engineLink>
+<homePageLink>http://as220.org/labs/fabacademy/</homePageLink>
+<apis>
+<api name="MetaWeblog" preferred="true" apiLink="http://as220.org/mt/mt-xmlrpc.cgi" blogID="33" />
+<api name="MovableType" preferred="false" apiLink="http://as220.org/mt/mt-xmlrpc.cgi" blogID="33" />
+<api name="Blogger" preferred="false" apiLink="http://as220.org/mt/mt-xmlrpc.cgi" blogID="33" />
+<api name="Atom" preferred="false" apiLink="http://as220.org/mt/mt-atom.cgi/weblog" blogID="33" />
+</apis>
+</service>
+</rsd>

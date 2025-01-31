@@ -1,0 +1,40 @@
+Using the fab academy bazaar archive:
+
+Telling bazaar who you are:
+	$ bzr whoami "User <user@website.com>"
+
+Branching the archive:
+	$ bzr branch sftp://academy@fab.cba.mit.edu:846/archive academy
+
+Show all changes:
+	$ bzr log
+
+Show changes since last revision:
+	$ bzr status  
+
+Adding files:
+	$ bzr add <filename(s)>
+
+Removing files:
+	$ bzr remove <filenames>
+
+Committing changes:
+	$ bzr commit -m "commit message"
+
+Getting the latest changes: 	
+	$ bzr pull
+
+Pushing changes to the repository for the first time:
+	$ bzr push sftp://academy@fab.cba.mit.edu:846/archive
+
+Pushing changes every subsequent revision:
+	$ bzr push
+
+Installing bzr upload plugin:
+	$ aptitude install bzr-upload
+
+Updating the web tree:
+	$ bzr upload sftp://academy@fab.cba.mit.edu/tree
+
+Undeleting files:
+	$ bzr revert <filename>

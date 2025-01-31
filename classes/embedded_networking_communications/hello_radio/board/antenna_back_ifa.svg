@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docbase="/home/cfd/Desktop/charliework/radio/ia/antenna"
+   sodipodi:docname="antenna_back_ifa.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/cfd/Desktop/charliework/radio/ia/antenna/antenna_back_ifa.png"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="396.44952"
+     inkscape:cy="631.47573"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:grid-points="true"
+     gridspacingx="0.5mm"
+     gridspacingy="0.5mm"
+     gridanglex="8.4666669mm"
+     gridanglez="8.4666669mm"
+     grid_units="mm"
+     gridempspacing="10"
+     inkscape:window-width="1670"
+     inkscape:window-height="971"
+     inkscape:window-x="0"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2164"
+       width="3.5433071"
+       height="170.07874"
+       x="301.18109"
+       y="439.37006" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2166"
+       width="99.212593"
+       height="3.5433075"
+       x="301.18109"
+       y="439.37006" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect2164"
+       id="use2168"
+       transform="translate(196.65355,0)"
+       width="744.09448"
+       height="1052.3622" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect2166"
+       id="use2172"
+       transform="translate(100.98425,4.8059158e-7)"
+       width="744.09448"
+       height="1052.3622" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2180"
+       width="3.5433145"
+       height="30.118111"
+       x="396.85037"
+       y="439.37006" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect2180"
+       id="use2182"
+       transform="translate(5.3149607,6.0073977e-8)"
+       width="744.09448"
+       height="1052.3622" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2184"
+       width="3.5433071"
+       height="63.779514"
+       x="350.78738"
+       y="379.13385" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect2184"
+       id="use2188"
+       transform="translate(97.440934,6.9085078e-7)"
+       width="744.09448"
+       height="1052.3622" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2190"
+       width="100.98425"
+       height="3.5433071"
+       x="350.78738"
+       y="379.13385" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 338.38459,469.50001 L 338.38459,593.50001 L 464.16584,593.50001 L 464.16584,469.50001 L 409.25959,469.50001 L 409.25959,473.03126 L 393.32209,473.03126 L 393.32209,469.50001 L 338.38459,469.50001 z "
+       id="rect2192" />
+  </g>
+</svg>
